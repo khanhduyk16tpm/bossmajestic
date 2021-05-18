@@ -1,0 +1,302 @@
+{% import 'macros/path.html' as f %}
+{% import 'macros/site.html' as s %}
+{% import 'macros/user.html' as user %}
+{% import 'macros/candidate.html' as c %}
+
+{% block js %}{% endblock %}
+
+{% set extra_class = '' %}
+
+{% if alert %}
+{% set extra_class = 'with-alert' %}
+{% endif %}
+<div class="container">
+    <nav id="main" class="navbar navbar-expand-lg navbar-light fixed-top px-md-5 {{extra_class}}">
+        <div class="container-fluid">
+            <a class="navbar-brand main-logo" href="{{ s.home_url() }}">
+                <img src="{{ f.img('logo/Inverted-Lockup.png') }}">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-md-5">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ s.job_search_url() }}">Jobs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ s.company_search_url() }}">Company Profiles</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ s.blog_url() }}" target="_blank">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ s.about_url() }}">About</a>
+                    </li>
+                </ul>
+                <span class="ml-md-auto"></span>
+                <div class="language-navbar">
+                    <div class="navbar-info">
+                        <div class="btn-group my-2">
+                            <div class="dropdown language-picker me-4">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                </button>
+                                <ul class="dropdown-menu {% if is_guest %}language-not-login{% endif %}" aria-labelledby="dropdownMenuButton1">
+                                    <li><a class="dropdown-item dropdown-item-checked" href="#">English</a></li>
+                                    <li><a class="dropdown-item" href="#">Chinese</a></li>
+                                </ul>
+                            </div>
+                        {% if is_guest %}
+                        
+                        <span class="navbar-text">
+                            <a href="{{ s.post_job_url() }}" class="btn btn-post-job mr-3 px-5">Post a job</a>
+                            <a href="{{ user.login_url() }}" rel="nofollow" data-bs-toggle="modal"
+                                data-bs-target="#loginModalForm">Login</a>
+                            <a href="{{ user.signup_url() }}" rel="nofollow" data-bs-toggle="modal"
+                                data-bs-target="#signupModalForm">Sign Up</a>
+                        </span>
+                        {% else %}
+                        
+                            
+                            <div class="dropdown message-dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2"
+                                    data-bs-toggle="dropdown" aria-expanded="false"><span class="badge">9</span>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                    {% for i in range(1,6) %}
+                                    <li><a class="dropdown-item"><img
+                                                src="{{f.landing_page_img('messenger-persion-icon.png')}}" alt="">
+                                            <div class="messenger-name">Messenger's Name</div>
+                                            <div class="dot"><span></span></div>
+                                            <div class="message-text">latest message - 1w</div>
+
+                                        </a></li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                            <div class="dropdown user-dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2"
+                                    data-bs-toggle="dropdown" aria-expanded="false"><img
+                                        src="{{f.img('about/icon-ionic-md-person@2x.png')}}" class="user-rounded"
+                                        alt="...">Username
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                    <li><a class="dropdown-item{{ f.if(active_menu == 'dashboard',' active') }}"
+                                            href="{{ c.my_application_url() }}"><img
+                                                src="{{f.landing_page_img('person-fill.svg')}}" alt="">My Profile</a>
+                                    </li>
+                                    <li><a class="dropdown-item{{ f.if(active_menu == 'profile',' active') }}"
+                                            href="{{ c.my_profile_overview_url() }}"><img
+                                                src="{{f.landing_page_img('bookmark-fill.svg')}}" alt="">My Resume</a>
+                                    </li>
+                               <!--      <li><a class="dropdown-item{{ f.if(active_menu == 'save',' active') }}"
+                                            href="{{ user.save_url() }}"><img
+                                                src="{{f.landing_page_img('file-earmark-text-fill.svg')}}"
+                                                alt="">Save</a></li> -->
+                                    <li><a class="dropdown-item{{ f.if(active_menu == 'applications',' active') }}"
+                                            href="{{ user.applications_url() }}"><img
+                                                src="{{f.landing_page_img('briefcase-fill.svg')}}" alt="">My
+                                            Applications</a></li>
+                                    <!-- <li><a class="dropdown-item{{ f.if(active_menu == 'settings',' active') }}"
+                                            href="{{ user.settings_url() }}"><img
+                                                src="{{f.landing_page_img('gear-fill.svg')}}" alt="">Setting</a></li> -->
+                                </ul>
+                            </div>
+                        
+                        {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+
+{% if is_guest %}
+<!-- LOGIN MODAL FORM -->
+<div class="modal fade" id="loginModalForm" tabindex="-1" aria-labelledby="loginModalForm" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content login-page">
+            <div class="login-modal-section">
+                <p class="login-with">Log in with</p>
+                <div class="row py-2 social-login">
+                    <a href="#" rlogin-desktopel="nofollow"
+                        class="btn btn-secondary btn-facebook col-12 mb-2">
+                        <i class="bi bi-facebook"></i>
+                        Continue with Facebook
+                    </a>
+                    <a href="#" rel="nofollow"
+                        class="btn btn-secondary btn-linkedin col-12 mb-2">
+                        <i class="bi bi-linkedin"></i>
+                        <span class="split"></span>Sign in with LinkedIn
+                    </a>
+                </div>
+                <div class="row py-2">
+                    <div class="col-sm-5 d-md-block custom-hr">
+                        <hr>
+                    </div>
+                    <div class="col-sm-2 text-muted text-center py-1">Or</div>
+                    <div class="col-sm-5 d-md-block custom-hr">
+                        <hr>
+                    </div>
+                </div>
+                <p class="login-with login-with-majestic">Log in with Job Majestic</p>
+                <form action="/en/auth/login" class="login-form" method="post" autocomplete="off">
+                    <div class="form-group row">
+                        <div class="col-sm-12">
+                            <label for="email-login">Email</label>
+                            <input type="email" id="email-login" class="form-control custom-form-control" maxlength="50"
+                                autocomplete="email" autofocus="" required="" name="email"
+                                placeholder="yourname@youremail.com">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-12">
+                            <label for="current-password">Password</label>
+                            <div class="input-group">
+                                <input type="password" id="current-password"
+                                    class="form-control custom-form-control current-password" maxlength="20" required=""
+                                    name="password">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-6 custom-action">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="gridCheckLogin" checked="">
+                                <label class="form-check-label" for="gridCheckLogin">
+                                    Remember me </label>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 text-right mt-2 mt-md-0 custom-action">
+                            <a class="text-underline" href="/password-recovery.html" rel="nofollow">Forgot
+                                password?</a>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-6">
+                            <button type="submit" class="btn custom-btn btn-login col-12">Login</button>
+                        </div>
+                        <div class="col-sm-6 text-right mt-2 mt-md-0 no-margin">
+                            <a href="{{ user.signup_url() }}" rel="nofollow" data-bs-toggle="modal"
+                                data-bs-dismiss="modal" data-bs-target="#signupModalForm"
+                                class="btn custom-btn btn-signup">Sign Up</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SIGNUP MODAL FORM -->
+<div class="modal fade" id="signupModalForm" tabindex="-1" aria-labelledby="signupModalForm" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content signup-page">
+            <div class="signup-modal-section">
+                <p class="signup-with">Sign up with</p>
+                <div class="row py-2 social-signup">
+                    <a href="#" rsignup-desktopel="nofollow"
+                        class="btn btn-secondary btn-facebook col-12 mb-2">
+                        <i class="bi bi-facebook"></i>
+                        Continue with Facebook
+                    </a>
+                    <a href="#" rel="nofollow"
+                        class="btn btn-secondary btn-linkedin col-12 mb-2">
+                        <i class="bi bi-linkedin"></i>
+                        <span class="split"></span>Sign in with LinkedIn
+                    </a>
+                </div>
+                <div class="row py-2">
+                    <div class="col-sm-5 d-md-block custom-hr">
+                        <hr>
+                    </div>
+                    <div class="col-sm-2 text-muted text-center py-1">Or</div>
+                    <div class="col-sm-5 d-md-block custom-hr">
+                        <hr>
+                    </div>
+                </div>
+                <p class="signup-with signup-with-majestic">Sign up with Job Majestic</p>
+                <form action="/en/auth/signup" class="signup-form" method="post" autocomplete="off">
+                    <div class="form-group row">
+                        <div class="col-sm-6 mb-3 mb-md-0">
+                            <label for="firstname">First Name</label>
+                            <input type="text" id="firstname" class="form-control custom-form-control" maxlength="50"
+                                autocomplete="given-name" autofocus="" required="" name="profile[first_name]" value="">
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="lastname">Last Name</label>
+                            <input type="text" id="lastname" class="form-control custom-form-control" maxlength="50"
+                                autocomplete="family-name" required="" name="profile[last_name]" value="">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-12">
+                            <label for="mobileNumber">Mobile Number</label>
+                            <div class="input-group">
+                                <select name="profile[mobile_region_code]"
+                                    class="custom-select custom-form-control w-20">
+                                    <option value="SG">+65</option>
+                                    <option value="ID">+62</option>
+                                    <option value="TH">+66</option>
+                                    <option value="MY" selected="selected">+60</option>
+                                </select>
+                                <div class="input-group-append w-80"> <input type="text"
+                                        class="form-control custom-form-control" maxlength="10" id="mobileNumber"
+                                        required="" name="profile[mobileNationalNumber_]" value="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-12">
+                            <label for="email-signup">Email</label>
+                            <input type="email" id="email-signup" class="form-control custom-form-control"
+                                maxlength="50" autocomplete="email" autofocus="" required="" name="email"
+                                placeholder="yourname@youremail.com">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-12">
+                            <label for="new-password">Password</label>
+                            <div class="input-group">
+                                <input type="password" id="new-password"
+                                    class="form-control custom-form-control new-password" maxlength="20" required=""
+                                    name="password">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-6 custom-action">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="gridCheck" checked="">
+                                <label class="form-check-label" for="gridCheck">
+                                    Remember me </label>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 text-right mt-2 mt-md-0 custom-action">
+                            <a class="text-underline" href="/password-recovery.html" rel="nofollow">Forgot
+                                password?</a>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-sm-12">
+                            <button type="submit" class="btn custom-btn btn-signup col-12">Sign Up</button>
+                        </div>
+                    </div>
+                </form>
+                <p class="text-center my-3">
+                    <small> Already have an account? <a class="text-underline" href="/login.html" rel="nofollow"
+                            data-dismiss="modal" data-toggle="modal" data-target="#signupModal">
+                            Log in</a>
+                    </small>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}

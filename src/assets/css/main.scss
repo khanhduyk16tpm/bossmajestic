@@ -1,0 +1,207 @@
+@import "../../../node_modules/bootstrap/scss/mixins";
+@import "../../../node_modules/bootstrap/scss/functions";
+@import "../../../node_modules/bootstrap/scss/variables";
+@import "var";
+@import "nav";
+@import "content";
+@import "carousel";
+@import "landingpage";
+@import "jobs/_job.scss";
+@import "jobs/_job_description.scss";
+@import "jobs/job_applications.scss";
+@import "company.scss";
+@import "about";
+@import "profile/profile";
+@import "profile/resume";
+@import "profile/resume_setting.scss";
+@import "auth/login";
+@import "auth/signup";
+@import "footer.scss";
+@import "modal.scss";
+
+body {
+    background-color: $bgColor;
+    color: $fontColor;
+    overflow-x: hidden;
+
+    .page {
+        background-color: $fullPageBgColor;
+    }
+    .yellow-button{
+        border-radius: 0px;
+        border: none;
+        background-color: $yellowButton;
+        color: $bigBtnFontColor;
+    }
+    .border-radius-none{
+        border-radius: 0px;
+        border: none;
+    }
+    .grey-text{
+        color: $textGrayColor;
+    }
+    .red{
+        color: #D5365B;
+    }
+    .alert {
+        background-color: $alertColor;
+        top: 0px;
+        height: 38px;
+        position: fixed;
+        z-index: 100;
+        width: 100%;
+        text-align: center;
+        color: $bigBtnBgColor;
+        padding: 4px;
+        border-radius: 0;
+    }
+
+    a,
+    a:hover {
+        color: $linkColor;
+        text-decoration: none;
+    }
+
+    .main-logo img {
+        vertical-align: unset;
+    }
+
+    .modal-header {
+        background-color: $modalHeaderBgColor;
+    }
+
+    .social-buttons i,
+    .social-buttons a {
+        color: $prime5;
+        font-size: 20px;
+        margin-right: 5px;
+
+        @include media-breakpoint-between(md, xl) {
+            font-size: 17px;
+        }
+    }
+
+    .footer {
+        background-color: $footerBgColor;
+        font-size: smaller;
+    }
+
+    .footer > .container {
+        color: $footerFontColor;
+    }
+
+    .footer a {
+        color: $footerFontColor;
+    }
+
+    #newsletterSubscription {
+        background-color: $newsletterSubscriptionBgColor;
+    }
+
+    .sitemap {
+        background-color: $sitemapBgColor;
+        color: $sitemapFontColor;
+        font-size: smaller;
+    }
+
+    .sitemap h6 {
+        color: $sitemapHeaderColor;
+        //text-transform: capitalize;
+    }
+
+    .sitemap a {
+        color: $sitemapLinkColor;
+    }
+
+    code {
+        font-size: 80%;
+    }
+
+    .btn-primary {
+        background-color: $btnPrimaryColor;
+        border-color: $btnPrimaryColor;
+        font-size: smaller;
+    }
+
+    .btn-primary:hover {
+        background-color: $btnSecondaryColor;
+    }
+
+    .btn-primary:disabled {
+        background-color: $btnSecondaryColor;
+        border-color: $btnSecondaryColor;
+    }
+
+    .btn-primary:not(:disabled):not(.disabled).active,
+    .btn-primary:not(:disabled):not(.disabled):active,
+    .show > .btn-primary.dropdown-toggle {
+        color: $dropdownMenuBgColor;
+        background-color: $btnSecondaryColor;
+        border-color: $btnSecondaryColor;
+    }
+
+    .dropdown-item.active,
+    .dropdown-item:active {
+        color: $dropdownMenuBgColor;
+        text-decoration: none;
+        background-color: $btnSecondaryColor;
+    }
+
+    .btn-facebook {
+        background-color: #3b5998;
+    }
+
+    .btn-linkedin {
+        background-color: #0e76a8;
+    }
+
+    .card-text {
+        color: $cardTextColor;
+    }
+    footer {
+        margin-top: auto;
+        .row {
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+
+    // CUSTOM FORM CONTROL
+    label {
+        margin-bottom: 0.5rem;
+    }
+
+    .form-group {
+        margin-bottom: 1rem;
+    }
+
+    .text-left {
+        text-align: left;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .text-right {
+        text-align: right;
+    }
+
+    .text-underline {
+        text-decoration: underline;
+    }
+
+    // MEDIA SCREENS
+    @include media-breakpoint-up(xxl) {
+        .px-md-5 {
+            padding-right: 0 !important;
+            padding-left: 0 !important;
+        }
+    }
+    @include media-breakpoint-between(md, xxl) {
+        .px-md-5 {
+            padding-right: 3rem !important;
+            padding-left: 3rem !important;
+        }
+    }
+}

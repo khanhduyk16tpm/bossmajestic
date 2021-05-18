@@ -1,0 +1,573 @@
+.announcement-alert-section {
+	background: #ffa2a2 0% 0% no-repeat padding-box;
+	border: 1px solid #ff0000;
+	padding-top: 20px;
+	.container-warning {
+		@include media-breakpoint-up(lg) {
+			max-width: 1320px;
+		}
+		.warning-img-title {
+			img {
+				width: 84px;
+				@include media-breakpoint-down(lg) {
+					width: 44px;
+					margin-left: 20px;
+				}
+				float: left;
+			}
+			h4 {
+				margin: 0 0 50px 130px;
+				@include media-breakpoint-down(lg) {
+					margin: 0px 0 35px 105px;
+					font-size: 18px;
+					padding-top: 10px;
+				}
+				font-weight: 300;
+				color: #e91421;
+				font-size: 30px;
+			}
+		}
+		.warning-description {
+			margin-left: 130px;
+			@include media-breakpoint-down(lg) {
+				margin-left: 20px;
+			}
+			p {
+				color: #e91421;
+				font-size: 18px;
+				@include media-breakpoint-down(lg) {
+					font-size: 14px;
+				}
+			}
+		}
+	}
+}
+.announcement-section {
+	margin-top: 15px;
+	background: #ffffff 0% 0% no-repeat padding-box;
+	border: 3px solid #ffcc33;
+	padding-top: 20px;
+	@include media-breakpoint-down(lg) {
+		margin-left: 0;
+	}
+	.container-warning {
+		@include media-breakpoint-up(lg) {
+			max-width: 1320px;
+		}
+		.warning-img-title {
+			img {
+				width: 84px;
+				@include media-breakpoint-down(lg) {
+					width: 44px;
+					margin-left: 20px;
+				}
+				float: left;
+			}
+			h4 {
+				margin: 0 0 50px 130px;
+				@include media-breakpoint-down(lg) {
+					margin: 0px 0 35px 105px;
+					font-size: 18px;
+					padding-top: 10px;
+				}
+				font-weight: 300;
+				color: $navBgColor;
+				font-size: 30px;
+			}
+		}
+		.warning-description {
+			margin-left: 130px;
+			@include media-breakpoint-down(lg) {
+				margin-left: 20px;
+			}
+			p {
+				color: $textGrayColor;
+				font-size: 18px;
+				@include media-breakpoint-down(lg) {
+					font-size: 14px;
+				}
+			}
+		}
+	}
+}
+.job-card {
+	padding: 5px 10px;
+	@include media-breakpoint-between(md, lg) {
+		padding: 5px 20px 5px 20px;
+	}
+	@include media-breakpoint-up(md) {
+		padding: 5px 10px;
+	}
+	.job-card-container {
+		padding: 20px;
+		/*max-width: 603px;*/
+		@include media-breakpoint-down(lg) {
+			padding-bottom: 0px;
+		}
+		background: $bgColor 0% 0% no-repeat padding-box;
+		box-shadow: 0px 0px 12px #000000d9;
+		.job-card-wrapper {
+
+			.job-type {
+				width: 101px;
+				height: 29px;
+
+				border: none;
+				border-radius: 0;
+				background-color: #6472e1;
+				color: $bgColor;
+				text-align: center;
+				padding-top: 5px;
+				margin-left: 1px;
+				margin-bottom: 13px;
+				@include media-breakpoint-down(lg) {
+					width: 94px;
+					height: 26px;
+					padding-top: 3px;
+				}
+				span {
+					font-size: 14px;
+					@include media-breakpoint-down(lg) {
+						font-size: 13px;
+					}
+					font-weight: bold;
+				}
+			}
+			.job-position {
+				.company-icon{
+					margin-top: -30px;
+					@include media-breakpoint-down(lg) {
+						margin-top: -20px;
+					}
+					img{
+						height: 97px;
+						@include media-breakpoint-down(lg) {
+							height: 80px;
+						}
+					}
+					
+				}
+				h4 {
+					font-size: 14px;
+					@include media-breakpoint-down(lg) {
+						font-size: 12px;
+					}
+				}
+				h3 {
+					font-size: 18px;
+					font-weight: bold;
+					@include media-breakpoint-down(lg) {
+						font-size: 14px;
+					}
+				}
+				p {
+					color: $textGrayColor;
+					font-size: 14px;
+					@include media-breakpoint-down(lg) {
+						font-size: 12px;
+					}
+				}
+			}
+			.job-require {
+				color: $textGrayColor;
+				font-size: 14px;
+				margin-bottom: 20px;
+				@include media-breakpoint-down(lg) {
+					font-size: 12px;
+				}
+			}
+			.job-description {
+				color: $textGrayColor;
+				font-size: 14px;
+				@include media-breakpoint-down(lg) {
+					font-size: 12px;
+				}
+			}
+		}
+	}
+	.card-footer {
+		background-color: $lightGray;
+		border: none;
+		border-radius: 0;
+		height: 52px;
+		color: $textGrayColor;
+		@include media-breakpoint-down(lg) {
+			background-color: $bgColor;
+			height: auto;
+			margin-top: -1px;
+		}
+		.posted-time-wrap {
+			p {
+				margin-top: 3px;
+				@include media-breakpoint-down(lg) {
+					font-size: 12px;
+					margin-left: 5px;
+				}
+			}
+		}
+		.share-apply-wrapper {
+			.flex-lg-row-reverse {
+				@include media-breakpoint-down(lg) {
+					width: 310px;
+				}
+				@include media-breakpoint-up(lg) {
+					width: 209px;
+				}
+			}
+			.share-container {
+				a {
+					color: #707070;
+					margin-right: 5px;
+				}
+				/*margin-left: 39px;*/
+				padding-top: 3px;
+				@include media-breakpoint-down(lg) {
+					margin-left: 0px;
+					padding-top: 9px;
+				}
+			}
+			.button-container {
+				button {
+					font-size: 14px;
+					width: 113px;
+					height: 32px;
+					@include media-breakpoint-down(lg) {
+						width: 208px;
+						height: 42px;
+					}
+					border: none;
+					border-radius: 0;
+					background-color: $yellowButton;
+					color: $linkColor;
+					text-align: center;
+				}
+			}
+		}
+	}
+}
+
+.similar-company-slider-title {
+	margin-left: 90px;
+	padding-right: 70px;
+	@include media-breakpoint-down(lg) {
+		margin-left: 10px;
+		h2 {
+			font-size: 18px;
+		}
+	}
+	a {
+		color: $redButton;
+	}
+}
+.similar-company-slider {
+	height: 370px;
+	.carousel-inner {
+		padding-left: 80px;
+		padding-right: 80px;
+		.carousel-item {
+			.company-card {
+				.company-icon {
+					height: 100px;
+				}
+				background-color: $whiteColor;
+				padding-left: 30px;
+				padding-top: 20px;
+				box-shadow: 0px 0px 3px #00000059;
+				border: 1px solid #00000059;
+				margin-left: 10px;
+				h3 {
+					font-size: 18px;
+				}
+				p {
+					font-size: 14px;
+				}
+				span {
+					p {
+						font-size: 12px;
+						color: $textGrayColor;
+					}
+				}
+			}
+			.job-card-slider{
+				span{
+					padding: 10px 20px 10px 20px;
+					background-color: #5E72E4;
+					color: $whiteColor;
+				}
+			}
+		}
+		.carousel-control-prev {
+			width: 3%;
+			height: 54%;
+			.carousel-control-prev-icon {
+				background-image: url("../img/companies/overview/previous-icon.png") !important;
+			}
+		}
+		.carousel-control-next {
+			width: 3%;
+			height: 54%;
+			.carousel-control-next-icon {
+				background-image: url("../img/companies/overview/next-icon.png") !important;
+			}
+		}
+	}
+}
+.company-cards-mobile {
+	.company-card {
+		text-align: center;
+		.company-icon {
+			height: 100px;
+		}
+		background-color: $whiteColor;
+		padding-top: 20px;
+		padding-bottom: 10px;
+		box-shadow: 0px 0px 3px #00000059;
+		margin-bottom: 10px;
+		h3 {
+			font-size: 18px;
+		}
+		p {
+			font-size: 14px;
+		}
+		span {
+			p {
+				font-size: 12px;
+				color: $textGrayColor;
+			}
+		}
+	}
+	.job-card-slider{
+		text-align: left;	
+		span{
+			padding: 10px 20px 10px 20px;
+			background-color: #5E72E4;
+			color: $whiteColor;
+		}
+	}
+	button {
+		border: none;
+		border-radius: 0px;
+		background-color: $yellowButton;
+		color: #303842;
+		margin-bottom: 50px;
+		margin-top: 20px;
+		height: 50px;
+		width: 100%;
+	}
+}
+
+/* style for common page : terms of use, privacy*/
+.term-of-use {
+	margin-top: 30px;
+	h5 {
+		font-size: 32px;
+		font-weight: bold;
+		@include media-breakpoint-down(lg) {
+			font-size: 18px;
+		}
+	}
+	p ol li {
+		font-size: 18px;
+		@include media-breakpoint-down(lg) {
+			font-size: 12px;
+		}
+	}
+}
+.row-term,
+.first-term {
+	margin: auto;
+	width: 50%;
+	@include media-breakpoint-down(lg) {
+		margin: 0;
+		width: 100%;
+	}
+}
+.row-term {
+	padding-bottom: 50px;
+	h5 {
+		font-size: 32px;
+		font-weight: 700;
+		@include media-breakpoint-down(lg) {
+			font-size: 18px;
+		}
+	}
+}
+.first-term {
+	padding-top: 50px;
+}
+.first-privacy,
+.privacy {
+	margin: auto;
+	width: 50%;
+	@include media-breakpoint-down(lg) {
+		margin: 0;
+		width: 100%;
+	}
+}
+.first-privacy {
+	padding-top: 50px;
+}
+.privacy {
+	padding-bottom: 50px;
+	h5 {
+		font-size: 32px;
+		font-weight: 700;
+		@include media-breakpoint-down(lg) {
+			font-size: 18px;
+		}
+	}
+}
+
+.p-not-found {
+	h4 {
+		height: 37px;
+		letter-spacing: 0px;
+		color: #00000099;
+		opacity: 1;
+		font-size: 24px;
+		margin: 15px 0 15px;
+		@include media-breakpoint-down(lg) {
+			font-size: 16px;
+		}
+	}
+	h1 {
+		height: 59px;
+		letter-spacing: 0px;
+		margin-top: 150px;
+		color: #222e3c;
+		opacity: 1;
+		font-size: 48px;
+	}
+	button {
+		top: 431px;
+		left: 889px;
+		width: 142px;
+		height: 39px;
+		background: #1b1c1d 0% 0% no-repeat padding-box;
+		opacity: 1;
+		border: none;
+		margin-bottom: 150px;
+		span {
+			top: 442px;
+			left: 913px;
+			width: 94px;
+			height: 18px;
+			letter-spacing: 0px;
+			color: #ffffff;
+			opacity: 1;
+			text-align: center;
+			font-size: 16px;
+		}
+	}
+}
+.box-lost-password {
+	padding: 150px 0 150px 0;
+	@include media-breakpoint-down(lg) {
+		margin-bottom: 0;
+		margin-top: 50px;
+	}
+	.recovery-password {
+		background: #fc3 0 0 no-repeat padding-box;
+		width: 905px;
+		height: 270px;
+		@include media-breakpoint-down(lg) {
+			width: 320px;
+			height: 247px;
+		}
+		h4 {
+			width: 754px;
+			height: 59px;
+			letter-spacing: 0px;
+			color: #222e3c;
+			opacity: 1;
+			font-size: 48px;
+			text-align: left;
+			margin-left: 60px;
+			margin-top: 15px;
+			@include media-breakpoint-down(lg) {
+				width: 251px;
+				height: 20px;
+				font-size: 16px;
+				margin-left: 0;
+			}
+		}
+		.subtext {
+			width: 753px;
+			height: 25px;
+			margin-left: 60px;
+			letter-spacing: 0px;
+			color: #00000099;
+			opacity: 1;
+			font-size: 24px;
+			text-align: left;
+			@include media-breakpoint-down(lg) {
+				width: 289px;
+				height: 25px;
+				font-size: 12px;
+				margin-left: 0;
+			}
+		}
+		.lbl-email {
+			width: 52px;
+			height: 18px;
+			margin-left: 60px;
+			margin-top: 15px;
+			letter-spacing: 0px;
+			color: #707070;
+			opacity: 1;
+			text-align: left;
+			font-size: 18px;
+			@include media-breakpoint-down(lg) {
+				width: 30px;
+				height: 15px;
+				font-size: 12px;
+				margin-left: 0;
+			}
+		}
+	}
+	.reset-pwd {
+		width: 150px;
+		margin-left: -58px;
+		@include media-breakpoint-down(lg) {
+			margin-left: 0;
+		}
+		button {
+			width: 148px;
+			height: 38px;
+			background: #1b1c1d 0% 0% no-repeat padding-box;
+			opacity: 1;
+			border-radius: 0;
+			border: none;
+			@include media-breakpoint-down(lg) {
+				width: 260px;
+				height: 39px;
+				margin-top: 15px;
+			}
+			span {
+				letter-spacing: 0px;
+				color: #ffffff;
+				opacity: 1;
+				text-align: center;
+				font-size: 14px;
+				@include media-breakpoint-down(lg) {
+					font-size: 14px;
+				}
+			}
+		}
+	}
+	.email-recover {
+		margin-left: 60px;
+		@include media-breakpoint-down(lg) {
+			margin-bottom: 0;
+			margin-left: 0;
+		}
+		input {
+			width: 368px;
+			height: 38px;
+			@include media-breakpoint-down(lg) {
+				width: 260px;
+				height: 38px;
+			}
+		}
+	}
+}

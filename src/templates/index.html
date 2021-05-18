@@ -1,0 +1,233 @@
+{% import 'macros/path.html' as f %}
+{% import 'macros/site.html' as s %}
+{% extends "layouts/base.html" %}
+
+{% set newsletter_subscription = true %}
+
+{% block js %} 
+{{ f.module(['toggle']) }} 
+<script src="{{ f.js('nocallback-toggle.min.js') }}"></script>
+<script>var exports = {"__esModule": true};</script>
+<script src="{{ f.js('boot-pop-1.0.min.js') }}"></script>
+<script src="{{ f.js('job.min.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+<div class="full-width">
+	<div class="container-fluid sank-rectangle"></div>
+	<div class="container-fluid container-herobanner container-section px-md-5">
+		<div class="row herobanner">
+			<div class="herobanner-img-mobile container-fluid">
+				<img class="img-fluid" src="{{f.landing_page_img('mask-group-21-2x.png')}}">
+			</div>
+			<div class="col-lg-5 col-md-12 col-sm-12 herobanner-title">
+				<h3>Lorem ipsum dolor sit amet, consecteturs</h3>
+				<div class="search-box">
+					<form method="post" action="/job-search" data-end="false"> 
+						<div class="row">
+							<div class="input-container" id="search-by-title-skill">
+								<div class="input-group"> 
+									<div class="input-group-prepend"> 
+										<div class="input-group-text border-radius-none">
+											<i class="bi bi-search"></i>
+										</div> 
+									</div> 
+								<input type="text" class="form-control" placeholder="Job title/ keywords" maxlength="80" name="title" value=""> </div>
+							</div>
+							<div class="input-container" id="search-by-location">
+								<div class="input-group"> 
+									<div class="input-group-prepend"> 
+										<div class="input-group-text border-radius-none">
+											<i class="bi bi-geo-alt-fill"></i>
+										</div> 
+									</div> 
+								<input type="text" class="form-control" placeholder="Location" maxlength="80" name="location" value=""> </div>
+							</div>
+							<div class="input-container" id="search-by-category">
+								<div class="input-group"> 
+									<div class="input-group-prepend"> 
+										<div class="input-group-text border-radius-none">
+											<i class="bi bi-briefcase-fill"></i>
+										</div> 
+									</div> 
+								<input type="text" class="form-control" placeholder="Job Categories" maxlength="80" name="categories" value=""> </div>
+							</div>
+							<div class="input-container" id="search-button">
+								<button type="submit" class="btn btn-secondary">Search</button>
+							</div>
+						</div>
+						<div class="row advanced-search">
+							<a href="{{ s.job_search_url() }}" data-bs-toggle="modal" data-bs-target="#advance-search-modal">Advanced Search</a>
+							
+						</div>
+					</form>
+				</div>
+				<p>Or discover categories</p>
+				<div class="categories">
+					<button>Work From Home</button>
+					<button>Freelance</button>
+					<button>Contract</button>
+					<button>Full-time</button>
+					<button>Part-time</button>
+					<button>Jobs for COVID-19 Layoff</button>
+					<button>Jobs for Women</button>
+				</div>
+			</div>
+			<div class="col-lg-7 herobanner-img">
+				<img class="img-fluid" src="{{f.landing_page_img('mask-group-21-2x.png')}}">
+			</div>
+		</div>
+		<div class="row trust-by-section">
+			<div class="container">
+				<div class="row trust-title">
+					<p>We are trusted by</p>
+				</div>
+				<div class="row trust-company-logo">
+					<img id="apple-logo" src="{{f.companies_main_img('apple.png')}}">
+					<img id="celcom-logo" src="{{f.companies_main_img('celcom.png')}}">
+					<img id="maxis-logo" src="{{f.companies_main_img('maxis.jpeg')}}">
+					<img id="shell-logo" src="{{f.companies_main_img('shell.png')}}">
+					<img id="samsung-logo" src="{{f.companies_main_img('samsung.png')}}">
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	{% include 'partials/_announcement_alert_section.html' %}
+	{% include 'partials/_announcement_section.html' %}
+	<div class="looking-job-section">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-6 col-sm-12 child" id="looking-job">
+					<h4>Looking For Jobs?</h4>
+					<p>Discover Jobs</p>
+				</div>
+				<div class="col-lg-6 col-sm-12 child" id="looking-people">
+					<div id="array-dots-mobile-1">
+						<img src="{{f.landing_page_img('group-3848.png')}}">
+					</div>
+					<h4>Looking For People?</h4>
+					<p>Search Candidates</p>
+					<div id="array-dots-mobile-2">
+						<img src="{{f.landing_page_img('group-3848.png')}}">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid explore-jobs-section container-section px-md-5">
+		<div id="array-dots-desktop-1">
+			<img src="{{f.landing_page_img('group-3848.png')}}" class="float-start">
+		</div>
+		<div class="container-fluid explore-jobs-container align-items-center">
+			<div class="row">
+				<div class="col-6 col-lg-3 explore-jobs-title">
+					<h4>Explore jobs by</h4>
+					<p>category</p>
+				</div>
+				{% for i in range(1,7) %}
+				<div class="col-6 col-lg-3 category-item-container text-center">
+					<div class="item-container">
+						<a href="#">
+							<h3>Lorem ipsum</h3>
+							<p>Lorem ipsum dolor sit amet,</p>
+						</a>
+					</div>
+				</div>
+				{% if i == 3 %}
+			</div>
+			<div class="row">
+				{% endif %}
+				{% endfor %}
+				<div class="col-6 col-sm-3 category-item-container text-center">
+					<div class="item-container">
+						<a href="#">
+							<h3>100+ More</h3>
+							<h3>Categories</h3>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="array-dots-desktop-2">
+			<img src="{{f.landing_page_img('group-3848.png')}}" class="float-end">
+		</div>
+	</div>
+	<div class="container-fluid available-jobs-section px-md-5">
+		<div class="container-fluid available-jobs-container container-section">
+			<div class="row title-wrapper">
+				<h4>Explore more <span>available jobs</span></h4>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+					et dolore</p>
+			</div>
+			<div class="row job-cards-container">
+				{% for i in range(1,6) %}
+				{% include 'partials/_job_card.html' %}
+				{% endfor %}
+				<div class="job-card job-card-show-more col-lg-6 col-md-12 col-sm-12">
+					<div class="job-card-container">
+						<h4>100+ More Jobs Available</h4>
+						<p>Discover Jobs</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tallent-people-section px-md-5">
+		<div class="container-fluid">
+			<div class="container">
+				<div class="row">
+					<h4 class="d-lg-none">Over 10,000+ Talented People Registered In Our Website</h4>
+					<div class="col-lg-6 col-sm-12 col-sm-12 child" id="img-box">
+						<img class="img-fluid" src="{{f.landing_page_img('tallent-people-img.png')}}">
+					</div>
+					<div class="col-lg-6 col-sm-12 col-md-12 child" id="text-box">					
+						<h4 class="d-none d-lg-block">Over 10,000+ Talented People Registered In Our Website</h4>
+						<button class="d-none d-lg-block btn btn-secondary rounded-0" >Register Now</button>
+					</div>	
+					<div class="col-sm-12 mobile-button-wrapper">
+						<button class="d-lg-none btn btn-secondarys rounded-0" >Register Now</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="carousel-sliders-section px-md-5">
+		{% include 'components/_carousel-sliders.html' %}
+	</div>
+	<div class="container feature-section px-md-5">
+		<div class="row">
+			<div class="col-lg-6 col-sm-12 col-sm-12 ">
+				<div class="text-center text-lg-start"><button class="btn btn-secondarys rounded-0" >Featured</button></div>
+				<img class="d-lg-none img-fluid" src="{{f.landing_page_img('feature-mobile-img.png')}}">
+				<h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed</h4>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum est ultricies integer quis. Iaculis urna id volutpat lacus laoreet. Mauris vitae ultricies leo integer malesuada. Ac odio tempor orci dapibus ultrices in. Egestas diam in arcu cursus euismod. Dictum fusce ut placerat orci nulla. Tincidunt ornare massa eget egestas purus viverra accumsan in nisl. Tempor id eu nisl nunc mi ipsum faucibus. Fusce id velit ut tortor pretium. Massa ultricies mi quis hendrerit dolor magna eget.</p>
+				<a href="#">Read More</a>
+			</div>
+			<div class="d-none d-lg-block col-lg-6 col-sm-12 col-sm-12 ">
+				<img src="{{f.landing_page_img('feature-img.png')}}">
+			</div>
+		</div>
+	</div>
+	<div class="container subcribe-section">
+		<div class="row">
+			<div class="col-lg-6 col-md-12 col-sm-12">
+				<h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed</h2>
+			</div>
+
+			<div class="col-lg-6 col-md-12 col-sm-12">
+				<div class="input-group">
+				  <input type="text" class="form-control" placeholder="Enter your email address"  aria-describedby="button-addon2">
+				  <button class="btn btn-outline-secondary" type="button" id="button-addon2">Subscribe</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container adv-img d-none d-lg-block px-md-5">
+		<img src="{{f.landing_page_img('adv-banner.png')}}">
+	</div>
+</div>
+
+{% include 'partials/_advance-search-modal.html' %}
+{% endblock %}

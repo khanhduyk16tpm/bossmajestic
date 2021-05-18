@@ -1,0 +1,85 @@
+{% import 'macros/path.html' as f %}
+{% import 'macros/site.html' as s %}
+{% import 'macros/user.html' as u %}
+
+{% set job_saved = false %}
+{% set job_applied = false %}
+{% if job_search_card %}
+<div class="job-card">
+{% else %}
+<div class="job-card col-lg-6 col-md-12 col-sm-12" id="job-card-{{i}}">
+{% endif %}
+    <div class="job-card-item-container">   
+            <div class="job-card-container">
+                <div class="job-card-wrapper">
+                    <div class="row job-type">
+                        <span>Full time</span>
+                    </div>
+                    <a href="{{ s.job_description_url() }}">
+                        <div class="row job-position">
+                            <div class="col-lg-9 col-8">
+                                <h4>Petroliam Nasional Berhad (PETRONAS)</h4>
+                                <h3>Project Manager</h3>
+                                <p>Manufacturing / Managing</p>
+                            </div>
+                            <div class="col-lg-3 col-4">
+                                <div class="company-icon">
+                                    <img src="{{f.companies_overview_img('header-icon.png')}}">
+                                </div> 
+                            </div>
+                        </div>
+                    </a>
+                    <div class="row job-require">
+                        <div class="col-lg-4 col-sm-12 col-md-12">
+                            <span><i class="bi bi-geo-alt-fill"></i> Location</span>
+                        </div>
+                        <div class="col-lg-5 col-sm-12 col-md-12">
+                            <span><i class="bi bi-briefcase-fill"></i> 2 - 3 Year experience</span>
+                        </div>
+                        <div class="col-lg-3 col-sm-12 col-md-12">
+                            <span>
+                                <i class="bi bi-cash"></i>
+                                {% if is_guest %}
+                                    <a href="javascript:void(0)" rel="nofollow" class="grey-text" data-bs-toggle="modal" data-bs-target="#loginModalForm">Salary <i class="bi bi-lock-fill"></i></a>
+                                {% else %}
+                                    RM 6789.00
+                                {% endif %}
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row job-description">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ultricies, lacus nec accumsan elementum, eros risus gravida massa, eget ultricies dui quam id dui. Nulla tincidunt imperdiet nulla ac ultricies. Cras vitae enim fringilla, vulputate arcu vitae,</p>
+                    </div>
+                </div>
+            
+                
+            </div>
+        
+        <div class="card-footer">
+            <div class="row">
+                <div class="col-lg-7 col-sm-12 col-md-12 posted-time-wrap">
+                    <p>Posted 2 Days ago</p>
+                </div>
+                <div class="col-lg-5 col-sm-12 col-md-12 share-apply-wrapper">
+                    <div class="row d-flex flex-lg-row-reverse ">
+                        <div class="col button-container">
+                          <button class="form-control btn btn-secondary yellow-button toggle-off {% if is_guest == false %} apply {%endif%}" data-url="/en/job/2113/apply" data-job= "Project Manager" data-company="Petroliam Nasional Berhad (PETRONAS)" {% if is_guest%} data-bs-toggle="modal" data-bs-target="#loginModalForm"{%endif%}>Apply Now</button>
+                        </div>
+                        <div class="col share-container">
+                            {% if job_application_page %}
+                            <a href="#"><i class="bi bi-share-fill"></i></a>
+                            <a href="javascript:void(0)" rel="nofollow" class="ml-2 bookmark-off" data-url="/en/job/1719/bookmark" data-reload="true"><i class="bi bi-x-circle-fill"></i></a>
+                            {% else %}
+                            <a href="javascript:void(0)" rel="nofollow" data-url="" {% if is_guest %} data-bs-toggle="modal" data-bs-target="#loginModalForm" {% else %} class="bookmark"  {% endif %} data-url="/en/job/2119/bookmark"><i class="bi bi-bookmark"></i></a> 
+                            <a href="#"><i class="bi bi-share-fill"></i></a>
+                            {% endif %}
+                            
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

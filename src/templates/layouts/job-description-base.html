@@ -1,0 +1,69 @@
+{% extends "layouts/base.html" %}
+
+{% block js %}{% endblock %}
+
+
+{% block content %}
+<div class="page">
+    <div class="container job-description-body">
+        <img src="{{f.jobs_search_img('job-desctiption-banner-2x.png')}}" class="img-fluid">
+        <div class="container job-header p-4">
+            {% include 'partials/_job-header.html' %}
+        </div>
+        <div class="container job-nav-bar">
+            <div class="row">
+                <div class="col-lg-3 col-6 nav-item">
+                    <button class="form-control btn btn-secondary {% if is_guest == false %} bookmark-job-description {%endif%}" {% if is_guest %} data-bs-toggle="modal" data-bs-target="#loginModalForm" {%endif%}><i class="bi bi-bookmark"></i> SAVE</button>
+                </div>
+                <div class="col-lg-3 col-6 nav-item">
+                    <button class="form-control btn btn-secondary"><i class="bi bi-share"></i> SHARE</button>
+                </div>
+                <div class="col-lg-3 col-6 d-none d-lg-block nav-item">
+                    <button class="form-control btn btn-secondary"><i class="bi bi-geo"></i></i> VIEW LOCATION</button>
+                </div>
+                <div class="col-lg-3 col-6 d-none d-lg-block nav-item">
+                    <button class="form-control btn btn-secondary yellow-button apply-modal-btn" {%if is_guest == false %} data-bs-toggle="modal" data-bs-target="#apply-modal" {% else %} data-bs-toggle="modal" data-bs-target="#loginModalForm" {%endif%}>APPLY NOW</button>
+                </div>
+            </div>
+            
+        </div>
+        <div class="container google-map-iframe d-lg-none">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d11699.138210747979!2d101.66281484925281!3d3.1341138608214374!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1svi!2s!4v1619600691675!5m2!1svi!2s" width="100%" height="270px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        <div class="container sub-nav-job-description d-lg-none py-2">
+            <div class="row">
+                <div class="col-4 sub-nav-item text-center">
+                    <a href="#requirements">Requirements</a>
+                </div>
+                <div class="col-4 sub-nav-item text-center">
+                    <a href="#job-scope">Job Scopes</a>
+                </div>
+                <div class="col-4 sub-nav-item text-center">
+                    <a href="#company-info">Company Info</a>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row mt-4 job-description-container">
+                <div class="col-lg-10 col-md-12 cold-sm-12 job-description p-4">
+                    {% block description %}
+
+                    {% endblock %}
+                </div>
+                <div class="col-lg-2 d-none d-lg-block">
+                    <img class="img-fluid" src="{{f.jobs_search_img('adv-banner-3.png')}}">
+                    <img class="img-fluid" src="{{f.jobs_search_img('adv-banner-2.png')}}">
+                </div>
+                <button class="form-control btn btn-secondary yellow-button d-lg-none mt-3 apply-modal-btn" {%if is_guest == false %} data-bs-toggle="modal" data-bs-target="#apply-modal" {% else %} data-bs-toggle="modal" data-bs-target="#loginModalForm" {%endif%}>APPLY NOW</button>
+            </div>
+
+        </div>
+    </div>
+    {% include 'partials/_job-apply-modal.html' %}
+    {% if similar_job_slide %}
+    <div class="container mt-4">
+        {% include 'components/_similar_job_slide.html' %}
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

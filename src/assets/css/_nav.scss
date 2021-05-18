@@ -1,0 +1,331 @@
+header {
+    .with-alert {
+        margin-top: 38px;
+    }
+    #main {
+        background-color: $navBgColor;
+
+        @include media-breakpoint-down(lg) {
+            .main-logo {
+                img {
+                    width: 124px;
+                    margin-top: 2px;
+                }
+            }
+        }
+        @include media-breakpoint-up(lg) {
+            height: 73px;
+            .main-logo {
+                img {
+                    width: 182px;
+                }
+            }
+        }
+        @include media-breakpoint-down(md) {
+            .main-logo {
+                img {
+                    margin-left: 12px;
+                }
+            }
+        }
+        .container-fluid {
+            max-width: 1335px;
+            width: 100%;
+            padding-right: var(--bs-gutter-x, 0.75rem);
+            padding-left: var(--bs-gutter-x, 0.75rem);
+            margin-right: auto;
+            margin-left: auto;
+
+            .profile-nav a.active {
+                background-color: $profileNavActiveColor;
+            }
+
+            .nav-link {
+                color: $navFontColor;
+            }
+            #navbarSupportedContent {
+                margin-left: 20px;
+                max-width: 966px;
+
+                .navbar-nav {
+                    width: 500px;
+                    li {
+                        /*margin-right: 7px;*/
+                    }
+                    @include media-breakpoint-between(lg, xl) {
+                        width: 420px;
+                    }
+                }
+                .language-navbar {
+                    width: 100%;
+                    .navbar-info {
+                        @include media-breakpoint-up(lg) {
+                            float: right;
+                        }
+                        .navbar-text a {
+                            margin-left: 20px;
+                            color: $bigBtnBgColor;
+                            text-decoration: none;
+
+                            @include media-breakpoint-between(lg, xl) {
+                                margin-left: 15px;
+                            }
+                        }
+
+                        .btn-post-job {
+                            background-color: $navBgColor;
+                            border-color: $bigBtnBgColor;
+                            border: 2px solid $bigBtnBgColor;
+                            border-radius: 0;
+
+                            @include media-breakpoint-between(lg, xl) {
+                                padding-left: 15px !important;
+                                padding-right: 15px !important;
+                            }
+
+                            @include media-breakpoint-down(sm) {
+                                padding-left: 15px !important;
+                                padding-right: 15px !important;
+                            }
+                        }
+
+                        .btn-post-job:hover {
+                            color: $navBgColor;
+                            background-color: $bigBtnBgColor;
+                        }
+
+                        .my-2 {
+                            .language-picker{
+                                margin-top: 11px;
+                                .dropdown-menu{
+                                    @include media-breakpoint-up(sm) {
+                                        margin-top: 11px;
+                                        &.language-not-login{
+                                            margin-top: 8px;
+                                        }
+                                    }
+                                    border-radius: 0px;
+                                }
+                            }
+                            .user-rounded {
+                                background-color: white;
+                                border-radius: 50%;
+                                padding: 4px;
+                                height: 35px;
+                                margin-right: 10px;
+                            }
+                            .message-dropdown {
+                                margin-right: 35px;
+                                button {
+                                    background: url("../img/landingpage/message-nofi-icon.png") center no-repeat;
+                                    background-size: 27px 27px;
+                                    border: none;
+                                    height: 50px;
+                                    width: 50px;
+                                    span {
+                                        position: absolute;
+                                        top: 10px;
+                                        right: 0px;
+                                        padding: 5px 7px;
+                                        border-radius: 50%;
+                                        background-color: red;
+                                        color: $dropdownMenuBgColor;
+                                    }
+                                }
+                                button:active {
+                                    border-style: outset;
+                                }
+                                .dropdown-toggle::after {
+                                    content: none;
+                                }
+                                .dropdown-menu {
+                                    border: none;
+                                    border-radius: 0;
+                                    padding: 2px;
+                                    padding-bottom: 15px;
+
+                                    li {
+                                        height: 70px;
+                                        margin: auto;
+                                        padding-top: 9px;
+                                        a {
+                                            color: $textColor;
+                                            .messenger-name {
+                                                font-size: 18px;
+                                                font-weight: bold;
+                                            }
+                                            img {
+                                                height: 50px;
+                                                margin-right: 15px;
+                                                float: left;
+                                            }
+                                            .dot {
+                                                height: 7px;
+                                                margin-top: -5px;
+                                                span {
+                                                    height: 17px;
+                                                    width: 17px;
+                                                    background-color: red;
+                                                    border-radius: 50%;
+                                                    float: right;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            .user-dropdown {
+                                button {
+                                    background-color: $bigBtnFontColor;
+                                    border: none;
+                                }
+                                .dropdown-toggle::after {
+                                    content: none;
+                                }
+                                @media (min-width: 40em) {
+                                    .dropdown-menu {
+                                        width: 235px;
+                                        margin-top: 11px;
+                                        border: none;
+                                        border-radius: 0;
+                                        left: -82px;
+                                        li {
+                                            border-bottom: solid 0.5px;
+                                            border-color: $textColor;
+                                            margin: auto;
+                                            img {
+                                                height: 15px;
+                                                margin-right: 15px;
+                                            }
+                                        }
+                                        li:last-child {
+                                            border-bottom: none;
+                                        }
+                                        a {
+                                            height: 53px;
+                                            padding-top: 13px;
+                                            color: $textColor;
+                                        }
+                                    }
+                                }
+                            }
+                            @media (min-width: 30em) {
+                                .dropdown-menu {
+                                    li {
+                                        a {
+                                            img {
+                                                margin-right: 15px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        .navbar-toggler,
+                        .high-light {
+                            color: $navHighlightFontColor;
+                        }
+                    }
+
+                    .language-picker {
+                        float: left;
+                        
+                        button {
+                            background: url("../img/about/icon-material-language@2x.png") right center no-repeat;
+                            background-size: 20px 20px;
+                            height: 24px;
+                            border: none;
+                        }
+                        .dropdown-toggle::after {
+                            content: none;
+                        }
+                        .dropdown-toggle::focus {
+                            box-shadow: none;
+                        }
+                        .dropdown-item-checked::before {
+                            position: absolute;
+                            right: 20px;
+                            content: "✓";
+                            font-weight: 900;
+                        }
+                        @media (min-width: 40em) {
+                            .dropdown-menu {
+                                width: 150px;
+                                border: none;
+                                border-radius: 0px;
+                            }
+                        }
+                    }
+                }
+
+                .btn-secondary:not(:disabled):not(.disabled).active,
+                .btn-secondary:not(:disabled):not(.disabled):active,
+                .show > .btn-secondary.dropdown-toggle {
+                    color: $bigBtnFontColor;
+                    background-color: $bigBtnBgColor;
+                    border-color: $bigBtnBgColor;
+                }
+
+                .btn-primary {
+                    background-color: $bigBtnBgColor;
+                    border-color: $bigBtnBgColor;
+                    color: $bigBtnFontColor;
+                }
+
+                @include media-breakpoint-down(lg) {
+                    .my-2 {
+                        float: left;
+                        .language-picker {
+                            .dropdown-menu {
+                                margin-top: 15px;
+                            }
+                        }
+                    }
+                    
+                    .message-dropdown {
+                        .dropdown-menu {
+                            width: 300px;
+                            left: 0px;
+                            margin-top: 16px;
+                        }
+                    }
+                    .user-dropdown {
+                        .dropdown-menu {
+                            border-radius: 0px;
+                            margin-top: 15px;
+                            img {
+                                margin-right: 10px;
+                            }
+                        }
+                    }
+                }
+
+                @include media-breakpoint-up(lg) {
+                    .my-2 {
+                        float: right;
+                    }
+                    .message-dropdown {
+                        .dropdown-menu {
+                            margin-top: 11px;
+                            width: 352px;
+                            left: -130px;
+                        }
+                    }
+                }
+                @include media-breakpoint-between(md, lg) {
+                    .my-2 {
+                        float: left;
+                        width: auto;
+                    }
+                    .message-dropdown {
+                        .dropdown-menu {
+                            margin-top: 11px;
+                            width: 352px;
+                            left: -130px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

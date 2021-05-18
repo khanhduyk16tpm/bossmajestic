@@ -1,0 +1,15 @@
+{% extends "layouts/base.html" %}
+
+{% block js %}{% endblock %}
+
+{% block content %}
+
+{% set hero_banner_img_url = "" %}
+{% if hero_banner_img_url %}
+<img class="img-fluid" src="{{hero_banner_img_url}}">
+{% endif %}
+<div class="container-fluid px-md-5 page">
+    {% block page %}
+    {% endblock %}
+</div>
+{% endblock %}
