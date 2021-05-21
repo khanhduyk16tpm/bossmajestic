@@ -159,8 +159,7 @@
             }
 
             .btn-signup {
-                background-color: $prime8;
-                color: $prime3;
+                background-color: $whiteColor;
                 width: 100px;
 
                 @include media-breakpoint-down(sm) {

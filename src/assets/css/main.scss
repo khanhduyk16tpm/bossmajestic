@@ -2,25 +2,12 @@
 @import "../../../node_modules/bootstrap/scss/functions";
 @import "../../../node_modules/bootstrap/scss/variables";
 @import "var";
-@import "nav";
-@import "content";
-@import "carousel";
-@import "landingpage";
-@import "jobs/_job.scss";
-@import "jobs/_job_description.scss";
-@import "jobs/job_applications.scss";
-@import "company.scss";
-@import "about";
-@import "profile/profile";
-@import "profile/resume";
-@import "profile/resume_setting.scss";
 @import "auth/login";
 @import "auth/signup";
-@import "footer.scss";
-@import "modal.scss";
+
 
 body {
-    background-color: $bgColor;
+    background-color: $backgroundColor;
     color: $fontColor;
     overflow-x: hidden;
 
@@ -31,7 +18,6 @@ body {
         border-radius: 0px;
         border: none;
         background-color: $yellowButton;
-        color: $bigBtnFontColor;
     }
     .border-radius-none{
         border-radius: 0px;
@@ -43,128 +29,77 @@ body {
     .red{
         color: #D5365B;
     }
-    .alert {
-        background-color: $alertColor;
-        top: 0px;
-        height: 38px;
-        position: fixed;
-        z-index: 100;
-        width: 100%;
-        text-align: center;
-        color: $bigBtnBgColor;
-        padding: 4px;
-        border-radius: 0;
-    }
+ 
 
     a,
     a:hover {
-        color: $linkColor;
+        color: $fontColor;
         text-decoration: none;
     }
 
-    .main-logo img {
-        vertical-align: unset;
-    }
-
-    .modal-header {
-        background-color: $modalHeaderBgColor;
-    }
-
-    .social-buttons i,
-    .social-buttons a {
-        color: $prime5;
-        font-size: 20px;
-        margin-right: 5px;
-
-        @include media-breakpoint-between(md, xl) {
-            font-size: 17px;
+    .side-navbar {
+      width: 320px;
+      position: fixed;
+      margin-left: -320px;
+      background-color: $whiteColor;
+      transition: 0.5s;
+        button:hover,button:focus {
+            color: rgba(0,0,0,0.85);
+            background-color: rgba(121,82,179,0.1);
         }
-    }
-
-    .footer {
-        background-color: $footerBgColor;
-        font-size: smaller;
-    }
-
-    .footer > .container {
-        color: $footerFontColor;
-    }
-
-    .footer a {
-        color: $footerFontColor;
-    }
-
-    #newsletterSubscription {
-        background-color: $newsletterSubscriptionBgColor;
-    }
-
-    .sitemap {
-        background-color: $sitemapBgColor;
-        color: $sitemapFontColor;
-        font-size: smaller;
-    }
-
-    .sitemap h6 {
-        color: $sitemapHeaderColor;
-        //text-transform: capitalize;
-    }
-
-    .sitemap a {
-        color: $sitemapLinkColor;
-    }
-
-    code {
-        font-size: 80%;
-    }
-
-    .btn-primary {
-        background-color: $btnPrimaryColor;
-        border-color: $btnPrimaryColor;
-        font-size: smaller;
-    }
-
-    .btn-primary:hover {
-        background-color: $btnSecondaryColor;
-    }
-
-    .btn-primary:disabled {
-        background-color: $btnSecondaryColor;
-        border-color: $btnSecondaryColor;
-    }
-
-    .btn-primary:not(:disabled):not(.disabled).active,
-    .btn-primary:not(:disabled):not(.disabled):active,
-    .show > .btn-primary.dropdown-toggle {
-        color: $dropdownMenuBgColor;
-        background-color: $btnSecondaryColor;
-        border-color: $btnSecondaryColor;
-    }
-
-    .dropdown-item.active,
-    .dropdown-item:active {
-        color: $dropdownMenuBgColor;
-        text-decoration: none;
-        background-color: $btnSecondaryColor;
-    }
-
-    .btn-facebook {
-        background-color: #3b5998;
-    }
-
-    .btn-linkedin {
-        background-color: #0e76a8;
-    }
-
-    .card-text {
-        color: $cardTextColor;
-    }
-    footer {
-        margin-top: auto;
-        .row {
-            margin-left: 0;
-            margin-right: 0;
+        button::after {
+            padding-top: 4px;
+            width: 1.25em;
+            line-height: 0;
+            content: url("../img/main/chevron-right.svg");
+            transition: transform 0.35s ease;
+            transform-origin: .5em 50%;
+            float: right;
         }
+        button[aria-expanded="true"]::after {
+            transform: rotate(90deg);
+        }
+        .menu-list{
+            a {
+                padding: .1875rem .5rem;
+                margin-top: .125rem;
+                margin-left: 1.5rem;
+                color: rgba(0,0,0,0.65);
+            } 
+        }
+         
+         
     }
+
+    .nav-link:active,
+    .nav-link:focus,
+    .nav-link:hover {
+      background-color: #ffffff26;
+    }
+
+    .my-container {
+      transition: 0.4s;
+    }
+
+    .active-nav {
+      margin-left: 0;
+    }
+
+    /* for main section */
+    .active-cont {
+      margin-left: 320px;
+    }
+    #menu-btn {
+      font-size: 30px;
+      &.btn-sidebar-off{
+        position: fixed;
+      }
+    }
+    .shadow{
+        box-shadow: 0px 0px 12px #00000029;
+    }
+
+    
 
     // CUSTOM FORM CONTROL
     label {
@@ -187,21 +122,5 @@ body {
         text-align: right;
     }
 
-    .text-underline {
-        text-decoration: underline;
-    }
 
-    // MEDIA SCREENS
-    @include media-breakpoint-up(xxl) {
-        .px-md-5 {
-            padding-right: 0 !important;
-            padding-left: 0 !important;
-        }
-    }
-    @include media-breakpoint-between(md, xxl) {
-        .px-md-5 {
-            padding-right: 3rem !important;
-            padding-left: 3rem !important;
-        }
-    }
 }
