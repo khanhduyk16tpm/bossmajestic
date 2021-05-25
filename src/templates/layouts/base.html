@@ -38,12 +38,11 @@
 <body class="d-flex flex-column h-100">
     {% include 'layouts/_side_bar_nav.html' %}
     <div class="my-container active-cont">
-        <a class="btn border-0 toggle-off btn-sidebar-off d-none" id="menu-btn"><i class="bi bi-list"></i></a>
-        <header class="mb-1 mb-4 mb-md-5 scroll-base">
+        <header class="scroll-base">
             {% include 'layouts/_header.html' %}
         </header>
 
-        <main role="main" class="mt-4 py-0 py-md-0 px-0">
+        <main role="main">
             {% block content %}{% endblock %}
         </main>
 

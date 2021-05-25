@@ -16,7 +16,8 @@ body {
     .yellow-button{
         border-radius: 0px;
         border: none;
-        background-color: $yellowButton;
+        background-color: $yellow;
+        height: 255px;
     }
     .border-radius-none{
         border-radius: 0px;
@@ -78,6 +79,10 @@ body {
 
     .my-container {
       transition: 0.4s;
+    }
+    .topbar{
+        height: 255px;
+        background-color: $yellow;
     }
 
     .active-nav {
