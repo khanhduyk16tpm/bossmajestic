@@ -9,8 +9,8 @@
 // Configuration
 @import "../../../node_modules/bootstrap/scss/functions";
 
-$navbar-light-color: rgba(#fff, .55);
-$navbar-light-toggler-border-color: rgba(#222E3C, .1) !default;
+$navbar-light-color: rgba(#fff, 0.55);
+$navbar-light-toggler-border-color: rgba(#222e3c, 0.1) !default;
 
 //$modal-header-padding: 0 0 !default; // Keep this for backwards compatibility
 
@@ -56,6 +56,3 @@ $navbar-light-toggler-border-color: rgba(#222E3C, .1) !default;
 // Utilities
 @import "../../../node_modules/bootstrap/scss/utilities/api";
 // scss-docs-end import-stack
-
-
-

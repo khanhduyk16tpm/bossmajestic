@@ -1,9 +1,9 @@
-
 @import "bootstrap";
+@import "custom-forms";
 @import "var";
+@import "header";
 @import "auth/login";
 @import "auth/signup";
-
 
 body {
     background-color: $backgroundColor;
@@ -13,23 +13,21 @@ body {
     .page {
         background-color: $fullPageBgColor;
     }
-    .yellow-button{
+    .yellow-button {
         border-radius: 0px;
         border: none;
-        background-color: $yellow;
-        height: 255px;
+        background-color: $yellowColor;
     }
-    .border-radius-none{
+    .border-radius-none {
         border-radius: 0px;
         border: none;
     }
-    .grey-text{
+    .grey-text {
         color: $textGrayColor;
     }
-    .red{
-        color: #D5365B;
+    .red {
+        color: #d5365b;
     }
- 
 
     a,
     a:hover {
@@ -38,14 +36,16 @@ body {
     }
 
     .side-navbar {
-      width: 320px;
-      position: fixed;
-      margin-left: -320px;
-      background-color: $whiteColor;
-      transition: 0.5s;
-        button:hover,button:focus {
-            color: rgba(0,0,0,0.85);
-            background-color: rgba(121,82,179,0.1);
+        width: 250px;
+        position: fixed;
+        min-height: 750px;
+        margin-left: -320px;
+        background-color: $whiteColor;
+        transition: 0.5s;
+        button:hover,
+        button:focus {
+            color: rgba(0, 0, 0, 0.85);
+            background-color: rgba(121, 82, 179, 0.1);
         }
         button::after {
             padding-top: 4px;
@@ -53,78 +53,52 @@ body {
             line-height: 0;
             content: url("../img/main/chevron-right.svg");
             transition: transform 0.35s ease;
-            transform-origin: .5em 50%;
+            transform-origin: 0.5em 50%;
             float: right;
         }
         button[aria-expanded="true"]::after {
             transform: rotate(90deg);
         }
-        .menu-list{
-            a {
-                padding: .1875rem .5rem;
-                margin-top: .125rem;
+        .menu-list {
+            li {
+                margin-top: 12px;
                 margin-left: 1.5rem;
-                color: rgba(0,0,0,0.65);
-            } 
+            }
         }
-         
-         
+        .company-logo img {
+            width: 125px;
+        }
+        .settings {
+            margin-bottom: 25px;
+        }
     }
 
     .nav-link:active,
     .nav-link:focus,
     .nav-link:hover {
-      background-color: #ffffff26;
+        background-color: #ffffff26;
     }
 
     .my-container {
-      transition: 0.4s;
+        transition: 0.4s;
     }
-    .topbar{
+    .topbar {
         height: 255px;
-        background-color: $yellow;
+        background-color: $yellowColor;
     }
 
     .active-nav {
-      margin-left: 0;
+        margin-left: 0;
     }
 
     /* for main section */
-    .active-cont {
-      margin-left: 320px;
-    }
     #menu-btn {
-      font-size: 30px;
-      &.btn-sidebar-off{
-        position: fixed;
-      }
+        font-size: 30px;
+        &.btn-sidebar-off {
+            position: fixed;
+        }
     }
-    .shadow{
+    .shadow {
         box-shadow: 0px 0px 12px #00000029;
     }
-
-    
-
-    // CUSTOM FORM CONTROL
-    label {
-        margin-bottom: 0.5rem;
-    }
-
-    .form-group {
-        margin-bottom: 1rem;
-    }
-
-    .text-left {
-        text-align: left;
-    }
-
-    .text-center {
-        text-align: center;
-    }
-
-    .text-right {
-        text-align: right;
-    }
-
-
 }

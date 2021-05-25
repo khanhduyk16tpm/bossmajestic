@@ -1,26 +1,12 @@
-/**
-https://coolors.co/4c4d4f-14342b-e7e63c-d5ebdc-ffffff
-https://coolors.co/4c4d4f-14342b-e7e63c-bbdfc5-ffffff
-https://coolors.co/4c4d4f-14342b-e7e63c-e2f3e8-ffffff
-https://coolors.co/4c4d4f-14342b-e7e63c-fdfded-ffffff
- */
-
-@import "../../../node_modules/bootstrap/scss/_functions";
-@import "../../../node_modules/bootstrap/scss/_variables";
-@import "../../../node_modules/bootstrap/scss/_mixins";
-@import "../../../node_modules/bootstrap/scss/mixins/_breakpoints";
-
 // COMMON
 $fontSize14: 14px;
 $fontSize12: 12px;
 
-$yellow: #ffcc33;
-$textGrayColor: #7F7F7F;
-$lightGray: #DFDFDF;
+$yellowColor: #ffcc33;
+$textGrayColor: #7f7f7f;
+$lightGray: #dfdfdf;
 $whiteColor: #ffffff;
-$redButton: #F8483B;
-$fullPageBgColor: #F4F4F6;
-$backgroundColor: #F2F8F8;
-$fontColor: #222E3C;
-
-
+$redButton: #f8483b;
+$fullPageBgColor: #f4f4f6;
+$backgroundColor: #f2f8f8;
+$fontColor: #222e3c;
