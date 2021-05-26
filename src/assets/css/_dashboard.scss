@@ -33,7 +33,7 @@
 	}
 }
 .my-account-detail-container{
-	p,a{
+	p, a{
 		font-size: 14px;
 		@include media-breakpoint-down(md) {
 			font-size: 10px;
