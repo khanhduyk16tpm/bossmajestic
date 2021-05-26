@@ -1,0 +1,21 @@
+{% import 'macros/path.html' as f %}
+{% import 'macros/site.html' as s %}
+{% extends "layouts/base.html" %}
+{% block js %} 
+{{ f.module(['toggle']) }} 
+<script src="{{ f.js('nocallback-toggle.min.js') }}"></script>
+{% endblock %}
+	
+{% block content %}
+{# <div class="container"> #}
+    <div class="container-fluid job-post">
+        <div class="caption px-5">
+            <a href="#">Back</a>
+            <h4>Post a Job</h4>
+        </div>
+        <form id="form-job-post">
+            {% include 'partials/_form_job_post.html' %}
+        </form>
+    </div>
+{# </div> #}
+{% endblock %}

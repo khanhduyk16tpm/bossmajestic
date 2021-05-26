@@ -5,6 +5,7 @@
 @import "auth/login";
 @import "auth/signup";
 @import "dashboard";
+@import "job/job_post";
 
 body {
     background-color: $backgroundColor;

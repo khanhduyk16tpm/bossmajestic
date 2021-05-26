@@ -1,0 +1,65 @@
+.job-post {
+    .caption {
+        margin-top: -80px;
+        position: absolute;
+        a {
+            text-decoration: underline;
+        }
+    }
+    .update-job {
+        h4 {
+            margin: 5px 0 0 30px;
+            padding-top: 12px;
+        }
+        .job-title input {
+            width: 920px;
+            height: 40px;
+        }
+    }
+}
+#form-job-post {
+    width: 1592px;
+    border: 2px solid #fff;
+    box-shadow: 0px 0px 12px #00000029;
+    height: 1502px;//1936px;
+    margin-top: -24px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    input {
+        border: 1px solid #CCCCCC;
+    }
+    .bi-info-circle {
+        opacity: 1;
+        color: #3893ef;
+        width: 12px;
+        height: 12px;
+        margin-top: -5px;
+        margin-left: 5px;
+    }
+    .square-radio {
+        border: 1px solid #cccccc;
+        margin: 2px;
+        width: 120px;
+        height: 40px;
+        //position: relative;
+        background-color: #fff;
+        color: #ccc;
+    }
+    .square-radio--clicked {
+        border: 1px solid #E4901C;
+        color: #E4901C;
+        background-color: #fff;
+    }
+    select {
+        width: 525px;//460px;
+    }
+    .working-experience input {
+        width: 230px;
+        height: 40px;
+    }
+    .working-hours input {
+        width: 60px;
+        height: 40px;
+    }
+}
