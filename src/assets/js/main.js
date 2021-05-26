@@ -31,3 +31,16 @@ var sidebarToggle = new NoCallbackToggle("#menu-btn",{
         return !0
     }
 });
+function triggerSidebarByScreen(x) {
+  if (x.matches) {
+    document.querySelector(".btn-sidebar-on").click();
+  }else{
+    document.querySelector(".btn-sidebar-off").click();
+  }
+}
+function init() {
+  var x = window.matchMedia("(max-width: 576px)")
+  triggerSidebarByScreen(x) 
+  x.addListener(triggerSidebarByScreen)
+}
+init()

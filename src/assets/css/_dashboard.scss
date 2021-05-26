@@ -1,5 +1,6 @@
 .top-summary{
-	margin-top: -90px;
+	margin-top: -80px;
+	padding: 0px 13px 0px 13px;
 	.grey-text{
 		padding-top: 2px;
 	}
@@ -18,4 +19,30 @@
 		}
     }
 
+}
+.quick-link-container{
+	h4{
+		font-size: 23px;
+		margin-bottom: 12px;
+		@include media-breakpoint-down(md) {
+			font-size: 18px;
+		}
+	}
+	@include media-breakpoint-down(md) {
+		margin-top: 20px;
+	}
+}
+.my-account-detail-container{
+	p,a{
+		font-size: 14px;
+		@include media-breakpoint-down(md) {
+			font-size: 10px;
+		}
+	}
+	h5{
+		font-size: 18px;
+		@include media-breakpoint-down(md) {
+			font-size: 14px;
+		}
+	}
 }
