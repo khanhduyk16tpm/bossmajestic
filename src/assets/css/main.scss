@@ -105,8 +105,6 @@ body {
     /* for main section */
     .active-cont {
         margin-left: 250px;
-        overflow: hidden;
-        position: relative;
         @include media-breakpoint-down(md) {
             min-width: 320px;
         }
