@@ -3,7 +3,7 @@
 @import "var";
 @import "auth/login";
 @import "auth/signup";
-
+@import "dashboard";
 
 body {
     background-color: $backgroundColor;
@@ -26,10 +26,15 @@ body {
     .grey-text{
         color: $textGrayColor;
     }
+    .green-text{
+        color: $greenColor;
+    }
     .red{
         color: #D5365B;
     }
- 
+    .white-box{
+        background-color: $whiteColor;
+    }
 
     a,
     a:hover {
@@ -38,9 +43,9 @@ body {
     }
 
     .side-navbar {
-      width: 320px;
+      width: 300px;
       position: fixed;
-      margin-left: -320px;
+      margin-left: -300px;
       background-color: $whiteColor;
       transition: 0.5s;
         button:hover,button:focus {
@@ -91,7 +96,12 @@ body {
 
     /* for main section */
     .active-cont {
-      margin-left: 320px;
+        margin-left: 300px;
+        overflow: hidden;
+        position: relative;
+        @include media-breakpoint-down(md) {
+            min-width: 320px;
+        }
     }
     #menu-btn {
       font-size: 30px;

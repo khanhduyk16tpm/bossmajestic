@@ -1,0 +1,21 @@
+.top-summary{
+	margin-top: -90px;
+	.grey-text{
+		padding-top: 2px;
+	}
+	@include media-breakpoint-down(md) {
+        h6{
+        	font-size: 14px;
+        }
+        h3{
+        	font-size: 20px;
+        }
+        p{
+        	font-size: 10px;
+        }
+        .grey-text{
+			font-size: 9px;
+		}
+    }
+
+}
