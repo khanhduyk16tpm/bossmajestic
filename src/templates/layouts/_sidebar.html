@@ -1,0 +1,67 @@
+{% import 'macros/path.html' as f %}
+{% import 'macros/site.html' as s %}
+<div class="side-navbar active-nav d-flex justify-content-between flex-wrap flex-column shadow h-100" id="sidebar">
+
+    <ul class="nav flex-column w-100">
+        <a class="btn border-0 toggle-on btn-sidebar-on" id="menu-btn"><i class="bi bi-list float-end"></i></a>
+        <a class="company-logo mb-4 text-center" href="{{ s.home_url() }}">
+            <img src="{{ f.img('logo/petronas.png') }}">
+        </a>
+        <li class="mb-1 menu-list">
+            <a class="btn text-start collapsed w-100 border-radius-none px-4 py-2 font-medium" data-bs-toggle="collapse"
+                aria-expanded="false">
+                Menu Item
+            </a>
+        </li>
+        <li class="mb-1 menu-list">
+            <button class="btn text-start collapsed w-100 border-radius-none px-4 py-2 font-medium"
+                data-bs-toggle="collapse" data-bs-target="#second-menu-collapse" aria-expanded="false">
+                Menu Item
+            </button>
+            <div class="collapse" id="second-menu-collapse">
+                <ul class="list-unstyled fw-normal pb-1 font-medium">
+                    <li><a href="#" class="d-inline-flex align-items-center rounded">Menu Item</a></li>
+                    <li><a href="#" class="d-inline-flex align-items-center rounded">Menu Item</a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="mb-1 menu-list">
+            <button class="btn text-start collapsed w-100 border-radius-none px-4 py-2 font-medium"
+                data-bs-toggle="collapse" data-bs-target="#third-menu-collapse" aria-expanded="false">
+                Menu Item
+            </button>
+            <div class="collapse" id="third-menu-collapse">
+                <ul class="list-unstyled fw-normal pb-1 font-medium">
+                    <li><a href="#" class="d-inline-flex align-items-center rounded">Menu Item</a></li>
+                    <li><a href="#" class="d-inline-flex align-items-center rounded">Menu Item</a></li>
+                    <li><a href="#" class="d-inline-flex align-items-center rounded">Menu Item</a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="mb-1 menu-list">
+            <button class="btn text-start collapsed w-100 border-radius-none px-4 py-2 font-medium"
+                data-bs-toggle="collapse" data-bs-target="#applicants-collapse" aria-expanded="false">
+                Menu Item
+            </button>
+            <div class="collapse" id="applicants-collapse">
+                <ul class="list-unstyled fw-normal pb-1 font-medium">
+                    <li><a href="#" class="d-inline-flex align-items-center rounded">Menu Item</a></li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+    <ul class="nav flex-column w-100 settings">
+        <li class="px-4 py-2"><a href="#" class="d-inline-flex align-items-center rounded font-medium">Settings</a>
+        </li>
+        <li class="px-4 py-2"><a href="#" class="d-inline-flex align-items-center rounded font-medium">Menu Item</a>
+        </li>
+        {% if is_guest %}
+        <li class="px-4 py-2"><a href="#" class="d-inline-flex align-items-center rounded font-medium">Login</a>
+        </li>
+        {% else %}
+        <li class="px-4 py-2"><a href="#" class="d-inline-flex align-items-center rounded font-medium">Logout</a>
+        </li>
+        {%endif%}
+    </ul>
+
+</div>
