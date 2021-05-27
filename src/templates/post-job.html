@@ -14,7 +14,7 @@
             <a href="#">Back</a>
             <h4>Post a Job</h4>
         </div>
-        <form id="form-job-post" method="post">
+        <form id="form-job-post" method="post" name="post_job" onSubmit="return check(this)">
             {% include 'partials/_form_job_post.html' %}
         </form>
     </div>

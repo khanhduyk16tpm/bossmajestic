@@ -9,7 +9,8 @@
             Title<i class="bi bi-info-circle"></i>
         </div>
         <div class="col-12 col-lg-9">
-            <input type="text" name="job-title" placeholder="eg. Senior Marketing Communications Executive" >
+            <input type="text" name="job_title" placeholder="eg. Senior Marketing Communications Executive" >
+            <div id="error-title" class="error"></div>
         </div>
     </div>
     <div class="row mt-5 job-type">
@@ -18,7 +19,7 @@
         </div>
         <div class="col-12 col-lg-1">
             <label>
-                <input type="radio" name="job-type" />
+                <input type="radio" name="job_type" value="Part-time"/>
                 <div class="square-radio job-type-select">
                     <span>Part-time</span>
                 </div>
@@ -26,7 +27,7 @@
         </div>
          <div class="col-12 col-lg-1">
              <label>
-                <input type="radio" name="job-type" checked/>
+                <input type="radio" name="job_type" value="Full-time" checked/>
                 <div class="square-radio job-type-select">
                     <span>Full-time</span>
                 </div>
@@ -34,7 +35,7 @@
         </div>
         <div class="col-12 col-lg-1">
             <label>
-                <input type="radio" name="job-type" />
+                <input type="radio" name="job_type" value="Freelance" />
                 <div class="square-radio job-type-select">
                     <span>Freelance</span>
                 </div>
@@ -42,7 +43,7 @@
         </div>
         <div class="col-12 col-lg-1">
             <label>
-                <input type="radio" name="job-type" />
+                <input type="radio" name="job_type" value="Contract" />
                 <div class="square-radio job-type-select">
                     <span>Contract</span>
                 </div>
@@ -54,10 +55,10 @@
             Category<i class="bi bi-info-circle"></i>
         </div>
         <div class="col-12 col-lg-9 form-group">
-            <select id="job-category" name="job-category" class="form-control job-category">
+            <select id="job-category" name="job_category" class="form-control job-category">
                 <option value="">select one...</option>
                 {% for i in range(1, 6) %}
-                <option value="">{{ 'category ' ~ i }}</option>
+                <option value="{{ 'category ' ~ i }}">{{ 'category ' ~ i }}</option>
                 {% endfor %}
             </select>
         </div>
@@ -67,10 +68,10 @@
             Education Level<i class="bi bi-info-circle"></i>
         </div>
         <div class="col-12 col-lg-9 form-group">
-            <select id="education-level" name="education-level" class="form-control education-level">
+            <select id="education-level" name="education_level" class="form-control education-level">
                 <option value="">select one...</option>
                 {% for i in range(1, 6) %}
-                <option value="">{{ 'Level ' ~ i }}</option>
+                <option value="{{ 'category ' ~ i }}">{{ 'category ' ~ i }}</option>
                 {% endfor %}
             </select>
         </div>
@@ -80,7 +81,7 @@
             Working Experience (Min. Years)<i class="bi bi-info-circle"></i>
         </div>
         <div class="col-12 col-lg-4">
-            <input type="text" name="working-experience" placeholder="eg. 5 years" >
+            <input type="text" name="working_experience" placeholder="eg. 5 years" >
         </div>
     </div>
      <div class="row mt-5 week-frequency">
@@ -89,7 +90,7 @@
         </div>
         <div class="col-12 col-lg-1">
             <label>
-                <input type="radio" name="work-week" />
+                <input type="radio" name="work_week" value="5 days per week" />
                 <div class="square-radio  work-week-select">
                     <span>5 days per week</span>
                 </div>
@@ -97,7 +98,7 @@
         </div>
          <div class="col-12 col-lg-1">
             <label>
-                <input type="radio" name="work-week" checked/>
+                <input type="radio" name="work_week" value="6 days per week" checked/>
                 <div class="square-radio work-week-select">
                     <span>6 days per week</span>
                 </div>
@@ -105,7 +106,7 @@
         </div>
         <div class="col-12 col-lg-1">
             <label>
-                <input type="radio" name="work-week" />
+                <input type="radio" name="work_week" value="shift" />
                 <div class="square-radio work-week-select">
                     <span>Shift</span>
                 </div>
@@ -113,7 +114,7 @@
         </div>
         <div class="col-12 col-lg-1">
             <label>
-                <input type="radio" name="work-week" />
+                <input type="radio" name="work_week" value="Indefinite" />
                 <div class="square-radio work-week-select">
                     <span>Indefinite</span>
                 </div>
@@ -125,11 +126,11 @@
             Working Hours<i class="bi bi-info-circle"></i>
         </div>
         <div class="col-12 col-lg-2">
-            <input type="text" name="work-from"> to <input type="text" name="work-to">
+            <input type="text" name="work_from"> to <input type="text" name="work_to">
         </div>
         <div class="col-12 col-lg-2">
             <label>
-                <input type="checkbox" name="work-indefinite" />
+                <input type="checkbox" name="work_indefinite" value="" />
                 <div class="square-radio work-indefinite">
                     <span>Indefinite</span>
                 </div>
@@ -141,7 +142,7 @@
             Salary<i class="bi bi-info-circle"></i>
         </div>
         <div class="col-12 col-lg-4">
-            <input type="text" name="min-salary" placeholder="Min..."> to <input type="text" name="max-salary" placeholder="Max...">
+            <input type="text" name="min_salary" placeholder="Min..."> to <input type="text" name="max_salary" placeholder="Max...">
         </div>       
     </div>
     <div class="row mt-5 benefits">
@@ -150,7 +151,7 @@
         </div>
         {% for i in range(0,1) %}
         <div class="col-12 col-lg-9 offset-lg-3 mb-2 copy-benefit-row">
-            <input type="text" name="job-benefit[]" placeholder="eg. 14 days of annual leave" >
+            <input type="text" name="job_benefit[]" placeholder="eg. 14 days of annual leave" >
             <a class="btn btn-sm mb-3 remove-benefit"><i class="bi bi-trash"></i></a>
         </div>
         {% endfor %}
@@ -166,7 +167,7 @@
             <select id="location" name="location" class="form-control location">
                 <option value="">select one...</option>
                 {% for i in range(1, 6) %}
-                <option value="">{{ 'Location ' ~ i }}</option>
+                <option value="{{ 'Location ' ~ i }}">{{ 'Location ' ~ i }}</option>
                 {% endfor %}
             </select>
         </div>
@@ -176,7 +177,7 @@
             Job Scope / Responsibilities<i class="bi bi-info-circle"></i>
         </div>
         <div class="col-12 col-lg-9">
-            <textarea></textarea>
+            <textarea name="job_scope"></textarea>
         </div>
     </div>
     <div class="row mt-5 requirements">
@@ -184,7 +185,7 @@
             Requirements<i class="bi bi-info-circle"></i>
         </div>
         <div class="col-12 col-lg-9">
-            <textarea></textarea>
+            <textarea name="requirements"></textarea>
         </div>
     </div>
     <div class="row mt-3 range-buttons">
