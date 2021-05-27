@@ -30,6 +30,8 @@
 
 {% macro scroll() %}{{ plugin_js('zang/scroll-1.0.0.min.js') }}{% endmacro %}
 
+{% macro datatable() %}{{ plugin_js('zang/simple-datatables.min.js') }}{% endmacro %}
+
 {% macro datepicker() %}{{ plugin_js('datepicker/datepicker.js') }}{% endmacro %}
 
 {% macro module(modules = {}) %}
@@ -46,6 +48,8 @@
 {{ copy() }}
 {% elseif m == 'datepicker' %}
 {{ datepicker() }}
+{% elseif m == 'datatable' %}
+{{ datatable() }}
 {% endif %}
 {% endfor %}
 {% endmacro %}
