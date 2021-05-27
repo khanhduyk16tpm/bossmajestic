@@ -21,7 +21,7 @@
     //width: 1592px;
     border: 2px solid #fff;
     box-shadow: 0px 0px 12px #00000029;
-    height: 1502px;//1936px;
+    //height: 1502px;//1936px;
     margin-top: -24px;
     position: relative;
     margin-left: auto;
@@ -38,21 +38,21 @@
         margin-top: -5px;
         margin-left: 5px;
     }
-    input[type="radio"] {
+    input[type="radio"], input[type="checkbox"]  {
         display: none;
-    &:checked {
-      + .square-radio  {
-        border: 1px solid #E4901C;
-        color: #E4901C;
-        background-color: #fff;
-        span {
-          color: #E4901C;
-          transform: translateY(70px);
-          &:before {
-            transform: translateY(0px);
-            opacity: 1;
-          }
-        }
+        &:checked {
+        + .square-radio  {
+            border: 1px solid #E4901C;
+            color: #E4901C;
+            background-color: #fff;
+            span {
+                color: #E4901C;
+                transform: translateY(70px);
+                &:before {
+                    transform: translateY(0px);
+                    opacity: 1;
+                }
+            }
       }
     }
     }
@@ -88,9 +88,56 @@
         width: 230px;
     }
     .working-hours input {
-        width: 60px;
+        width: 100px;
     }
     .salary input {
         width: 200px;
+    }
+    .benefits input {
+        width: 525px;
+    }
+    #addBenefit {
+        border: 1px dashed #3893EF;
+        opacity: 1;
+        width: 525px;
+        height: 40px;
+        color: #3893EF;
+    }
+    textarea {
+        width: 920px;
+        height: 225px;
+        border: 1px solid #CCCCCC;
+    }
+    .range-buttons {
+        padding-bottom: 45px;
+    }
+    .range-buttons button {
+        opacity: 1;
+        height: 42px;
+    }
+    .btn-cancel {
+        background: #CCCCCC 0% 0% no-repeat padding-box;
+        border: 1px solid #ccc;
+        width: 104px;
+    }
+    .btn-draft {
+        border: 1px solid #E4901C;
+        width: 143px;
+        background-color: #FFF;
+        color: #e4901c;
+    }
+    .btn-preview {
+        border: 1px solid #E4901C;
+        width: 133px;
+        background-color: #FFF;
+        color: #e4901c;
+        .bi {
+            margin-left: 5px;
+        }
+    }
+    .btn-save {
+        background: #FFCC33 0% 0% no-repeat padding-box;
+        border: 1px solid #FFCC33;
+        width: 154px;
     }
 }

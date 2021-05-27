@@ -2,8 +2,9 @@
 {% import 'macros/site.html' as s %}
 {% extends "layouts/base.html" %}
 {% block js %} 
-{{ f.module(['toggle']) }} 
-<script src="{{ f.js('nocallback-toggle.min.js') }}"></script>
+{{ f.module(['copy']) }} 
+<script src="{{ f.js('job-post.min.js') }}"></script>
+{# <script src="{{ f.js('nocallback-toggle.min.js') }}"></script> #}
 {% endblock %}
 	
 {% block content %}
@@ -13,7 +14,7 @@
             <a href="#">Back</a>
             <h4>Post a Job</h4>
         </div>
-        <form id="form-job-post">
+        <form id="form-job-post" method="post">
             {% include 'partials/_form_job_post.html' %}
         </form>
     </div>
