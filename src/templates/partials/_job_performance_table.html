@@ -1,29 +1,17 @@
-<table class="table white-box shadow">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
-</table>
+<table class="table table-responsive">
+    <thead>
+      <tr>
+        <th>Job</th>
+        <th data-type="date" data-format="YYYY/MM/DD">Date Published</th>
+        <th>New Applications</th>
+        <th>Days Left</th>
+        <th>Total Applications</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in range(1,50) %}
+      <tr><td>Job Title Long Title</td><td>15/02/21</td><td>{{ i }}</td><td>1{{i}}</td><td>2{{i}}</td></tr>
+      {% endfor %}
+
+    </tbody>
+  </table>

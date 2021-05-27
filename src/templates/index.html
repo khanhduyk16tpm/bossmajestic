@@ -6,7 +6,6 @@
 
 {% block js %} 
 {{ f.module(['toggle']) }} 
-<script src="{{ f.js('nocallback-toggle.min.js') }}"></script>
 {% endblock %}
 	
 {% block content %}
@@ -92,10 +91,16 @@
 			</div>
 		</div>
 	</div>
-	<div class="row mt-4 px-3">
+	<div class="row mt-4 table-wrapper">
+		<div class="white-box shadow">
+			<div class="d-flex justify-content-between mt-3 px-2">
+				<h5>My Job Performance</h5>
+				<a href="">Show all <i class="bi bi-chevron-right"></i></a>
+			</div>
 		{% include 'partials/_job_performance_table.html' %}
+		</div>
 	</div>
-	<div class="row mt-3 px-2">
+	<div class="row mt-4 px-2">
 		<div class="col-lg-6">
 			<div class="white-box p-3 shadow my-account-detail-container">
 				<h5>My Account Details</h5>
