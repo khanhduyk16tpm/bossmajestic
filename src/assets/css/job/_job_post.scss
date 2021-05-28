@@ -129,6 +129,10 @@
     .range-buttons button {
         opacity: 1;
         height: 42px;
+        @include media-breakpoint-down(md) {
+            width: 285px;
+            margin-bottom: 1rem;
+        }
     }
     .btn-cancel {
         background: #CCCCCC 0% 0% no-repeat padding-box;
