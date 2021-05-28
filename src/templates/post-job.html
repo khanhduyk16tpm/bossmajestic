@@ -21,7 +21,7 @@
                 <div class="row mt-3 range-buttons">
                     <div class="col-12 col-lg-7"></div>
                     <div class="col-12 col-lg-5 py-3">
-                        <button class="btn-cancel" type="button">Cancel</button>
+                        <button class="btn-cancel" type="button" data-bs-toggle="modal" data-bs-target="#delete-job">Cancel</button>
                         <button class="btn-draft" >Save as draft</button>
                         <button class="btn-preview">Preview<i class="bi bi-box-arrow-up-right"></i></button>
                         <button class="btn-save">Save & Publish</button>
@@ -30,5 +30,6 @@
             </div>
         </form>
     </div>
+    {% include 'partials/_delete-job-modal.html' %}
 {# </div> #}
 {% endblock %}
