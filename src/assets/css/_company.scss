@@ -1,0 +1,83 @@
+.company-nav-tab{
+	margin-top: 10px;
+	.nav-tabs{
+		border-bottom: none;
+		.nav-item{
+			border-radius: 0px;
+			.active{
+				border-color: $whiteColor;
+				border-bottom: 3px solid $yellow;
+			}
+			button{
+				height:55px;
+				@include media-breakpoint-down(lg)  {
+					height:45px;
+				}
+			}
+		}
+		
+	}
+}
+.company-left-side{
+	margin-top: -25px;
+	padding: 0px 15px 0px 15px;
+	@include media-breakpoint-down(lg)  {
+		padding: 0px;
+	}
+}
+.company-right-side{
+	margin-top: -15px;
+}
+.company-rating-container{
+	margin-bottom: 15px;
+	h1{
+		width: auto;
+
+	}
+	span{
+		width: auto;
+		float: left;
+		p{
+			margin-bottom: 0px;
+			color: $textGrayColor;
+		}
+		.star-rating-icon{
+			height: 20px;
+			@include media-breakpoint-down(lg)  {
+				height: 14px;
+			}
+		}
+	}
+}
+.ad-banner{
+	padding: 150px 0px 150px 0px;
+}
+.read-more-state {
+  display: none;
+}
+.read-more-target {
+  opacity: 0;
+  max-height: 0;
+  font-size: 0;
+  transition: .25s ease;
+}
+.read-more-state:checked ~ .read-more-wrap .read-more-target {
+  opacity: 1;
+  font-size: inherit;
+  max-height: 999em;
+}
+.read-more-state ~ .read-more-trigger:before {
+  content: 'Show more';
+  color: #3893EF;
+}
+.read-more-state:checked ~ .read-more-trigger:before {
+  content: 'Show less';
+  color: #3893EF;
+}
+.read-more-trigger {
+    cursor: pointer;
+    &::before{
+    	float: right;
+    	width: auto;
+    }
+}

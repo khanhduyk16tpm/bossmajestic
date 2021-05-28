@@ -1,0 +1,50 @@
+{% extends "layouts/base.html" %}
+
+{% block js %}{% endblock %}
+
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 company-left-side">
+            <div class="d-lg-none px-3 mb-3">
+                <div class="text-center white-box p-3 shadow">
+                    <a class="company-logo mb-4 text-center" href="{{ s.home_url() }}">
+                        <img src="{{ f.img('logo/petronas.png') }}" width="140px">
+                    </a>
+                    <div class="d-flex justify-content-center company-rating-container mt-3">
+                        <h1>5.0</h1>
+                        <span class="ms-2">
+                            <p>Average Rating</p>
+                            {% for i in range(1,6) %}
+                                <img class="star-rating-icon" src="{{f.companies_overview_img('star.png')}}">
+                            {% endfor%}
+                        </span>
+                    </div>
+                    <input type="checkbox" class="read-more-state" id="post-1" />
+                    <p class="text-left read-more-wrap small">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus pretium ante ante, at accumsan ipsum euismod vitae. Cras sollicitudin fermentum tellus, id pharetra elit ultrices eu. Cras non hendrerit risus. Sed <span class="read-more-target"> nec commodo massa. Duis mauris ante, pulvinar id hendrerit a, sodales vel isi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla facilisi. Proin tincidunt venenatis ipsum, ut posuere sapien mattis sed. Duis laoreet eget arcu eget convallis.</span></p>
+                    <label for="post-1" class="read-more-trigger small"></label>
+                </div>
+            </div>
+            <div class="company-body white-box shadow">
+                <div class="company-nav-tab">
+                    {% include 'partials/_company-nav-tab.html' %}
+                </div>
+                {% block overview %}
+
+                {% endblock %}
+            </div>
+        </div>
+        <div class="col-lg-4 company-right-side d-none d-lg-block pe-3">
+            {% include 'partials/_company-overview-card.html' %}
+            {% include 'partials/_company-review-card.html' %}
+            <div class="white-box shadow mt-4 text-center ad-banner d-none d-lg-block">
+                <h3>Ad Banner</h3>
+            </div>
+        </div>
+       
+        
+    </div>
+
+</div>
+{% endblock %}
