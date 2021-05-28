@@ -2,7 +2,7 @@
 {% import 'macros/site.html' as s %}
 {% extends "layouts/base.html" %}
 {% block js %} 
-{{ f.module(['copy']) }} 
+{{ f.module(['copy', 'toggle']) }} 
 <script src="{{ f.js('job-post.min.js') }}"></script>
 {# <script src="{{ f.js('nocallback-toggle.min.js') }}"></script> #}
 {% endblock %}
@@ -22,7 +22,7 @@
                     <div class="col-12 col-lg-7"></div>
                     <div class="col-12 col-lg-5 py-3">
                         <button class="btn-cancel" type="button">Cancel</button>
-                        <button class="btn-draft" onClick="validateForm()">Save as draft</button>
+                        <button class="btn-draft" >Save as draft</button>
                         <button class="btn-preview">Preview<i class="bi bi-box-arrow-up-right"></i></button>
                         <button class="btn-save">Save & Publish</button>
                     </div>

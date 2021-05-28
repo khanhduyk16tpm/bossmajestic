@@ -2,13 +2,18 @@
 {% import 'macros/site.html' as s %}
 {% import 'macros/form.html' as form %}
 {% import 'macros/path.html' as f %}
+    <div class="d-flex flex-row align-items-center alert-note d-none">
+        <div class="d-flex justify-content-center col-lg-5 offset-lg-5 err-box">
+            <i class="bi bi-exclamation-circle"></i>Please fill up the details correctly.
+        </div>
+    </div>
     <div class="row job-title mt-5">
         <div class="col-12 col-lg-3 d-lg-flex justify-content-end">
             Title<i class="bi bi-info-circle"></i>
         </div>
         <div class="col-12 col-lg-9">
             <input type="text" name="job_title" placeholder="eg. Senior Marketing Communications Executive" required>
-            <div id="error-title" class="error"></div>
+            <div id="error-title" class="error d-none">Error lorem ipsum</div>
         </div>
     </div>
     <div class="row mt-5 job-type">
@@ -59,7 +64,7 @@
                 <option value="{{ 'category ' ~ i }}">{{ 'category ' ~ i }}</option>
                 {% endfor %}
             </select>
-            <div id="error-category" class="error"></div>
+            <div id="error-category" class="error d-none">Error lorem ipsum</div>
         </div>
     </div>
     <div class="row mt-5 education">
@@ -73,7 +78,7 @@
                 <option value="{{ 'category ' ~ i }}">{{ 'category ' ~ i }}</option>
                 {% endfor %}
             </select>
-            <div id="error-level" class="error"></div>
+            <div id="error-level" class="error d-none">Error lorem ipsum</div>
         </div>
     </div>
     <div class="row mt-5 working-experience">
@@ -82,7 +87,7 @@
         </div>
         <div class="col-12 col-lg-4">
             <input type="text" name="working_experience" placeholder="eg. 5 years" required>
-            <div id="error-experience" class="error"></div>
+            <div id="error-experience" class="error d-none">Error lorem ipsum</div>
         </div>
     </div>
      <div class="row mt-5 week-frequency">
@@ -144,7 +149,7 @@
         </div>
         <div class="col-12 col-lg-4">
             <input type="text" name="min_salary" placeholder="Min..." required> to <input type="text" name="max_salary" placeholder="Max..." required>
-            <div id="error-salary" class="error"></div>
+            <div id="error-salary" class="error d-none">Error lorem ipsum</div>
         </div>       
     </div>
     <div class="row mt-5 benefits">
@@ -172,7 +177,7 @@
                 <option value="{{ 'Location ' ~ i }}">{{ 'Location ' ~ i }}</option>
                 {% endfor %}
             </select>
-            <div id="error-location" class="error"></div>
+            <div id="error-location" class="error d-none">Error lorem ipsum</div>
         </div>
     </div>
     <div class="row mt-5 job-scope">
@@ -181,7 +186,7 @@
         </div>
         <div class="col-12 col-lg-9">
             <textarea name="job_scope" required></textarea>
-            <div id="error-scope" class="error"></div>
+            <div id="error-scope" class="error d-none">Error lorem ipsum</div>
         </div>
     </div>
     <div class="row mt-5 requirements">
@@ -190,6 +195,6 @@
         </div>
         <div class="col-12 col-lg-9">
             <textarea name="requirements" required></textarea>
-            <div id="error-requirements" class="error"></div>
+            <div id="error-requirements" class="error d-none">Error lorem ipsum</div>
         </div>
     </div>

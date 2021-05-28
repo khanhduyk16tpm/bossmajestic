@@ -12,15 +12,29 @@ function check(form) {
 function validateForm() {
     var form = post_job;
     var inputs = form.querySelectorAll('input,select,textarea');
+    var totalErr = 0;
     console.log(inputs);
     var valid = true;
+    const errBox = document.getElementsByClassName("alert-note");
     inputs.forEach(input => {
+        const clsErr = input.parentNode.getElementsByClassName('error');
         if (!input.checkValidity()) {
-            //document.getElementById("error-title").innerHTML = "Error lorem ipsum";
-            input.parentNode.getElementsByClassName('error')[0].innerHTML = "Error lorem ipsum";
+            //input.parentNode.getElementsByClassName('error')[0].innerHTML = "Error lorem ipsum";
             valid = false;
+            clsErr[0].classList.remove("d-none");
+            totalErr++;
+        } else {
+            console.log(input);
+            if (clsErr[0]) {
+                clsErr[0].classList.add("d-none");
+            }
         }
     })
+    if (totalErr > 0) {
+        errBox[0].classList.remove("d-none");
+    } else {
+        errBox[0].classList.add("d-none");
+    }
     return valid;
 }
 function getDataForm() {
@@ -41,3 +55,29 @@ function getDataForm() {
         }
     }
 }
+
+/**handle buttons */
+var draftToggle = new Toggle(".btn-draft",{
+    onOn: function(draft) {
+        validateForm();
+    },
+    callback: function(n) {
+        draftToggle.triggerOn(n)
+    }
+});
+var previewToggle = new Toggle(".btn-preview",{
+    onOn: function(prev) {
+        validateForm();
+    },
+    callback: function(n) {
+        previewToggle.triggerOn(n)
+    }
+});
+var saveToggle = new Toggle(".btn-save",{
+    onOn: function(s) {
+        validateForm();
+    },
+    callback: function(n) {
+        saveToggle.triggerOn(n)
+    }
+});
