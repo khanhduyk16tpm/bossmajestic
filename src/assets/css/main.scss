@@ -6,8 +6,10 @@
 @import "auth/signup";
 @import "data-table";
 @import "dashboard";
+@import "company";
 @import "job/job_post";
 @import "modal";
+
 
 body {
     background-color: $backgroundColor;
@@ -29,6 +31,9 @@ body {
     .grey-text {
         color: $textGrayColor;
     }
+    .light-grey-text{
+      color: $lightGray;
+    }
     .green-text{
         color: $greenColor;
     }
@@ -38,10 +43,9 @@ body {
     .white-box{
         background-color: $whiteColor;
     }
-    .red {
-        color: #d5365b;
+    .blue-text{
+        color: #3893EF;
     }
-
     a,
     a:hover {
         color: $fontColor;
@@ -116,8 +120,5 @@ body {
         &.btn-sidebar-off {
             position: fixed;
         }
-    }
-    .shadow {
-        box-shadow: 0px 0px 12px #00000029;
     }
 }

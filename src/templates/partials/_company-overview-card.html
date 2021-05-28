@@ -1,0 +1,19 @@
+{% import 'macros/path.html' as f %}
+{% import 'macros/site.html' as s %}
+<div class="text-center white-box p-5 shadow">
+	<a class="company-logo mb-4 text-center" href="{{ s.home_url() }}">
+        <img src="{{ f.img('logo/petronas.png') }}" width="140px">
+    </a>
+    <div class="d-flex justify-content-center company-rating-container mt-3">
+      	<h1>5.0</h1>
+		<span class="ms-2">
+			<p>Average Rating</p>
+			{% for i in range(1,6) %}
+				<img class="star-rating-icon" src="{{f.companies_overview_img('star.png')}}">
+			{% endfor%}
+		</span>
+	</div>
+	<button class="btn yellow-button px-3 py-2">
+		<i class="bi bi-pencil-fill"></i> Edit Company Account
+	</button>
+</div>

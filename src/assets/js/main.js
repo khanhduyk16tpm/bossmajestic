@@ -31,7 +31,6 @@ var sidebarToggle = new NoCallbackToggle("#menu-btn",{
         return !0
     }
 });
-const table = new simpleDatatables.DataTable("table")
 function triggerSidebarByScreen(x) {
   if (x.matches) {
     document.querySelector(".btn-sidebar-on").click();
