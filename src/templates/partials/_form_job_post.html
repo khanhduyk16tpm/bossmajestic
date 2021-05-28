@@ -9,7 +9,7 @@
             Title<i class="bi bi-info-circle"></i>
         </div>
         <div class="col-12 col-lg-9">
-            <input type="text" name="job_title" placeholder="eg. Senior Marketing Communications Executive" >
+            <input type="text" name="job_title" placeholder="eg. Senior Marketing Communications Executive" required>
             <div id="error-title" class="error"></div>
         </div>
     </div>
@@ -55,12 +55,13 @@
             Category<i class="bi bi-info-circle"></i>
         </div>
         <div class="col-12 col-lg-9 form-group">
-            <select id="job-category" name="job_category" class="form-control job-category">
+            <select id="job-category" name="job_category" class="form-control job-category" required>
                 <option value="">select one...</option>
                 {% for i in range(1, 6) %}
                 <option value="{{ 'category ' ~ i }}">{{ 'category ' ~ i }}</option>
                 {% endfor %}
             </select>
+            <div id="error-category" class="error"></div>
         </div>
     </div>
     <div class="row mt-5 education">
@@ -68,12 +69,13 @@
             Education Level<i class="bi bi-info-circle"></i>
         </div>
         <div class="col-12 col-lg-9 form-group">
-            <select id="education-level" name="education_level" class="form-control education-level">
+            <select id="education-level" name="education_level" class="form-control education-level" required>
                 <option value="">select one...</option>
                 {% for i in range(1, 6) %}
                 <option value="{{ 'category ' ~ i }}">{{ 'category ' ~ i }}</option>
                 {% endfor %}
             </select>
+            <div id="error-level" class="error"></div>
         </div>
     </div>
     <div class="row mt-5 working-experience">
@@ -81,7 +83,8 @@
             Working Experience (Min. Years)<i class="bi bi-info-circle"></i>
         </div>
         <div class="col-12 col-lg-4">
-            <input type="text" name="working_experience" placeholder="eg. 5 years" >
+            <input type="text" name="working_experience" placeholder="eg. 5 years" required>
+            <div id="error-experience" class="error"></div>
         </div>
     </div>
      <div class="row mt-5 week-frequency">
@@ -142,7 +145,8 @@
             Salary<i class="bi bi-info-circle"></i>
         </div>
         <div class="col-12 col-lg-4">
-            <input type="text" name="min_salary" placeholder="Min..."> to <input type="text" name="max_salary" placeholder="Max...">
+            <input type="text" name="min_salary" placeholder="Min..." required> to <input type="text" name="max_salary" placeholder="Max..." required>
+            <div id="error-salary" class="error"></div>
         </div>       
     </div>
     <div class="row mt-5 benefits">
@@ -164,12 +168,13 @@
             Location/Branch<i class="bi bi-info-circle"></i>
         </div>
         <div class="col-12 col-lg-9 form-group">
-            <select id="location" name="location" class="form-control location">
+            <select id="location" name="location" class="form-control location" required>
                 <option value="">select one...</option>
                 {% for i in range(1, 6) %}
                 <option value="{{ 'Location ' ~ i }}">{{ 'Location ' ~ i }}</option>
                 {% endfor %}
             </select>
+            <div id="error-location" class="error"></div>
         </div>
     </div>
     <div class="row mt-5 job-scope">
@@ -177,7 +182,8 @@
             Job Scope / Responsibilities<i class="bi bi-info-circle"></i>
         </div>
         <div class="col-12 col-lg-9">
-            <textarea name="job_scope"></textarea>
+            <textarea name="job_scope" required></textarea>
+            <div id="error-scope" class="error"></div>
         </div>
     </div>
     <div class="row mt-5 requirements">
@@ -185,16 +191,17 @@
             Requirements<i class="bi bi-info-circle"></i>
         </div>
         <div class="col-12 col-lg-9">
-            <textarea name="requirements"></textarea>
+            <textarea name="requirements" required></textarea>
+            <div id="error-requirements" class="error"></div>
         </div>
     </div>
     <div class="row mt-3 range-buttons">
         <div class="col-12 col-lg-7"></div>
         <div class="col-12 col-lg-5 py-3">
             <button class="btn-cancel">Cancel</button>
-            <button class="btn-draft">Save as draft</button>
+            <button class="btn-draft" onClick="validateForm()">Save as draft</button>
             <button class="btn-preview">Preview<i class="bi bi-box-arrow-up-right"></i></button>
-            <button class="btn-save">Save & Public</button>
+            <button class="btn-save">Save & Publish</button>
         </div>
     </div>
 </div>
