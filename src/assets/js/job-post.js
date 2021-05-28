@@ -24,7 +24,7 @@ function validateForm() {
             clsErr[0].classList.remove("d-none");
             totalErr++;
         } else {
-            console.log(input);
+            //console.log(input);
             if (clsErr[0]) {
                 clsErr[0].classList.add("d-none");
             }

@@ -58,7 +58,7 @@
             Category<i class="bi bi-info-circle"></i>
         </div>
         <div class="col-12 col-lg-9 form-group">
-            <select id="job-category" name="job_category" class="form-control job-category" required>
+            <select id="job-category" name="job_category" class="job-category" required>
                 <option value="">select one...</option>
                 {% for i in range(1, 6) %}
                 <option value="{{ 'category ' ~ i }}">{{ 'category ' ~ i }}</option>
@@ -72,7 +72,7 @@
             Education Level<i class="bi bi-info-circle"></i>
         </div>
         <div class="col-12 col-lg-9 form-group">
-            <select id="education-level" name="education_level" class="form-control education-level" required>
+            <select id="education-level" name="education_level" class="education-level" required>
                 <option value="">select one...</option>
                 {% for i in range(1, 6) %}
                 <option value="{{ 'category ' ~ i }}">{{ 'category ' ~ i }}</option>
@@ -171,7 +171,7 @@
             Location/Branch<i class="bi bi-info-circle"></i>
         </div>
         <div class="col-12 col-lg-9 form-group">
-            <select id="location" name="location" class="form-control location" required>
+            <select id="location" name="location" class="location" required>
                 <option value="">select one...</option>
                 {% for i in range(1, 6) %}
                 <option value="{{ 'Location ' ~ i }}">{{ 'Location ' ~ i }}</option>
