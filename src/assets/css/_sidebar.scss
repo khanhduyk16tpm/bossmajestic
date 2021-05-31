@@ -1,0 +1,51 @@
+ .side-navbar {
+        width: 250px;
+        min-height: 750px;
+        margin-left: -250px;
+        transition: 0.5s;
+        button:hover,
+        button:focus {
+            color: rgba(0, 0, 0, 0.85);
+            background-color: rgba(121, 82, 179, 0.1);
+        }
+        button::after {
+            padding-top: 4px;
+            width: 1.25em;
+            line-height: 0;
+            content: url("../img/main/chevron-right.svg");
+            transition: transform 0.35s ease;
+            transform-origin: 0.5em 50%;
+            float: right;
+        }
+        button[aria-expanded="true"]::after {
+            transform: rotate(90deg);
+        }
+      
+    }
+
+    .nav-link:active,
+    .nav-link:focus,
+    .nav-link:hover {
+        background-color: #ffffff26;
+    }
+
+    .my-container {
+        transition: 0.4s;
+    }
+    .active-nav {
+        margin-left: 0;
+    }
+
+    /* for main section */
+    .active-cont {
+        margin-left: 250px;
+        @include media-breakpoint-down(md) {
+            min-width: 320px;
+        }
+    }
+    #menu-btn {
+        font-size: 30px;
+        &.btn-sidebar-off {
+            position: fixed;
+        }
+    }

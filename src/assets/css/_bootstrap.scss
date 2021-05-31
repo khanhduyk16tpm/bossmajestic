@@ -9,10 +9,21 @@
 // Configuration
 @import "../../../node_modules/bootstrap/scss/functions";
 
+
+$primary: $yellowColor;
+$secondary: white;
+
+$enable-negative-margins: true;
 $navbar-light-color: rgba(#fff, 0.55);
 $navbar-light-toggler-border-color: rgba(#222e3c, 0.1) !default;
 
 //$modal-header-padding: 0 0 !default; // Keep this for backwards compatibility
+
+
+$btn-border-radius: 0;
+$btn-padding-y: 10px;              
+$btn-padding-x: 20px;              
+
 
 @import "../../../node_modules/bootstrap/scss/variables";
 @import "../../../node_modules/bootstrap/scss/mixins";

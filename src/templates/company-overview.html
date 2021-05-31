@@ -1,5 +1,10 @@
 {% extends "layouts/company-base.html" %}
 
+{% block js %} 
+{{ f.module(['toggle']) }} 
+<script src="{{ f.js('nocallback-toggle.min.js') }}"></script>
+<script src="{{ f.js('company.min.js') }}"></script>
+{% endblock %}
 
 {% block overview %}
 

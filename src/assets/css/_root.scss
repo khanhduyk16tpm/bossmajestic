@@ -1,0 +1,12 @@
+
+body {
+    background-color: $backgroundColor;
+    color: $fontColor;
+    overflow-x: hidden;
+
+    a,
+    a:hover {
+        color: $fontColor;
+        text-decoration: none;
+    }
+}
