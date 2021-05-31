@@ -21,10 +21,8 @@
     }
 }
 #form-job-post {
-    //width: 1592px;
     border: 2px solid #fff;
     box-shadow: 0px 0px 12px #00000029;
-    //height: 1502px;//1936px;
     margin-top: -24px;
     position: relative;
     margin-left: auto;
@@ -74,7 +72,6 @@
             transform: translateY(10px);
         }
         span {
-            // position: absolute;
             transform: translate(0, 60px);
             left: 0;
             right: 0;
@@ -84,7 +81,7 @@
         }
     }
     select {
-        width: 525px;//460px;
+        width: 525px;
         @include media-breakpoint-down(md) {
             width: 285px;
         }
