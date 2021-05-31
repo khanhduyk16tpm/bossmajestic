@@ -1,121 +1,15 @@
-@import "bootstrap";
-@import "custom-forms";
 @import "var";
+@import "bootstrap";
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
+
+
+@import "custom-forms";
+@import "root";
+@import "sidebar";
 @import "header";
 @import "auth/login";
 @import "auth/signup";
 @import "data-table";
 @import "dashboard";
 @import "company";
-
-body {
-    background-color: $backgroundColor;
-    color: $fontColor;
-    overflow-x: hidden;
-
-    .page {
-        background-color: $fullPageBgColor;
-    }
-    .yellow-button {
-        border-radius: 0px;
-        border: none;
-        background-color: $yellowColor;
-    }
-    .border-radius-none {
-        border-radius: 0px;
-        border: none;
-    }
-    .grey-text {
-        color: $textGrayColor;
-    }
-    .light-grey-text{
-      color: $lightGray;
-    }
-    .green-text{
-        color: $greenColor;
-    }
-    .red{
-        color: #D5365B;
-    }
-    .white-box{
-        background-color: $whiteColor;
-    }
-    .blue-text{
-        color: #3893EF;
-    }
-    a,
-    a:hover {
-        color: $fontColor;
-        text-decoration: none;
-    }
-
-    .side-navbar {
-        width: 250px;
-        position: fixed;
-        min-height: 750px;
-        margin-left: -250px;
-        background-color: $whiteColor;
-        transition: 0.5s;
-        button:hover,
-        button:focus {
-            color: rgba(0, 0, 0, 0.85);
-            background-color: rgba(121, 82, 179, 0.1);
-        }
-        button::after {
-            padding-top: 4px;
-            width: 1.25em;
-            line-height: 0;
-            content: url("../img/main/chevron-right.svg");
-            transition: transform 0.35s ease;
-            transform-origin: 0.5em 50%;
-            float: right;
-        }
-        button[aria-expanded="true"]::after {
-            transform: rotate(90deg);
-        }
-        .menu-list {
-            li {
-                margin-top: 12px;
-                margin-left: 1.5rem;
-            }
-        }
-        .company-logo img {
-            width: 125px;
-        }
-        .settings {
-            margin-bottom: 25px;
-        }
-    }
-
-    .nav-link:active,
-    .nav-link:focus,
-    .nav-link:hover {
-        background-color: #ffffff26;
-    }
-
-    .my-container {
-        transition: 0.4s;
-    }
-    .topbar {
-        height: 255px;
-        background-color: $yellowColor;
-    }
-
-    .active-nav {
-        margin-left: 0;
-    }
-
-    /* for main section */
-    .active-cont {
-        margin-left: 250px;
-        @include media-breakpoint-down(md) {
-            min-width: 320px;
-        }
-    }
-    #menu-btn {
-        font-size: 30px;
-        &.btn-sidebar-off {
-            position: fixed;
-        }
-    }
-}

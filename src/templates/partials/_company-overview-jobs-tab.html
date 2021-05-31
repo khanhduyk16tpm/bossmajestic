@@ -1,0 +1,8 @@
+{% set jobListPage = true %}
+<div class="row page">
+	{% for i in range(1,5) %}
+	<div class="col-lg-6">
+		{% include 'partials/_job-card.html' %}
+	</div>
+{% endfor %}
+</div>

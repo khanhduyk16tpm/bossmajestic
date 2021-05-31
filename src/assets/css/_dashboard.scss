@@ -1,52 +1,6 @@
-.top-summary{
-	margin-top: -80px;
-	padding: 0px 13px 0px 13px;
-	.grey-text{
-		padding-top: 2px;
-	}
-	@include media-breakpoint-down(md) {
-        h6{
-        	font-size: 14px;
-        }
-        h3{
-        	font-size: 20px;
-        }
-        p{
-        	font-size: 10px;
-        }
-        .grey-text{
-			font-size: 9px;
-		}
-    }
 
-}
-.quick-link-container{
-	h4{
-		font-size: 23px;
-		margin-bottom: 12px;
-		@include media-breakpoint-down(md) {
-			font-size: 18px;
-		}
-	}
-	@include media-breakpoint-down(md) {
-		margin-top: 20px;
-	}
-}
-.my-account-detail-container{
-	p,a{
-		font-size: 14px;
-		@include media-breakpoint-down(md) {
-			font-size: 10px;
-		}
-	}
-	h5{
-		@include media-breakpoint-down(md) {
-			font-size: 14px;
-		}
-	}
-}
 .table-wrapper{
-	padding: 0px 20px 0px 20px;
+	padding: 0px 20px;
 	@include media-breakpoint-down(md) {
 		font-size: 10px;
 	}
