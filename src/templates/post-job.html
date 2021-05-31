@@ -4,27 +4,25 @@
 {% block js %} 
 {{ f.module(['copy', 'toggle']) }} 
 <script src="{{ f.js('job-post.min.js') }}"></script>
-{# <script src="{{ f.js('nocallback-toggle.min.js') }}"></script> #}
 {% endblock %}
-	
+
 {% block content %}
-{# <div class="container"> #}
-    <div class="container-fluid job-post">
-        <div class="caption px-5">
-            <a href="#">Back</a>
+    <div class="container-fluid job-post m-auto">
+        <div class="caption px-5 position-absolute">
+            <a href="#" class="text-decoration-underline">Back</a>
             <h4>Post a Job</h4>
         </div>
-        <form id="form-job-post" method="post" name="post_job" >
+        <form id="form-job-post" method="post" name="post_job" class="position-relative" >
             <div class="mt-3 update-job">
                 <h4 class="">New Job Details</h4>
                 {% include 'partials/_form_job_post.html' %}
-                <div class="row mt-3 range-buttons">
+                <div class="row mt-3 range-buttons py-5">
                     <div class="col-12 col-lg-6"></div>
-                    <div class="col-12 col-lg-6 py-3">
+                    <div class="col-12 col-lg-6">
                         <button class="btn-cancel border-0" type="button" data-bs-toggle="modal" data-bs-target="#delete-job">Cancel</button>
                         <button class="btn-draft" >Save as draft</button>
                         <button class="btn-preview">Preview<i class="bi bi-box-arrow-up-right"></i></button>
-                        <button class="btn-save border-0">Save & Publish</button>
+                        <button class="btn-save border-0" type="button" data-toggle="modal" data-target="#myModal">Save & Publish</button>
                     </div>
                 </div>
             </div>
@@ -32,5 +30,4 @@
     </div>
     {% include 'partials/_delete-job-modal.html' %}
     {% include 'partials/_post-job-success-modal.html' %}
-{# </div> #}
 {% endblock %}

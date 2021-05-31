@@ -41,7 +41,7 @@ function getDataForm() {
     var form = post_job;
     //var inputs = form.getElementsByTagName("input");
     var inputs = form.querySelectorAll('input,select,textarea');
-    console.log(inputs);
+    //console.log(inputs);
 
     var data = {};
     for (var i = 0; i < inputs.length; i++) {
