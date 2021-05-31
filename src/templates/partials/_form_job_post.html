@@ -6,7 +6,7 @@
 {% set education_levels = ['Level 1', 'Level 2', 'Level 3', 'Level 4', 'Level 5'] %}
 {% set locations = ['Location 1', 'Location 2', 'Location 3', 'Location 4', 'Location 5'] %}
     <div class="d-flex flex-row align-items-center alert-note d-none">
-        <div class="d-flex justify-content-center col-lg-5 offset-lg-5 err-box">
+        <div class="d-flex justify-content-center col-lg-5 offset-lg-5 err-box p-2">
             <i class="bi bi-exclamation-circle"></i>Please fill up the details correctly.
         </div>
     </div>
@@ -30,15 +30,15 @@
         <div class="col-12 col-lg-2">
             <label>
                 <input type="radio" name="job_type" value="Part-time" class="d-none" {% if job.title == "Part-time" %} checked {% endif %}/>
-                <div class="square-radio job-type-select text-center">
+                <div class="square-radio job-type-select text-center d-inline-block p-2 m-1">
                     <span>Part-time</span>
                 </div>
             </label>
         </div>
          <div class="col-12 col-lg-2">
              <label>
-                <input type="radio" name="job_type" value="Full-time" class="d-none" {% if job.title == "Full-time" %} checked {% endif %}/>
-                <div class="square-radio job-type-select text-center">
+                <input type="radio" name="job_type" value="Full-time" class="d-none" {% if job.title == "Full-time" %} checked {% endif %} checked/>
+                <div class="square-radio job-type-select text-center d-inline-block p-2 m-1">
                     <span>Full-time</span>
                 </div>
             </label>
@@ -46,7 +46,7 @@
         <div class="col-12 col-lg-2">
             <label>
                 <input type="radio" name="job_type" value="Freelance" class="d-none" />
-                <div class="square-radio job-type-select text-center">
+                <div class="square-radio job-type-select text-center d-inline-block p-2 m-1">
                     <span>Freelance</span>
                 </div>
             </label>
@@ -54,7 +54,7 @@
         <div class="col-12 col-lg-2">
             <label>
                 <input type="radio" name="job_type" value="Contract" class="d-none" />
-                <div class="square-radio job-type-select text-center">
+                <div class="square-radio job-type-select text-center d-inline-block p-2 m-1">
                     <span>Contract</span>
                 </div>
             </label>
@@ -104,7 +104,7 @@
         <div class="col-12 col-lg-2">
             <label>
                 <input type="radio" name="work_week" value="5 days per week" class="d-none"  />
-                <div class="square-radio  work-week-select text-center">
+                <div class="square-radio  work-week-select text-center d-inline-block p-2 m-1">
                     <span>5 days per week</span>
                 </div>
             </label>
@@ -112,7 +112,7 @@
          <div class="col-12 col-lg-2">
             <label>
                 <input type="radio" name="work_week" value="6 days per week" class="d-none" checked/>
-                <div class="square-radio work-week-select text-center">
+                <div class="square-radio work-week-select text-center d-inline-block p-2 m-1">
                     <span>6 days per week</span>
                 </div>
             </label>
@@ -120,7 +120,7 @@
         <div class="col-12 col-lg-2">
             <label>
                 <input type="radio" name="work_week" value="shift" class="d-none" />
-                <div class="square-radio work-week-select text-center">
+                <div class="square-radio work-week-select text-center d-inline-block p-2 m-1">
                     <span>Shift</span>
                 </div>
             </label>
@@ -128,7 +128,7 @@
         <div class="col-12 col-lg-2">
             <label>
                 <input type="radio" name="work_week" value="Indefinite" class="d-none" />
-                <div class="square-radio work-week-select text-center">
+                <div class="square-radio work-week-select text-center d-inline-block p-2 m-1">
                     <span>Indefinite</span>
                 </div>
             </label>
@@ -144,7 +144,7 @@
         <div class="col-12 col-lg-2">
             <label>
                 <input type="checkbox" name="work_indefinite" value="" class="d-none" />
-                <div class="square-radio work-indefinite text-center">
+                <div class="square-radio work-indefinite text-center d-inline-block p-2 m-1">
                     <span>Indefinite</span>
                 </div>
             </label>
