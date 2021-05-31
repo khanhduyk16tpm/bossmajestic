@@ -1,0 +1,39 @@
+.modal-delete-job {
+    .title .bi-exclamation-triangle {
+        color: #FFCC33;
+        font-size: 3rem;
+        margin-right: 5px;
+    }
+    .btn-delete {
+        background: #CCCCCC 0% 0% no-repeat padding-box;
+        opacity: 1;
+        width: 82px;
+        height: 42px;
+        margin-bottom: 10px;
+        color: #222E3C;
+    }
+    .btn-cancel {
+        width: 104px;
+        height: 42px;
+        background: #FFCC33 0% 0% no-repeat padding-box;
+        opacity: 1;
+        color: #222e3c;
+    }
+}
+.modal-post-job {
+    .bi-check-circle-fill {
+        font-size: 3.5em;
+        color: #5ABA5F;
+    }
+    .h4, .whatnext {
+        color: #222E3C;
+    }
+    .card {
+        width: 204px;
+        height: 112px;
+    }
+    .btn-dismiss {
+        width: 107px;
+        height: 42px;
+    }
+}

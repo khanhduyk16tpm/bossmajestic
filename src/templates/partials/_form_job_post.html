@@ -1,0 +1,203 @@
+{% import 'macros/path.html' as f %}
+{% import 'macros/site.html' as s %}
+{% import 'macros/form.html' as form %}
+{% import 'macros/path.html' as f %}
+{% set categories = ['category 1', 'category 2', 'category 3', 'category 4', 'category 5'] %}
+{% set education_levels = ['Level 1', 'Level 2', 'Level 3', 'Level 4', 'Level 5'] %}
+{% set locations = ['Location 1', 'Location 2', 'Location 3', 'Location 4', 'Location 5'] %}
+    <div class="d-flex flex-row align-items-center alert-note d-none">
+        <div class="d-flex justify-content-center col-lg-5 offset-lg-5 err-box">
+            <i class="bi bi-exclamation-circle"></i>Please fill up the details correctly.
+        </div>
+    </div>
+    <div class="row job-title mt-5">
+        <div class="col-12 col-lg-3 d-lg-flex justify-content-end">
+            Title<i class="bi bi-info-circle"></i>
+        </div>
+        <div class="col-12 col-lg-9">
+            <input type="text" name="job_title" placeholder="eg. Senior Marketing Communications Executive" required>
+            <div id="error-title" class="error d-none">Error lorem ipsum</div>
+        </div>
+    </div>
+    <div class="row mt-5 job-type">
+        <div class="col-12 col-lg-3 d-lg-flex justify-content-end">
+            Job Type<i class="bi bi-info-circle"></i>
+        </div>
+        <div class="col-12 col-lg-2">
+            <label>
+                <input type="radio" name="job_type" value="Part-time" class="d-none" />
+                <div class="square-radio job-type-select">
+                    <span>Part-time</span>
+                </div>
+            </label>
+        </div>
+         <div class="col-12 col-lg-2">
+             <label>
+                <input type="radio" name="job_type" value="Full-time" class="d-none" checked/>
+                <div class="square-radio job-type-select">
+                    <span>Full-time</span>
+                </div>
+            </label>
+        </div>
+        <div class="col-12 col-lg-2">
+            <label>
+                <input type="radio" name="job_type" value="Freelance" class="d-none" />
+                <div class="square-radio job-type-select">
+                    <span>Freelance</span>
+                </div>
+            </label>
+        </div>
+        <div class="col-12 col-lg-2">
+            <label>
+                <input type="radio" name="job_type" value="Contract" class="d-none" />
+                <div class="square-radio job-type-select">
+                    <span>Contract</span>
+                </div>
+            </label>
+        </div>
+    </div>
+    <div class="row mt-5 job-category">
+        <div class="col-12 col-lg-3 d-lg-flex justify-content-end">
+            Category<i class="bi bi-info-circle"></i>
+        </div>
+        <div class="col-12 col-lg-9 form-group">
+            <select id="job-category" name="job_category" class="job-category" required>
+                <option value="">select one...</option>
+                {% for category in categories %}
+                <option value="{{ category }}">{{ category  }}</option>
+                {% endfor %}
+            </select>
+            <div id="error-category" class="error d-none">Error lorem ipsum</div>
+        </div>
+    </div>
+    <div class="row mt-5 education">
+        <div class="col-12 col-lg-3 d-lg-flex justify-content-end">
+            Education Level<i class="bi bi-info-circle"></i>
+        </div>
+        <div class="col-12 col-lg-9 form-group">
+            <select id="education-level" name="education_level" class="education-level" required>
+                <option value="">select one...</option>
+                {% for level in education_levels %}
+                <option value="{{ level }}">{{  level }}</option>
+                {% endfor %}
+            </select>
+            <div id="error-level" class="error d-none">Error lorem ipsum</div>
+        </div>
+    </div>
+    <div class="row mt-5 working-experience">
+         <div class="col-12 col-lg-3 d-lg-flex justify-content-end">
+            Working Experience (Min. Years)<i class="bi bi-info-circle"></i>
+        </div>
+        <div class="col-12 col-lg-4">
+            <input type="text" name="working_experience" placeholder="eg. 5 years" required>
+            <div id="error-experience" class="error d-none">Error lorem ipsum</div>
+        </div>
+    </div>
+     <div class="row mt-5 week-frequency">
+        <div class="col-12 col-lg-3 d-lg-flex justify-content-end">
+            Work Week<i class="bi bi-info-circle"></i>
+        </div>
+        <div class="col-12 col-lg-2">
+            <label>
+                <input type="radio" name="work_week" value="5 days per week" class="d-none"  />
+                <div class="square-radio  work-week-select">
+                    <span>5 days per week</span>
+                </div>
+            </label>
+        </div>
+         <div class="col-12 col-lg-2">
+            <label>
+                <input type="radio" name="work_week" value="6 days per week" class="d-none" checked/>
+                <div class="square-radio work-week-select">
+                    <span>6 days per week</span>
+                </div>
+            </label>
+        </div>
+        <div class="col-12 col-lg-2">
+            <label>
+                <input type="radio" name="work_week" value="shift" class="d-none" />
+                <div class="square-radio work-week-select">
+                    <span>Shift</span>
+                </div>
+            </label>
+        </div>
+        <div class="col-12 col-lg-2">
+            <label>
+                <input type="radio" name="work_week" value="Indefinite" class="d-none" />
+                <div class="square-radio work-week-select">
+                    <span>Indefinite</span>
+                </div>
+            </label>
+        </div>
+    </div>
+    <div class="row mt-5 working-hours">
+        <div class="col-12 col-lg-3 d-lg-flex justify-content-end">
+            Working Hours<i class="bi bi-info-circle"></i>
+        </div>
+        <div class="col-12 col-lg-3">
+            <input type="text" name="work_from"> to <input type="text" name="work_to">
+        </div>
+        <div class="col-12 col-lg-2">
+            <label>
+                <input type="checkbox" name="work_indefinite" value="" class="d-none" />
+                <div class="square-radio work-indefinite">
+                    <span>Indefinite</span>
+                </div>
+            </label>
+        </div>
+    </div>
+    <div class="row mt-5 salary">
+        <div class="col-12 col-lg-3 d-lg-flex justify-content-end">
+            Salary<i class="bi bi-info-circle"></i>
+        </div>
+        <div class="col-12 col-lg-5">
+            <input type="text" name="min_salary" placeholder="Min..." required> to <input type="text" name="max_salary" placeholder="Max..." required>
+            <div id="error-salary" class="error d-none">Error lorem ipsum</div>
+        </div>       
+    </div>
+    <div class="row mt-5 benefits">
+        <div class="col-12 col-lg-3 d-lg-flex justify-content-end">
+            Benefits<i class="bi bi-info-circle"></i>
+        </div>
+        {% for i in range(0,1) %}
+        <div class="col-12 col-lg-9 offset-lg-3 mb-2 copy-benefit-row">
+            <input type="text" name="job_benefit[]" placeholder="eg. 14 days of annual leave" >
+            <a class="btn btn-sm mb-3 remove-benefit"><i class="bi bi-trash"></i></a>
+        </div>
+        {% endfor %}
+        <div class="col-12 col-lg-9 offset-lg-3">
+            <a class="btn btn-sm" id="addBenefit"><i class="bi bi-plus"></i> Add Benefits</a>
+        </div>
+    </div>    
+    <div class="row mt-5">
+        <div class="col-12 col-lg-3 d-lg-flex justify-content-end">
+            Location/Branch<i class="bi bi-info-circle"></i>
+        </div>
+        <div class="col-12 col-lg-9 form-group">
+            <select id="location" name="location" class="location" required>
+                <option value="">select one...</option>
+                {% for location in locations %}
+                <option value="{{ location }}">{{ location }}</option>
+                {% endfor %}
+            </select>
+            <div id="error-location" class="error d-none">Error lorem ipsum</div>
+        </div>
+    </div>
+    <div class="row mt-5 job-scope">
+        <div class="col-12 col-lg-3 d-lg-flex justify-content-end">
+            Job Scope / Responsibilities<i class="bi bi-info-circle"></i>
+        </div>
+        <div class="col-12 col-lg-9">
+            <textarea name="job_scope" required></textarea>
+            <div id="error-scope" class="error d-none">Error lorem ipsum</div>
+        </div>
+    </div>
+    <div class="row mt-5 requirements">
+        <div class="col-12 col-lg-3 d-lg-flex justify-content-end">
+            Requirements<i class="bi bi-info-circle"></i>
+        </div>
+        <div class="col-12 col-lg-9">
+            <textarea name="requirements" required></textarea>
+            <div id="error-requirements" class="error d-none">Error lorem ipsum</div>
+        </div>
+    </div>

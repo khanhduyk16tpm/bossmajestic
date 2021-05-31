@@ -3,7 +3,6 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css");
 @import url("https://fonts.googleapis.com/css?family=Open+Sans&display=swap");
 
-
 @import "custom-forms";
 @import "root";
 @import "sidebar";
@@ -13,3 +12,7 @@
 @import "data-table";
 @import "dashboard";
 @import "company";
+@import "job/job_post";
+@import "modal";
+
+
