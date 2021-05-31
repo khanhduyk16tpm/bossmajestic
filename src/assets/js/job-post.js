@@ -5,7 +5,6 @@ const copySkill = new Copy({
     max: 20
 });
 function check(form) {
-    //console.log(form);
     //validateForm();
     return false;
 }

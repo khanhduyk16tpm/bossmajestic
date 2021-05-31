@@ -1,0 +1,37 @@
+{% import 'macros/path.html' as f %}
+{% import 'macros/site.html' as s %}
+{% extends "layouts/base.html" %}
+{% set job = {'title': 'Test Job', 'type': 'Full-time', 'category': 'Category 1', 'education': 'Level 1',
+'working_experience': '5 years', 'work_week': '5 days per week', 'working_from': '08:00', 'working_to': '17:00',
+'min_salary': '1000', 'max_salary': '10000', 'benefit' : ['benefit 1', 'benefit 2'], 
+'location': 'Location 1', 'scope': 'scope', 'requirement': 'add requirement'} %}
+{% block js %} 
+{{ f.module(['copy', 'toggle']) }} 
+<script src="{{ f.js('job-post.min.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+    <div class="container-fluid job-post m-auto">
+        <div class="caption px-5 position-absolute">
+            <a href="#" class="text-decoration-underline">Back</a>
+            <h4>Edit Job</h4>
+        </div>
+        <form id="form-job-post" method="post" name="post_job" class="position-relative" >
+            <div class="mt-3 update-job">
+                <h4 class="">Job Details</h4>
+                {% include 'partials/_form_job_post.html' %}
+                <div class="row mt-3 range-buttons py-5">
+                    <div class="col-12 col-lg-6"></div>
+                    <div class="col-12 col-lg-6">
+                        <button class="btn-cancel border-0" type="button">Cancel</button>
+                        <button class="btn-delete border-0" type="button" data-bs-toggle="modal" data-bs-target="#delete-job">Delete</button>
+                        <button class="btn-preview">Preview<i class="bi bi-box-arrow-up-right"></i></button>
+                        <button class="btn-save border-0" type="button" data-toggle="modal" data-target="#myModal">Save Changes</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    {% include 'partials/_delete-job-modal.html' %}
+    {% include 'partials/_post-job-success-modal.html' %}
+{% endblock %}

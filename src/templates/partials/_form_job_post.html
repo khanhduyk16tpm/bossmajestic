@@ -15,7 +15,11 @@
             Title<i class="bi bi-info-circle"></i>
         </div>
         <div class="col-12 col-lg-9">
-            <input type="text" name="job_title" placeholder="eg. Senior Marketing Communications Executive" required>
+            {% if job.title %}
+            <input type="text" name="job_title" placeholder="eg. Senior Marketing Communications Executive" value="{{ job.title }}">
+            {% else %}
+            <input type="text" name="job_title" placeholder="eg. Senior Marketing Communications Executive" required >
+            {% endif %}
             <div id="error-title" class="error d-none">Error lorem ipsum</div>
         </div>
     </div>
@@ -25,7 +29,7 @@
         </div>
         <div class="col-12 col-lg-2">
             <label>
-                <input type="radio" name="job_type" value="Part-time" class="d-none" />
+                <input type="radio" name="job_type" value="Part-time" class="d-none" {% if job.title == "Part-time" %} checked {% endif %}/>
                 <div class="square-radio job-type-select text-center">
                     <span>Part-time</span>
                 </div>
@@ -33,7 +37,7 @@
         </div>
          <div class="col-12 col-lg-2">
              <label>
-                <input type="radio" name="job_type" value="Full-time" class="d-none" checked/>
+                <input type="radio" name="job_type" value="Full-time" class="d-none" {% if job.title == "Full-time" %} checked {% endif %}/>
                 <div class="square-radio job-type-select text-center">
                     <span>Full-time</span>
                 </div>
