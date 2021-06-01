@@ -163,7 +163,7 @@
         </div>
         {% if job.benefits %}
             {% for benefit in job.benefits %}
-            <div class="col-12 col-lg-9 offset-lg-3 mb-2">
+            <div class="col-12 col-lg-9 offset-lg-3 mb-2 copy-benefit-row">
                 <input type="text" name="job_benefit[]" placeholder="eg. 14 days of annual leave" value="{{ benefit }}" >
                 <a class="btn btn-sm mb-3 remove-benefit"><i class="bi bi-trash"></i></a>
             </div>
