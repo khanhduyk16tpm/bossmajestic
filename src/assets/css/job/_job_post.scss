@@ -1,15 +1,10 @@
 .job-post {
     .caption {
         margin-top: -80px;
-        position: absolute;
-        a {
-            text-decoration: underline;
-        }
     }
     .update-job {
         h4 {
             margin: 5px 0 0 65px;
-            padding-top: 12px;
         }
         .job-title input {
             width: 920px;
@@ -24,15 +19,11 @@
     border: 2px solid #fff;
     box-shadow: 0px 0px 12px #00000029;
     margin-top: -24px;
-    position: relative;
-    margin-left: auto;
-    margin-right: auto;
     input, select {
         border: 1px solid #CCCCCC;
         height: 40px;
     }
     .bi-info-circle {
-        opacity: 1;
         color: #3893ef;
         width: 12px;
         height: 12px;
@@ -58,23 +49,16 @@
     }
     .square-radio {
         border: 1px solid #cccccc;
-        margin: 2px;
-        width: 130px;
+        width: 150px;
         height: 40px;
-        position: relative;
         background-color: #fff;
         color: #ccc;
-        text-align: center;
-        display: inline-block;
         cursor: pointer;
-        padding: 6px;
         &:active {
             transform: translateY(10px);
         }
         span {
             transform: translate(0, 60px);
-            left: 0;
-            right: 0;
             transition: all 300ms ease;
             font-size: 1em;
             user-select: none;
@@ -103,7 +87,6 @@
     }
     #addBenefit {
         border: 1px dashed #3893EF;
-        opacity: 1;
         width: 525px;
         height: 40px;
         color: #3893EF;
@@ -119,18 +102,14 @@
             width: 285px;
         }
     }
-    .range-buttons {
-        padding-bottom: 45px;
-    }
     .range-buttons button {
-        opacity: 1;
         height: 42px;
         @include media-breakpoint-down(md) {
             width: 285px;
             margin-bottom: 1rem;
         }
     }
-    .btn-cancel {
+    .btn-cancel, .btn-delete {
         background: #CCCCCC 0% 0% no-repeat padding-box;
         width: 104px;
     }
@@ -154,18 +133,14 @@
         width: 154px;
     }
     .error {
-        letter-spacing: 0px;
         color: #F8483B;
-        opacity: 1;
     }
     .err-box {
         background: #FFA2A2 0% 0% no-repeat padding-box;
         border: 1px solid #FF0000;
-        opacity: 1;
         width: 365px;
         height: 52px;
         color: #E91421;
-        padding: 12px;
         .bi {
             margin-right: 5px;
         }

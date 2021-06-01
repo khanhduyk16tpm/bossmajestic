@@ -5,7 +5,6 @@ const copySkill = new Copy({
     max: 20
 });
 function check(form) {
-    //console.log(form);
     //validateForm();
     return false;
 }
@@ -41,7 +40,7 @@ function getDataForm() {
     var form = post_job;
     //var inputs = form.getElementsByTagName("input");
     var inputs = form.querySelectorAll('input,select,textarea');
-    console.log(inputs);
+    //console.log(inputs);
 
     var data = {};
     for (var i = 0; i < inputs.length; i++) {
