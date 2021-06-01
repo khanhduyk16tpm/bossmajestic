@@ -2,7 +2,7 @@
 {% import 'macros/site.html' as s %}
 {% import 'macros/form.html' as form %}
 {% import 'macros/path.html' as f %}
-{% set categories = ['category 1', 'category 2', 'category 3', 'category 4', 'category 5'] %}
+{% set categories = ['Category 1', 'Category 2', 'Category 3', 'Category 4', 'Category 5'] %}
 {% set education_levels = ['Level 1', 'Level 2', 'Level 3', 'Level 4', 'Level 5'] %}
 {% set locations = ['Location 1', 'Location 2', 'Location 3', 'Location 4', 'Location 5'] %}
     <div class="d-flex flex-row align-items-center alert-note d-none">
@@ -15,11 +15,7 @@
             Title<i class="bi bi-info-circle"></i>
         </div>
         <div class="col-12 col-lg-9">
-            {% if job.title %}
-            <input type="text" name="job_title" placeholder="eg. Senior Marketing Communications Executive" value="{{ job.title }}">
-            {% else %}
-            <input type="text" name="job_title" placeholder="eg. Senior Marketing Communications Executive" required >
-            {% endif %}
+            <input type="text" name="job_title" placeholder="eg. Senior Marketing Communications Executive" value="{% if job.title %}{{ job.title }}{% endif  %}" required >
             <div id="error-title" class="error d-none">Error lorem ipsum</div>
         </div>
     </div>
@@ -29,7 +25,7 @@
         </div>
         <div class="col-12 col-lg-2">
             <label>
-                <input type="radio" name="job_type" value="Part-time" class="d-none" {% if job.title == "Part-time" %} checked {% endif %}/>
+                <input type="radio" name="job_type" value="Part-time" class="d-none" {% if job.type == "Part-time" %} checked {% endif %} />
                 <div class="square-radio job-type-select text-center d-inline-block p-2 m-1">
                     <span>Part-time</span>
                 </div>
@@ -37,7 +33,7 @@
         </div>
          <div class="col-12 col-lg-2">
              <label>
-                <input type="radio" name="job_type" value="Full-time" class="d-none" {% if job.title == "Full-time" %} checked {% endif %} checked/>
+                <input type="radio" name="job_type" value="Full-time" class="d-none" {% if job.type == "Full-time" %} checked {% endif %} />
                 <div class="square-radio job-type-select text-center d-inline-block p-2 m-1">
                     <span>Full-time</span>
                 </div>
@@ -45,7 +41,7 @@
         </div>
         <div class="col-12 col-lg-2">
             <label>
-                <input type="radio" name="job_type" value="Freelance" class="d-none" />
+                <input type="radio" name="job_type" value="Freelance" class="d-none" {% if job.type == "Freelance" %} checked {% endif %} />
                 <div class="square-radio job-type-select text-center d-inline-block p-2 m-1">
                     <span>Freelance</span>
                 </div>
@@ -53,7 +49,7 @@
         </div>
         <div class="col-12 col-lg-2">
             <label>
-                <input type="radio" name="job_type" value="Contract" class="d-none" />
+                <input type="radio" name="job_type" value="Contract" class="d-none" {% if job.type == "Contract" %} checked {% endif %} />
                 <div class="square-radio job-type-select text-center d-inline-block p-2 m-1">
                     <span>Contract</span>
                 </div>
@@ -68,7 +64,7 @@
             <select id="job-category" name="job_category" class="job-category" required>
                 <option value="">select one...</option>
                 {% for category in categories %}
-                <option value="{{ category }}">{{ category  }}</option>
+                <option value="{{ category }}" {% if job.category == category %} selected {% endif %}>{{ category  }}</option>
                 {% endfor %}
             </select>
             <div id="error-category" class="error d-none">Error lorem ipsum</div>
@@ -82,7 +78,7 @@
             <select id="education-level" name="education_level" class="education-level" required>
                 <option value="">select one...</option>
                 {% for level in education_levels %}
-                <option value="{{ level }}">{{  level }}</option>
+                <option value="{{ level }}" {% if job.education == level %}selected{% endif %}>{{  level }}</option>
                 {% endfor %}
             </select>
             <div id="error-level" class="error d-none">Error lorem ipsum</div>
@@ -93,7 +89,7 @@
             Working Experience (Min. Years)<i class="bi bi-info-circle"></i>
         </div>
         <div class="col-12 col-lg-4">
-            <input type="text" name="working_experience" placeholder="eg. 5 years" required>
+            <input type="text" name="working_experience" placeholder="eg. 5 years" value ="{% if job.working_experience %}{{ job.working_experience }} {% endif %}" required>
             <div id="error-experience" class="error d-none">Error lorem ipsum</div>
         </div>
     </div>
@@ -103,7 +99,7 @@
         </div>
         <div class="col-12 col-lg-2">
             <label>
-                <input type="radio" name="work_week" value="5 days per week" class="d-none"  />
+                <input type="radio" name="work_week" value="5 days per week" class="d-none"  {% if job.work_week == "5 days per week" %} checked {% endif %}/>
                 <div class="square-radio  work-week-select text-center d-inline-block p-2 m-1">
                     <span>5 days per week</span>
                 </div>
@@ -111,7 +107,7 @@
         </div>
          <div class="col-12 col-lg-2">
             <label>
-                <input type="radio" name="work_week" value="6 days per week" class="d-none" checked/>
+                <input type="radio" name="work_week" value="6 days per week" class="d-none" {% if job.work_week == "6 days per week" %} checked {% endif %} />
                 <div class="square-radio work-week-select text-center d-inline-block p-2 m-1">
                     <span>6 days per week</span>
                 </div>
@@ -119,7 +115,7 @@
         </div>
         <div class="col-12 col-lg-2">
             <label>
-                <input type="radio" name="work_week" value="shift" class="d-none" />
+                <input type="radio" name="work_week" value="Shift" class="d-none" {% if job.work_week == "Shift" %} checked {% endif %}/>
                 <div class="square-radio work-week-select text-center d-inline-block p-2 m-1">
                     <span>Shift</span>
                 </div>
@@ -127,7 +123,7 @@
         </div>
         <div class="col-12 col-lg-2">
             <label>
-                <input type="radio" name="work_week" value="Indefinite" class="d-none" />
+                <input type="radio" name="work_week" value="Indefinite" class="d-none" {% if job.work_week == "Indefinite" %} checked {% endif %}/>
                 <div class="square-radio work-week-select text-center d-inline-block p-2 m-1">
                     <span>Indefinite</span>
                 </div>
@@ -139,11 +135,13 @@
             Working Hours<i class="bi bi-info-circle"></i>
         </div>
         <div class="col-12 col-lg-3">
-            <input type="text" name="work_from"> to <input type="text" name="work_to">
+            <input type="text" name="work_from" value="{% if job.work_from %}{{ job.work_from }}{% endif %}">
+            to
+            <input type="text" name="work_to" value="{% if job.work_to %}{{ job.work_to }}{% endif %}">
         </div>
         <div class="col-12 col-lg-2">
             <label>
-                <input type="checkbox" name="work_indefinite" value="" class="d-none" />
+                <input type="checkbox" name="work_indefinite" value="" class="d-none" {% if job.work_indefinite %} checked {% endif %} />
                 <div class="square-radio work-indefinite text-center d-inline-block p-2 m-1">
                     <span>Indefinite</span>
                 </div>
@@ -155,7 +153,7 @@
             Salary<i class="bi bi-info-circle"></i>
         </div>
         <div class="col-12 col-lg-5">
-            <input type="text" name="min_salary" placeholder="Min..." required> to <input type="text" name="max_salary" placeholder="Max..." required>
+            <input type="text" name="min_salary" placeholder="Min..." value="{% if job.min_salary %}{{ job.min_salary }}{% endif %}" required> to <input type="text" name="max_salary" placeholder="Max..." value="{% if job.max_salary %}{{ job.max_salary }}{% endif %}" required>
             <div id="error-salary" class="error d-none">Error lorem ipsum</div>
         </div>       
     </div>
@@ -163,6 +161,14 @@
         <div class="col-12 col-lg-3 d-lg-flex justify-content-end">
             Benefits<i class="bi bi-info-circle"></i>
         </div>
+        {% if job.benefits %}
+            {% for benefit in job.benefits %}
+            <div class="col-12 col-lg-9 offset-lg-3 mb-2">
+                <input type="text" name="job_benefit[]" placeholder="eg. 14 days of annual leave" value="{{ benefit }}" >
+                <a class="btn btn-sm mb-3 remove-benefit"><i class="bi bi-trash"></i></a>
+            </div>
+            {% endfor %}
+        {% endif %}
         {% for i in range(0,1) %}
         <div class="col-12 col-lg-9 offset-lg-3 mb-2 copy-benefit-row">
             <input type="text" name="job_benefit[]" placeholder="eg. 14 days of annual leave" >
@@ -181,7 +187,7 @@
             <select id="location" name="location" class="location" required>
                 <option value="">select one...</option>
                 {% for location in locations %}
-                <option value="{{ location }}">{{ location }}</option>
+                <option value="{{ location }}" {% if job.location == location %}selected{% endif %}>{{ location }}</option>
                 {% endfor %}
             </select>
             <div id="error-location" class="error d-none">Error lorem ipsum</div>
@@ -192,7 +198,7 @@
             Job Scope / Responsibilities<i class="bi bi-info-circle"></i>
         </div>
         <div class="col-12 col-lg-9">
-            <textarea name="job_scope" required></textarea>
+            <textarea name="job_scope" required>{% if job.scope %}{{ job.scope }}{% endif %}</textarea>
             <div id="error-scope" class="error d-none">Error lorem ipsum</div>
         </div>
     </div>
@@ -201,7 +207,7 @@
             Requirements<i class="bi bi-info-circle"></i>
         </div>
         <div class="col-12 col-lg-9">
-            <textarea name="requirements" required></textarea>
+            <textarea name="requirements" required>{% if job.requirement %}{{ job.requirement }}{% endif %}</textarea>
             <div id="error-requirements" class="error d-none">Error lorem ipsum</div>
         </div>
     </div>
