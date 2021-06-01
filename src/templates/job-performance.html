@@ -1,0 +1,18 @@
+{% import 'macros/path.html' as f %}
+{% import 'macros/site.html' as s %}
+{% extends "layouts/base.html" %}
+{% block js %} 
+{{ f.module(['toggle']) }} 
+<script src="{{ f.js('dashboard.min.js') }}"></script>
+{% endblock %}
+{% block content %}
+<div class="row table-wrapper job-performance-secion">
+    <div class="d-flex justify-content-between mt-3 px-2">
+        <h5>My Job Performance</h5>
+        <button class="btn-post-job mb-2 border-0"><i class="bi bi-plus"></i>Post a Job</button>
+    </div>
+    <div class="bg-white shadow">
+    {% include 'partials/_job_performance_table.html' %}
+    </div>
+</div>
+{% endblock %}
