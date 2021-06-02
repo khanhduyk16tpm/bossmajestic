@@ -17,10 +17,13 @@ $enable-negative-margins: true;
 $navbar-light-color: rgba(#fff, 0.55);
 $navbar-light-toggler-border-color: rgba(#222e3c, 0.1) !default;
 
+$card-border-radius: 0;
+$card-border-color: white;
 //$modal-header-padding: 0 0 !default; // Keep this for backwards compatibility
 
 
 $btn-border-radius: 0;
+$btn-border-radius-sm: 0;
 $btn-padding-y: 10px;              
 $btn-padding-x: 20px;              
 

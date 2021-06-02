@@ -1,7 +1,7 @@
 var sidebarToggle = new NoCallbackToggle("#menu-btn",{
     onOn: function(n) {
       var sidebar = document.querySelector("#sidebar");
-      var container = document.querySelector(".my-container");
+      var container = document.querySelector(".content-page");
       var sidebarbtnon = document.querySelector(".btn-sidebar-on");
       sidebar.classList.add("active-nav");
       container.classList.add("active-cont");
@@ -15,7 +15,7 @@ var sidebarToggle = new NoCallbackToggle("#menu-btn",{
     },
     onOff: function(n) {
       var sidebar = document.querySelector("#sidebar");
-      var container = document.querySelector(".my-container");
+      var container = document.querySelector(".content-page");
       var sidebarbtnoff = document.querySelector(".btn-sidebar-off");
       sidebar.classList.remove("active-nav");
       container.classList.remove("active-cont");

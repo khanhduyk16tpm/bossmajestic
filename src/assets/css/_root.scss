@@ -4,6 +4,10 @@ body {
     color: $fontColor;
     overflow-x: hidden;
 
+    .page{
+    	background-color: $backgroundColor;
+    }
+    
     a,
     a:hover {
         color: $fontColor;
