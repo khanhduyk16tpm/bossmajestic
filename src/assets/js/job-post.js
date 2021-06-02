@@ -12,9 +12,11 @@ function validateForm() {
     var form = post_job;
     var inputs = form.querySelectorAll('input,select,textarea');
     var totalErr = 0;
-    console.log(inputs);
+    //console.log(inputs);
     var valid = true;
     const errBox = document.getElementsByClassName("alert-note");
+    form.work_from.required = !form.work_indefinite.checked;
+    form.work_to.required = !form.work_indefinite.checked;
     inputs.forEach(input => {
         const clsErr = input.parentNode.getElementsByClassName('error');
         if (!input.checkValidity()) {
@@ -57,7 +59,7 @@ function getDataForm() {
 
 /**handle buttons */
 var draftToggle = new Toggle(".btn-draft",{
-    onOn: function(draft) {
+    onOn: function (draft) {
         validateForm();
     },
     callback: function(n) {
@@ -65,7 +67,7 @@ var draftToggle = new Toggle(".btn-draft",{
     }
 });
 var previewToggle = new Toggle(".btn-preview",{
-    onOn: function(prev) {
+    onOn: function (prev) {
         validateForm();
     },
     callback: function(n) {
@@ -73,7 +75,7 @@ var previewToggle = new Toggle(".btn-preview",{
     }
 });
 var saveToggle = new Toggle(".btn-save",{
-    onOn: function(s) {
+    onOn: function (s) {
         validateForm();
     },
     callback: function(n) {
