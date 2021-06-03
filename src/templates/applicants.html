@@ -1,0 +1,25 @@
+{% extends "layouts/applicants-base.html" %}
+{% set current_page = "applicants" %} 
+{% block js %} 
+{{ f.module(['toggle']) }} 
+<script src="{{ f.js('nocallback-toggle.min.js') }}"></script>
+{% endblock %}
+
+{% block applicant %}
+
+<div class="tab-content" id="companyTabContent">
+  <div class="tab-pane fade show active" id="newApllicants" role="tabpanel" aria-labelledby="new-apllicants-tab">
+  	{% include 'partials/_new-applicants-tab.html' %}
+  </div>
+  <div class="tab-pane fade" id="shortlisted" role="tabpanel" aria-labelledby="shortlisted-tab">
+  	{% include 'partials/_shortlisted-tab.html' %}
+  </div>
+  <div class="tab-pane fade" id="kiv" role="tabpanel" aria-labelledby="kiv-tab">
+  	{% include 'partials/_kiv-tab.html' %}
+  </div>
+  <div class="tab-pane fade" id="rejected" role="tabpanel" aria-labelledby="rejected-tab">
+  	{% include 'partials/_rejected-tab.html' %}
+  	
+  </div>
+</div>
+{% endblock %}
