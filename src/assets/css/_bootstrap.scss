@@ -31,8 +31,11 @@ $nav-pills-link-active-bg: white;
 $btn-border-radius: 0;
 $btn-border-radius-sm: 0;
 $btn-padding-y: 10px;              
-$btn-padding-x: 20px;              
+$btn-padding-x: 20px;      
 
+$dropdown-border-radius: 0;
+$dropdown-border-color: white;
+$dropdown-padding-x: 0.5em;
 
 @import "../../../node_modules/bootstrap/scss/variables";
 @import "../../../node_modules/bootstrap/scss/mixins";
