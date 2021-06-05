@@ -37,6 +37,22 @@ $dropdown-border-radius: 0;
 $dropdown-border-color: white;
 $dropdown-padding-x: 0.5em;
 
+$form-range-track-height: .2rem;
+$form-select-border-radius: 0;
+
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer / 4,
+  2: $spacer / 2,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+  6: $spacer * 5,
+  7: $spacer * 6,
+);
+
+
 @import "../../../node_modules/bootstrap/scss/variables";
 @import "../../../node_modules/bootstrap/scss/mixins";
 @import "../../../node_modules/bootstrap/scss/utilities";
