@@ -23,7 +23,7 @@
             Company Name<i class="bi bi-info-circle"></i>
         </div>
         <div class="col-12 col-lg-9">
-            <input type="text" name="company_name" placeholder="eg. Web Discovery Solutions Sdn. Bhd." value="" required >
+            <input type="text" name="company_name" class="form-control" placeholder="eg. Web Discovery Solutions Sdn. Bhd." value="" required >
             <div id="error-name" class="error d-none">Error lorem ipsum</div>
         </div>
     </div>
@@ -32,7 +32,7 @@
             Registration Code/SSM No.<i class="bi bi-info-circle"></i>
         </div>
         <div class="col-12 col-lg-9">
-            <input type="text" name="registration_code" placeholder="0000000000-A" value="" required >
+            <input type="text" class="form-control" name="registration_code" placeholder="0000000000-A" value="" required >
             <div id="error-registration-code" class="error d-none">Error lorem ipsum</div>
         </div>
     </div>
@@ -41,7 +41,7 @@
             Company Size<i class="bi bi-info-circle"></i>
         </div>
         <div class="col-12 col-lg-9">
-            <select id="company-size" name="company_size" class="company-size" required>
+            <select id="company-size" name="company_size" class="company-size form-control" required>
                 <option value="">select one...</option>
                 {% for size in sizes %}
                 <option value="{{ size }}" >{{ size }}</option>
@@ -56,7 +56,7 @@
             Industry<i class="bi bi-info-circle"></i>
         </div>
         <div class="col-12 col-lg-9">
-            <input type="text" name="industry" placeholder="Type your company industry" value="" required >
+            <input type="text" name="industry"  class="form-control" placeholder="Type your company industry" value="" required >
             <div id="error-industry" class="error d-none">Error lorem ipsum</div>
         </div>
     </div>
@@ -65,7 +65,7 @@
             Company Website<i class="bi bi-info-circle"></i>
         </div>
         <div class="col-12 col-lg-9">
-            <input type="text" name="website" placeholder="www.company.com" value="" required >
+            <input type="text" name="website" class="form-control" placeholder="www.company.com" value="" required >
             <div id="error-website" class="error d-none">Error lorem ipsum</div>
         </div>
     </div>
@@ -74,7 +74,7 @@
             Contact Number<i class="bi bi-info-circle"></i>
         </div>
         <div class="col-12 col-lg-9">
-            <input type="text" name="contact_number" placeholder="Contact Number" value="" required >
+            <input type="text" name="contact_number" class="form-control" placeholder="Contact Number" value="" required >
             <div id="error-contact" class="error d-none">Error lorem ipsum</div>
         </div>
     </div>
@@ -91,7 +91,7 @@
             Company Email<i class="bi bi-info-circle"></i>
         </div>
         <div class="col-12 col-lg-9">
-            <input type="text" name="email" placeholder="Company Email" value="" required >
+            <input type="text" name="email" class="form-control" placeholder="Company Email" value="" required >
             <div id="error-email" class="error d-none">Error lorem ipsum</div>
         </div>
     </div>
