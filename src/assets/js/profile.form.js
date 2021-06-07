@@ -1,4 +1,4 @@
-let $dob = new Datepicker('#dob', {yearRange: 60});
+//let $dob = new Datepicker('#dob', {yearRange: 60});
 
 const copyLanguage = new Copy({
     addBtn: '#addLang',
@@ -49,4 +49,30 @@ const copyExperience = new Copy({
     max: 30,
     prepend: true,
     afterAdd: workingHere
+});
+function validateForm() {
+    var form = account_setting;
+    var inputs = form.querySelectorAll('input,select, file');
+    var totalErr = 0;
+    var valid = true;
+    inputs.forEach(input => {
+        const clsErr = input.parentNode.getElementsByClassName('error');
+        if (!input.checkValidity()) {
+            valid = false;
+            clsErr[0].classList.remove("d-none");
+            totalErr++;
+        } else {
+            if (clsErr[0]) {
+                clsErr[0].classList.add("d-none");
+            }
+        }
+    })
+}
+var updateToggle = new Toggle(".btn-update-account",{
+    onOn: function (s) {
+        validateForm();
+    },
+    callback: function(n) {
+        updateToggle.triggerOn(n)
+    }
 });
