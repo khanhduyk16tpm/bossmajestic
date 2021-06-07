@@ -1,19 +1,5 @@
-.job-post {
-    .update-job {
-        h4 {
-            margin: 5px 0 0 65px;
-        }
-        .job-title input {
-            width: 920px;
-            @include media-breakpoint-down(md) {
-                width:  285px;
-            }
-        }
-    }
-}
 #form-job-post {
     box-shadow: 0px 0px 12px #00000029;
-    margin-top: -24px;
     input[type="radio"], input[type="checkbox"]  {
         &:checked {
         + .square-radio  {
@@ -75,12 +61,6 @@
         color: #3893EF;
         @include media-breakpoint-down(md) {
             width: 250px;
-        }
-    }
-    textarea {
-        width: 920px;
-        @include media-breakpoint-down(md) {
-            width: 285px;
         }
     }
     .range-buttons button {

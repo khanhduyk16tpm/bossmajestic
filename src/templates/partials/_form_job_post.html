@@ -14,8 +14,8 @@
         <div class="col-12 col-lg-3 d-lg-flex justify-content-end">
             Title<i class="bi bi-info-circle mt-n1 ms-1"></i>
         </div>
-        <div class="col-12 col-lg-9">
-            <input type="text" name="job_title" class="form-control" placeholder="eg. Senior Marketing Communications Executive" value="{% if job.title %}{{ job.title }}{% endif  %}" required >
+        <div class="col-12 col-lg-9 px-3">
+            <input type="text" name="job_title" class="form-control rounded-0" placeholder="eg. Senior Marketing Communications Executive" value="{% if job.title %}{{ job.title }}{% endif  %}" required >
             <div id="error-title" class="error d-none">Error lorem ipsum</div>
         </div>
     </div>
@@ -198,8 +198,8 @@
         <div class="col-12 col-lg-3 d-lg-flex justify-content-end">
             Job Scope / Responsibilities<i class="bi bi-info-circle mt-n1 ms-1"></i>
         </div>
-        <div class="col-12 col-lg-9">
-            <textarea name="job_scope" class="form-control" required>{% if job.scope %}{{ job.scope }}{% endif %}</textarea>
+        <div class="col-12 col-lg-9 px-3">
+            <textarea name="job_scope" class="form-control rounded-0" required>{% if job.scope %}{{ job.scope }}{% endif %}</textarea>
             <div id="error-scope" class="error d-none">Error lorem ipsum</div>
         </div>
     </div>
@@ -207,8 +207,8 @@
         <div class="col-12 col-lg-3 d-lg-flex justify-content-end">
             Requirements<i class="bi bi-info-circle mt-n1 ms-1"></i>
         </div>
-        <div class="col-12 col-lg-9">
-            <textarea name="requirements" class="form-control" required>{% if job.requirement %}{{ job.requirement }}{% endif %}</textarea>
+        <div class="col-12 col-lg-9 px-3">
+            <textarea name="requirements" class="form-control rounded-0" required>{% if job.requirement %}{{ job.requirement }}{% endif %}</textarea>
             <div id="error-requirements" class="error d-none">Error lorem ipsum</div>
         </div>
     </div>
