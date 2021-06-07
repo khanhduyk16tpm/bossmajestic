@@ -1,0 +1,11 @@
+{% extends "layouts/company-base.html" %}
+{% set current_page = "company_overview" %} 
+{% set active_menu = 'my-jobs' %}
+{% block js %} 
+{{ f.module(['toggle']) }} 
+{% endblock %}
+{% block overview %}
+<div class="bg-body pt-3">
+	{% include 'partials/_job-cards.html' %}
+</div>
+{% endblock %}

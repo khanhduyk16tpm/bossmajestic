@@ -48,11 +48,6 @@
     <script src="{{ f.js('nocallback-toggle.min.js') }}"></script>
     <script src="{{ f.plugin('zang/simple-datatables.min.js') }}"></script>
     <script src="{{ f.js('main.min.js') }}"></script>
-
-    {% if is_guest %}
-    <script src="{{ f.js('password-toggle.min.js') }}"></script>
-    <script src="{{ f.js('guest.min.js') }}"></script>
-    {% endif %}
     {% block js %}{% endblock %}
     <!-- page specific end -->
 </body>

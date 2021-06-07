@@ -11,7 +11,8 @@
 
 
 $primary: $yellowColor;
-$secondary: white;
+
+$body-bg: #F2F8F8;
 
 $enable-negative-margins: true;
 $navbar-light-color: rgba(#fff, 0.55);
@@ -21,9 +22,6 @@ $card-border-radius: 0;
 $card-border-color: white;
 //$modal-header-padding: 0 0 !default; // Keep this for backwards compatibility
 
-$nav-tabs-border-color: white;
-$nav-tabs-link-active-border-color: white;
-$nav-tabs-border-radius: 0;
 $nav-pills-border-radius: 0;
 $nav-pills-link-active-color: $fontColor;
 $nav-pills-link-active-bg: white;
@@ -39,6 +37,21 @@ $dropdown-padding-x: 0.5em;
 
 $form-range-track-height: .2rem;
 $form-select-border-radius: 0;
+
+$form-range-track-border-radius:  0;
+$form-select-border-color: dark;
+$input-group-addon-border-color: dark;
+
+$gray-300: #dee2e6;
+$nav-link-color: primary;
+$nav-link-active-color:primary;
+$nav-tabs-border-radius:0;
+$nav-link-hover-color:$yellowColor;
+$nav-tabs-link-hover-border-color:  white white $yellowColor white;
+$nav-tabs-link-active-bg: white;
+$nav-tabs-border-width:2px;
+$nav-tabs-border-color: white;
+$nav-tabs-link-active-border-color: white white $yellowColor white;
 
 $spacer: 1rem;
 $spacers: (

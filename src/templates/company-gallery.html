@@ -1,5 +1,10 @@
-{% import 'macros/path.html' as f %}
-{% import 'macros/site.html' as s %}
+{% extends "layouts/company-base.html" %}
+{% set current_page = "company_overview" %} 
+{% set active_menu = 'gallery' %}
+{% block js %} 
+{{ f.module(['toggle']) }} 
+{% endblock %}
+{% block overview %}
 <div class="mb-3 p-3 shadow">
 	{% for i in range(1,3) %}
 		<div class="d-inline-flex mt-2 mb-3">
@@ -31,3 +36,4 @@
 		</div>
 	{% endfor %}
 </div>
+{% endblock %}

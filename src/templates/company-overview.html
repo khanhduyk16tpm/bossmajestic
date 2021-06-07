@@ -1,22 +1,111 @@
 {% extends "layouts/company-base.html" %}
 {% set current_page = "company_overview" %} 
+{% set active_menu = 'overview' %}
 {% block js %} 
 {{ f.module(['toggle']) }} 
-<script src="{{ f.js('nocallback-toggle.min.js') }}"></script>
-<script src="{{ f.js('company.min.js') }}"></script>
 {% endblock %}
 
 {% block overview %}
 
-<div class="tab-content" id="companyTabContent">
-  <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">
-  	{% include 'partials/_company-overview-tab.html' %}
-  </div>
-  <div class="tab-pane fade" id="jobs" role="tabpanel" aria-labelledby="jobs-tab">
-  	{% include 'partials/_company-overview-jobs-tab.html' %}
-  </div>
-  <div class="tab-pane fade" id="gallery" role="tabpanel" aria-labelledby="gallery-tab">
-  	{% include 'partials/_company-overview-gallery-tab.html' %}
-  </div>
+<div class="shadow">
+	<img src="{{f.companies_overview_img('slide-img.png')}}" class="img-fluid">
+	 <div class="row p-3">
+        <div class="col-lg-3">
+            <h3>About</h3>
+        </div>
+        <div class="col-lg-9">
+        	<div class="d-flex justify-content-between">
+            <p id="about-company" class="text-about mt-1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam efficitur urna viverra odio viverra ultrices. Aenean eu eros sollicitudin, tristique tortor vel, ultricies augue. Nunc pharetra ullamcorper tristique. Morbi id tempor orci. In suscipit purus ac velit eleifend consectetur. Proin quam odio, volutpat non dolor ac, sagittis mattis nunc. In hac habitasse platea dictumst. Aliquam erat volutpat. Nam tempus lectus sit amet turpis lobortis semper. Vestibulum a dolor mi. Nam vel placerat nisl.</p>
+            <textarea rows="6" cols="50" class="form-control d-none input-about" required="" name="company[about]" data-text-id = "about-company">Job Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam efficitur urna viverra odio viverra ultrices. Aenean eu eros sollicitudin, tristique tortor vel, ultricies augue. Nunc pharetra ullamcorper tristique. Morbi id tempor orci. In suscipit purus ac velit eleifend consectetur. Proin quam odio, volutpat non dolor ac, sagittis mattis nunc. In hac habitasse platea dictumst. Aliquam erat volutpat. Nam tempus lectus sit amet turpis lobortis semper. Vestibulum a dolor mi. Nam vel placerat nisl.
+            </textarea>
+            <button type="button" class="btn edit-btn d-flex align-items-stretch" data-input-class="input-about" data-text-class = "text-about"><i class="bi bi-pencil-fill"></i></button>
+            <button type="button" class="btn d-none save-btn d-flex align-items-stretch" data-input-class="input-about" data-text-class = "text-about"><i class="bi bi-save-fill"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="row p-3">
+        <div class="col-lg-3">
+            <h3>Website</h3>
+        </div>
+        <div class="col-lg-9">
+        	<div class="d-flex justify-content-between">
+            <p id="website-company" class="text-website mt-1">https://www.jevmanagement.com/</p>
+            <input type="text" rows="6" cols="50" class="form-control d-none input-website" required="" name="company[website]" data-text-id = "website-company" value="https://www.jevmanagement.com/">
+            </input>
+            <button type="button" class="btn edit-btn d-flex align-items-stretch" data-input-class="input-website" data-text-class = "text-website"><i class="bi bi-pencil-fill"></i></button>
+            <button type="button" class="btn d-none save-btn d-flex align-items-stretch" data-input-class="input-website" data-text-class = "text-website"><i class="bi bi-save-fill"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="row p-3">
+        <div class="col-lg-3">
+            <h3>Company Size</h3>
+        </div>
+        <div class="col-lg-9">
+        	<div class="d-flex justify-content-between">
+            <p id="size-company" class="text-size mt-1">10 - 49 Employees</p>
+            <input type="text" rows="6" cols="50" class="form-control d-none input-size" required="" name="company[size]" data-text-id = "size-company" value="10 - 49 Employees">
+            </input>
+            <button type="button" class="btn edit-btn d-flex align-items-stretch" data-input-class="input-size" data-text-class = "text-size"><i class="bi bi-pencil-fill"></i></button>
+            <button type="button" class="btn d-none save-btn d-flex align-items-stretch" data-input-class="input-size" data-text-class = "text-size"><i class="bi bi-save-fill"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="row p-3">
+        <div class="col-lg-3">
+            <h3>Perks</h3>
+        </div>
+        <div class="col-lg-9">
+        	<div class="d-flex justify-content-between">
+        		<ul class="mt-1">
+        			{% for i in range(1,6) %}
+        			<li id="perks-company-{{i}}" class="text-perks ">Lorem Ipsum </li>
+        			{% endfor %}
+        		</ul>
+ 				<ul class="mt-1 list-unstyled me-auto bd-highlight">
+				{% for i in range(1,6) %}
+				<li>
+					<input type="text" class="form-control input-perks d-none w-100" value="Lorem Ipsum" data-text-id = "perks-company-{{i}}">
+				</li>
+				{% endfor %}
+				</ul>
+ 	
+            <button type="button" class="btn edit-btn d-flex align-items-stretch" data-input-class="input-perks" data-text-class = "text-perks"><i class="bi bi-pencil-fill"></i></button>
+            <button type="button" class="btn d-none save-btn d-flex align-items-stretch" data-input-class="input-perks" data-text-class = "text-perks"><i class="bi bi-save-fill"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="row p-3">
+        <div class="col-lg-3">
+            <h3>Branches</h3>
+        </div>
+        <div class="col-lg-9">
+        	<div class="d-flex justify-content-between">
+        		<ul class="mt-1 list-unstyled me-auto bd-highlight">
+				{% for i in range(1,4) %}
+				<li class="mb-4">
+					<h5 id="branch-name-company{{i}}" class="text-branchs mt-1">Ara Damansara</h5>
+		            <input type="text" rows="6" cols="50" class="form-control d-none input-branchs" required="" name="company[branch-name]" data-text-id = "branch-name-company{{i}}" value="Ara Damansara">
+		            </input>
+		            <p id="branch-address-company{{i}}" class="text-branchs mt-1">Pacific Place,, Jalan PJU 1A/4A, Ara Damansara, Petaling Jaya, 47301, Selangor</p>
+		            <textarea rows="6" cols="50" class="form-control d-none input-branchs" required="" name="company[about]" data-text-id = "branch-address-company{{i}}">Pacific Place,, Jalan PJU 1A/4A, Ara Damansara, Petaling Jaya, 47301, Selangor
+		            </textarea>
+
+		            Contact: <p id="branch-contact-company{{i}}" class="text-branchs mt-1">012-3456789</p>
+		            <input type="phone" rows="6" cols="50" class="form-control d-none input-branchs mb-2" required="" name="company[branch-contact]" data-text-id = "branch-contact-company{{i}}" value="012-3456789">
+		            </input>
+	            </li>
+				{% endfor %}
+        		</ul>
+ 	
+	            <button type="button" class="btn edit-btn d-flex align-items-stretch" data-input-class="input-branchs" data-text-class = "text-branchs"><i class="bi bi-pencil-fill"></i></button>
+	            <button type="button" class="btn d-none save-btn d-flex align-items-stretch" data-input-class="input-branchs" data-text-class = "text-branchs"><i class="bi bi-save-fill"></i></button>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}

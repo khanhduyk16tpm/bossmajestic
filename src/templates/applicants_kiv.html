@@ -1,11 +1,19 @@
+{% extends "layouts/applicants-base.html" %}
 {% import 'macros/path.html' as f %}
 {% import 'macros/site.html' as s %}
+{% set current_page = "applicants" %} 
+{% set active_menu = 'kiv' %}
+{% block js %} 
+{{ f.module(['toggle']) }} 
+<script src="{{ f.js('nocallback-toggle.min.js') }}"></script>
+{% endblock %}
 
+{% block applicant %}
 <div class="row px-3 mt-1">
 	<div class="col-lg-4 ps-lg-0">
-	  <div class="nav flex-column nav-pills" id="v-pills-rejected-tab" role="tablist" aria-orientation="vertical">
+	  <div class="nav flex-column nav-pills" id="v-pills-kiv-tab" role="tablist" aria-orientation="vertical">
 	  	{% for i in range(1,5) %}
-	    <div class="nav-link p-3 bg-white shadow mb-3 {% if i == 1 %} active {% endif %}" data-bs-toggle="pill" data-bs-target="#v-pills-rejected-{{i}}" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">
+	    <div class="nav-link p-3 bg-white shadow mb-3 {% if i == 1 %} active {% endif %}" data-bs-toggle="pill" data-bs-target="#v-pills-kiv-{{i}}" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">
 	    	<div class="d-flex">
 			  <div class="flex-shrink-0 align-self-center">
 			    <img src="{{f.mainImg('candidate_photo.png')}}" height="110px">
@@ -23,17 +31,17 @@
 			</div>
 			<div class="d-flex justify-content-between g-1 mt-3">
 			  	<button type="button" class="btn btn-outline-warning flex-fill me-1">Shortlist</button>
-			  	<button type="button" class="btn btn-outline-warning flex-fill me-1">KIV</button>
-			  	<button type="button" class="btn btn-dark flex-fill">Unreject</button>
+			  	<button type="button" class="btn btn-warning flex-fill me-1">Remove from KIV</button>
+			  	<button type="button" class="btn btn-outline-dark flex-fill">Reject</button>
 			</div>
 	    </div>
 	  	{% endfor %}
 	  </div>
 	</div>
 	<div class="col-lg-8 shadow bg-white p-3">
-	  <div class="tab-content" id="v-pills-rejected-tabContent">
+	  <div class="tab-content" id="v-pills-kiv-tabContent">
 	  	{% for i in range(1,5) %}
-	    <div class="tab-pane fade {% if i == 1 %} active show {% endif %}" id="v-pills-rejected-{{i}}" role="tabpanel" aria-labelledby="v-pills-{{i}}-tab">
+	    <div class="tab-pane fade {% if i == 1 %} active show {% endif %}" id="v-pills-kiv-{{i}}" role="tabpanel" aria-labelledby="v-pills-kiv-{{i}}-tab">
 	    	<div class="d-flex">
 			  <div class="flex-shrink-0 align-self-center">
 			    <img src="{{f.mainImg('candidate_photo.png')}}" class="img-fluid" height="150px">
@@ -328,3 +336,4 @@
 	  </div>
 	</div>
 </div>
+{% endblock %}
