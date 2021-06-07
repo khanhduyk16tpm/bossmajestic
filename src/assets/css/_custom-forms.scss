@@ -12,3 +12,21 @@ label {
 .font-medium {
     font-size: $fontSize14;
 }
+form {
+    .error {
+        color: #F8483B;
+    }
+    .err-box {
+        background: #FFA2A2 0% 0% no-repeat padding-box;
+        border: 1px solid #FF0000;
+        width: 365px;
+        height: 52px;
+        color: #E91421;
+        .bi {
+            margin-right: 5px;
+        }
+    }
+    .bi-info-circle {
+        color: #3893ef;
+    }
+}

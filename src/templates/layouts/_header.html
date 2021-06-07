@@ -58,7 +58,7 @@
     {% elseif current_page ==  "job-performance" %}
     <div class="d-flex justify-content-between p-4 mb-5">
         <h4 class="ms-1">My Job Performance</h4>
-        <button class="btn btn-dark text-warning"><i class="bi bi-plus me-1"></i> Post a Job</button>
+        <a class="btn btn-dark text-warning" href="{{ s.post_job_url()  }}"><i class="bi bi-plus me-1"></i> Post a Job</a>
     </div>
     {% elseif current_page ==  "applicants" %}
     <div class="mb-5 p-4">

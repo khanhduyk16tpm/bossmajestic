@@ -1,0 +1,104 @@
+{% import 'macros/path.html' as f %}
+    {% set sizes = ['50', '100', '150', '200', '500'] %}
+    {% set dial_codes = [{'country_code': 'MY', 'code': '+60'}, {'country_code': 'US', 'code': '+1'}] %}
+    <div class="d-flex flex-row align-items-center alert-note d-none">
+        <div class="d-flex justify-content-center col-lg-5 offset-lg-5 err-box p-2">
+            <i class="bi bi-exclamation-circle"></i>Please fill up the details correctly.
+        </div>
+    </div>
+    <div class="row company-logo mt-5">
+        <div class="col-12 col-lg-3 d-lg-flex justify-content-end">
+            Company Logo<i class="bi bi-info-circle mt-n1 ms-1"></i>
+        </div>
+        <div class="col-12 col-lg-9">
+            <label>
+            <img src="{{ f.img('logo/petronas.png') }}" class="border rounded-circle">
+            <input type="file" name="company_logo" class="d-none" required>
+            <div id="error-logo" class="error d-none">Error lorem ipsum</div>
+            </label>
+            <div class="p-3"><button class="btn btn-primary remove-logo" type="button">Remove Logo</button></div>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-12 col-lg-3 d-lg-flex justify-content-end">
+            Company Name<i class="bi bi-info-circle mt-n1 ms-1"></i>
+        </div>
+        <div class="col-12 col-lg-9">
+            <input type="text" name="company_name" class="form-control company-name rounded-0" placeholder="eg. Web Discovery Solutions Sdn. Bhd." value="" required >
+            <div id="error-name" class="error d-none">Error lorem ipsum</div>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-12 col-lg-3 d-lg-flex justify-content-end">
+            Registration Code/SSM No.<i class="bi bi-info-circle mt-n1 ms-1"></i>
+        </div>
+        <div class="col-12 col-lg-9">
+            <input type="text" class="form-control registration-code rounded-0" name="registration_code" placeholder="0000000000-A" value="" required >
+            <div id="error-registration-code" class="error d-none">Error lorem ipsum</div>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-12 col-lg-3 d-lg-flex justify-content-end">
+            Company Size<i class="bi bi-info-circle mt-n1 ms-1"></i>
+        </div>
+        <div class="col-12 col-lg-9">
+            <select id="company-size" name="company_size" class="company-size form-control rounded-0 d-inline" required>
+                <option value="">select one...</option>
+                {% for size in sizes %}
+                <option value="{{ size }}" >{{ size }}</option>
+                {% endfor %}
+            </select>
+            Employees
+            <div id="error-size" class="error d-none">Error lorem ipsum</div>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-12 col-lg-3 d-lg-flex justify-content-end">
+            Industry<i class="bi bi-info-circle mt-n1 ms-1"></i>
+        </div>
+        <div class="col-12 col-lg-9">
+            <input type="text" name="industry"  class="form-control industry rounded-0" placeholder="Type your company industry" value="" required >
+            <div id="error-industry" class="error d-none">Error lorem ipsum</div>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-12 col-lg-3 d-lg-flex justify-content-end">
+            Company Website<i class="bi bi-info-circle mt-n1 ms-1"></i>
+        </div>
+        <div class="col-12 col-lg-9">
+            <input type="text" name="website" class="form-control website rounded-0" placeholder="www.company.com" value="" required >
+            <div id="error-website" class="error d-none">Error lorem ipsum</div>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-12 col-lg-3 d-lg-flex justify-content-end">
+            Contact Number<i class="bi bi-info-circle mt-n1 ms-1"></i>
+        </div>
+        <div class="col-12 col-lg-9">
+            <input type="text" name="contact_number" class="form-control contact-number rounded-0" placeholder="Contact Number" value="" required >
+            <div id="error-contact" class="error d-none">Error lorem ipsum</div>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-12 col-lg-3 d-lg-flex justify-content-end">
+            Mobile Number<i class="bi bi-info-circle mt-n1 ms-1"></i>
+        </div>
+        <div class="col-12 col-lg-9">
+            <select id="dial-code" name="dial-code" class="dial-code form-control rounded-0 d-inline" required>
+                {% for dial in dial_codes %}
+                <option value="{{ dial.code }}" >{{ dial.country_code ~ ' ' ~ dial.code }}</option>
+                {% endfor %}
+            </select>
+            <input type="text" class="phone-number form-control rounded-0 d-inline" placeholder="123456789" required>
+            <div id="error-phone" class="error d-none">Error lorem ipsum</div>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-12 col-lg-3 d-lg-flex justify-content-end">
+            Company Email<i class="bi bi-info-circle mt-n1 ms-1"></i>
+        </div>
+        <div class="col-12 col-lg-9">
+            <input type="text" name="email" class="form-control rounded-0 email" placeholder="Company Email" value="" required >
+            <div id="error-email" class="error d-none">Error lorem ipsum</div>
+        </div>
+    </div>
