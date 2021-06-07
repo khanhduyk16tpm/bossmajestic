@@ -1,87 +1,71 @@
-<div class="container-fluid topbar">
-    <a class="btn border-0 toggle-off btn-sidebar-off d-none" id="menu-btn"><i class="bi bi-list"></i></a>
-
-    <!-- <nav id="main" class="navbar navbar-expand-lg navbar-light px-md-5 {{extra_class}}">
-      <div class="wrapper-content">
-          <a class="navbar-brand main-logo" href="#">
-              <img src="assets/img/logo/boss_majestic.png">
+{% import 'macros/path.html' as f %}
+{% import 'macros/site.html' as s %}
+<div class="position-relative h-100">
+  <a class="btn border-0 toggle-off btn-sidebar-off d-none" id="menu-btn"><i class="bi bi-list"></i></a>
+  <div class="position-absolute top-0 start-50 translate-middle-x d-none d-lg-block">
+    <a href="{{s.home_url()}}">
+       <img src="{{ f.img('logo/boss_majestic.png') }}" height="30px" class="mt-3">
+    </a>
+  </div>
+  <div class="position-absolute top-0 end-0 px-2 me-3">
+      <div class="d-flex mt-2 fs-5 px-3">
+        <div class="p-2 bd-highlight me-2">
+          <a href="{{s.search_candidate_home_url()}}">
+             <i class="bi bi-search"></i>
           </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-          </button>
-  
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <span class="ml-md-auto"></span>
-              <div class="language-navbar">
-                  <div class="navbar-info">
-                      <div class="btn-group my-2">
-                          <div class="dropdown language-picker me-4">
-                              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
-                                  data-bs-toggle="dropdown" aria-expanded="false">
-                              </button>
-                              <ul class="dropdown-menu {% if is_guest %}language-not-login{% endif %}"
-                                  aria-labelledby="dropdownMenuButton1">
-                                  <li><a class="dropdown-item dropdown-item-checked" href="#">English</a></li>
-                                  <li><a class="dropdown-item" href="#">Chinese</a></li>
-                              </ul>
-                          </div>
-                          {% if is_guest %}
-  
-                          <span class="navbar-text">
-                              <a href="#" class="btn btn-post-job mr-3 px-5">Post a job</a>
-                              <a href="#" rel="nofollow" data-bs-toggle="modal" data-bs-target="#loginModalForm">Login</a>
-                              <a href="#" rel="nofollow" data-bs-toggle="modal" data-bs-target="#signupModalForm">Sign
-                                  Up</a>
-                          </span>
-                          {% else %}
-  
-  
-                          <div class="dropdown message-dropdown">
-                              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2"
-                                  data-bs-toggle="dropdown" aria-expanded="false"><span class="badge">9</span>
-                              </button>
-                              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                                  {% for i in range(1,6) %}
-                                  <li><a class="dropdown-item"><img src="#" alt="">
-                                          <div class="messenger-name">Messenger's Name</div>
-                                          <div class="dot"><span></span></div>
-                                          <div class="message-text">latest message - 1w</div>
-  
-                                      </a></li>
-                                  {% endfor %}
-                              </ul>
-                          </div>
-                          <div class="dropdown user-dropdown">
-                              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2"
-                                  data-bs-toggle="dropdown" aria-expanded="false">
-                                  <img src="assets/img/users/user1-160x160.jpg" class="user-rounded" alt="...">
-                              </button>
-                              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                                  <li><a class="dropdown-item" href="#"><img src="#" alt="">My
-                                          Profile</a>
-                                  </li>
-                                  <li><a class="dropdown-item" href="#"><img src="#" alt="">My Resume</a>
-                                  </li>
-                                  <li><a class="dropdown-item" href="#"><img src="#" alt="">My
-                                          Applications</a></li>
-                              </ul>
-                          </div>
-  
-                          {% endif %}
-                      </div>
-                  </div>
+        </div>
+        <div class="p-2 bd-highlight me-2">
+          <i class="bi bi-globe" class="dropdown-toggle" id="dropdownMenuLanguage" data-bs-toggle="dropdown" aria-expanded="false"></i>
+          <ul class="dropdown-menu shadow mt-1" aria-labelledby="dropdownMenuLanguage">
+            <li><a class="dropdown-item" href="#">English</a></li>
+            <li><a class="dropdown-item" href="#">Malay</a></li>
+            <li><a class="dropdown-item" href="#">Chinese</a></li>
+          </ul>
+        </div>
+        <div class="p-2 bd-highlight me-2">
+            <i class="bi bi-bell"></i>
+        </div>
+        <div class="dropdown p-2 bd-highlight ms-2">
+          <img src="{{f.mainImg('candidate_photo.png')}}" height="30px" class="dropdown-toggle mb-1" id="dropdownMenuUser" data-bs-toggle="dropdown" aria-expanded="false">
+          <ul class="dropdown-menu shadow mt-1" aria-labelledby="dropdownMenuUser">
+            <div class="d-flex p-2">
+              <div class="flex-shrink-0 align-self-center">
+                <img src="{{f.mainImg('candidate_photo.png')}}" height="70px">
               </div>
-          </div>
+              <div class="flex-grow-1 ms-3 align-self-center">
+                <p class="fs-5 mb-0">Leah Chen</p>
+                <p class="text-muted mb-2 small">leahchen@gmail.com</p>
+                <p class="small">Hiring Manager</p>
+              </div>
+            </div>
+            <hr>
+            <li><a class="dropdown-item" href="#">My Company Settings</a></li>
+            <li><a class="dropdown-item" href="#">My Settings</a></li>
+            <li><a class="dropdown-item" href="#">Switch User</a></li>
+            <hr>
+            <li><a class="dropdown-item mt-0" href="#">Logout</a></li>
+          </ul>
+        </div>
       </div>
-  </nav> -->
-</div>
-<div class="w-50 h-100 d-flex">
-  <div class="align-self-end mb-5 ps-4">
-  {% if current_page == "company_overview" %} 
-    <h5>Petroliam Nasional Berhad (Petronas)</h5>
-    <p>Lorem ipsum dolor sit amet, consetessur adsipiscing elit. Prasesent tempor, ante sit amet malesuada tempus, ante arcu pulvinar purus, vel.</p>
-    <button type="button" class="btn text-warning bg-dark btn-sm px-3 py-2">Preview My Company Profile <i class="bi bi-box-arrow-up-right"></i></button>
-  {% endif %}
-</div>
+  </div>
+  <div class="position-absolute bottom-0 start-0 w-100">
+    {% if current_page == "company_overview" %}
+      <div class="mb-5 ps-4">
+        <h4>Petroliam Nasional Berhad (Petronas)</h4>
+        <p>Lorem ipsum dolor sit amet, consetessur adsipiscing elit. Prasesent tempor, ante sit amet malesuada tempus, ante arcu pulvinar purus, vel.</p>
+        <button type="button" class="btn text-warning bg-dark btn-sm px-3 py-2">Preview My Company Profile <i class="bi bi-box-arrow-up-right"></i></button>
+      </div>
+    {% elseif current_page ==  "job-performance" %}
+    <div class="d-flex justify-content-between p-4 mb-5">
+        <h4 class="ms-1">My Job Performance</h4>
+        <button class="btn btn-dark text-warning"><i class="bi bi-plus me-1"></i> Post a Job</button>
+    </div>
+    {% elseif current_page ==  "applicants" %}
+    <div class="mb-5 p-4">
+        <a href="#" class="link-dark"><u>Back</u></a>
+        <h4 class="mb-3 mt-3">Applicants</h4>
+        <button class="btn btn-dark text-warning mb-2">Preview Job <i class="bi bi-box-arrow-up-right ms-1"></i></button>
+    </div>
+    {% endif %}
+  </div>
 </div>
