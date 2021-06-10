@@ -6,3 +6,9 @@ header.main-header {
 #dropdownMenuUser{
     cursor: pointer;
 }
+.background-img-header{
+    background: url("../img/main/woman-attending-online-class.png") no-repeat center,
+		linear-gradient(rgba(3, 8, 21, 0.5), rgba(13, 8, 21, 0.5));
+		background-blend-mode: overlay;
+		background-size: cover;
+}

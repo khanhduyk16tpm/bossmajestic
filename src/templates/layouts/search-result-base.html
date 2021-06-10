@@ -1,0 +1,16 @@
+{% extends "layouts/base.html" %}
+
+{% block js %}{% endblock %}
+
+
+{% block content %}
+<div class="row">
+    <div class="col-3">
+       {% include 'partials/_candidate-filter.html' %}
+    </div>
+    <div class="col-9">
+        {% block search_content %}
+        {% endblock %}
+    </div>
+</div>
+{% endblock %}

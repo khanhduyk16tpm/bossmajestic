@@ -4,27 +4,27 @@
 
     <ul class="nav flex-column w-100">
         <a class="btn border-0 toggle-on btn-sidebar-on" id="menu-btn"><i class="bi bi-list float-end"></i></a>
-        <a class="company-logo mb-4 text-center" href="{{ s.home_url() }}" width="125px">
+        <a class="mb-4 text-center" href="{{ s.home_url() }}" width="125px">
             <img src="{{ f.img('logo/petronas.png') }}">
         </a>
-        <li class="mb-1 menu-list">
-            <a class="btn text-start collapsed w-100 border-radius-none px-4 py-2 font-medium"  href="{{s.overview_url()}}">
+        <li class="mb-1">
+            <a class="btn text-start collapsed w-100 border-radius-none px-4 py-2 font-medium {{ f.if(active_menu == 'overview','fw-bold') }}"  href="{{s.overview_url()}}">
                 Overview
             </a>
         </li>
-        <li class="mb-1 menu-list">
+        <li class="mb-1">
             <button class="btn text-start collapsed w-100 px-4 py-2 font-medium"
-                data-bs-toggle="collapse" data-bs-target="#second-menu-collapse" aria-expanded="false">
+                data-bs-toggle="collapse" data-bs-target="#second-menu-collapse" aria-expanded="{{ f.if(active_menu in ['new-applicant', 'job-performance'],'true', 'false') }}">
                 Menu Item
             </button>
-            <div class="collapse" id="second-menu-collapse">
+            <div class="collapse {{ f.if(active_menu in ['new-applicant', 'job-performance'],'show') }}" id="second-menu-collapse">
                 <ul class="list-unstyled fw-normal pb-1 font-medium">
-                    <li class="mt-3 ms-4"><a href="{{s.applicants_url()}}" class="d-inline-flex align-items-center rounded">Applicants</a></li>
-                    <li class="mt-3 ms-4"><a href="{{s.job_performance_url()}}" class="d-inline-flex align-items-center rounded">Job Performance</a></li>
+                    <li class="mt-3 ms-4"><a href="{{s.applicants_url()}}" class="{{ f.if(active_menu == 'new-applicant','fw-bold') }} d-inline-flex align-items-center rounded">Applicants</a></li>
+                    <li class="mt-3 ms-4"><a href="{{s.job_performance_url()}}" class="{{ f.if(active_menu == 'job-performance','fw-bold') }} d-inline-flex align-items-center rounded">Job Performance</a></li>
                 </ul>
             </div>
         </li>
-        <li class="mb-1 menu-list">
+        <li class="mb-1">
             <button class="btn text-start collapsed w-100 px-4 py-2 font-medium"
                 data-bs-toggle="collapse" data-bs-target="#third-menu-collapse" aria-expanded="false">
                 Menu Item
@@ -37,7 +37,7 @@
                 </ul>
             </div>
         </li>
-        <li class="mb-1 menu-list">
+        <li class="mb-1">
             <button class="btn text-start collapsed w-100 border-radius-none px-4 py-2 font-medium"
                 data-bs-toggle="collapse" data-bs-target="#applicants-collapse" aria-expanded="false">
                 Menu Item
@@ -49,7 +49,7 @@
             </div>
         </li>
     </ul>
-    <ul class="nav flex-column w-100 settings mb-3">
+    <ul class="nav flex-column w-100  mb-3">
         <li class="px-4 py-2"><a href="#" class="d-inline-flex align-items-center rounded font-medium">Settings</a>
         </li>
         <li class="px-4 py-2"><a href="#" class="d-inline-flex align-items-center rounded font-medium">Menu Item</a>

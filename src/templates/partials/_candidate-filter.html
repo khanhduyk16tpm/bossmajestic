@@ -1,0 +1,119 @@
+<form method="post" action="/job-search/filter-by" data-end="false" class="p-2 ms-1 mt-5"> 
+	<div class="mb-3 d-flex flex-column align-items-start">
+		<p class="fs-5 fw-bold ms-2">Related Categories</p>
+		<button type="button" class="btn btn-sm text-muted">Remote</button>
+		<button type="button" class="btn btn-sm text-muted">Full time</button>
+		<button type="button" class="btn btn-sm text-muted">Part time</button>
+		<button type="button" class="btn btn-sm text-muted">Freelance</button>
+		<span id="more-1" class="d-none d-flex flex-column align-items-start"> 
+			<button type="button" class="btn btn-sm text-muted">Remote</button>
+			<button type="button" class="btn btn-sm text-muted">Freelance</button>
+		</span>
+		<span id="show-more-1" data-id="more-1" data-button-id="show-more-1" class="show-more small text-primary ms-2"><i class="bi bi-chevron-down"></i> More</span>
+	</div>
+
+	<div class="mb-3">
+		<div class="d-flex justify-content-between mb-3 ms-2">
+			<p class="fs-5 fw-bold mb-0">Company</p>
+			<button type="button" data-chk-class = "company-ckb" class="btn btn-sm text-muted clear-all">Clear</button>
+		</div>
+		{% for i in range(1,4) %}
+		<div class="form-check small ms-2">
+		  <input class="form-check-input company-ckb" type="checkbox" value="" id="companyCheck{{i}}">
+		  <label class="form-check-label" for="companyCheck{{i}}">
+		    Sub Category
+		  </label>
+		</div>
+		{% endfor %}
+		<div class="d-none" id="more-2">
+			{% for i in range(5,8) %}
+			<div class="form-check small ms-2">
+			  <input class="form-check-input company-ckb" type="checkbox" value="" id="companyCheck{{i}}">
+			  <label class="form-check-label" for="companyCheck{{i}}">
+			    Sub Category
+			  </label>
+			</div>
+			{% endfor %}	
+		</div>
+		<span data-id = "more-2" data-button-id = "show-more-2" id="show-more-2" class="show-more small text-primary ms-2"><i class="bi bi-chevron-down"></i> More</span>
+	</div>
+
+	<div class="mb-3">
+		<div class="d-flex justify-content-between mb-3 ms-2">
+			<p class="fs-5 fw-bold mb-0">Categories</p>
+			<button type="button" data-chk-class = "category-ckb" class="btn btn-sm text-muted clear-all">Clear</button>
+		</div>
+		{% for i in range(1,4) %}
+		<div class="form-check small ms-2">
+		  <input class="form-check-input category-ckb" type="checkbox" value="" id="categoryCheck{{i}}">
+		  <label class="form-check-label" for="categoryCheck{{i}}">
+		    Sub Category
+		  </label>
+		</div>
+		{% endfor %}
+		<div class="d-none" id="more-3">
+			{% for i in range(5,8) %}
+			<div class="form-check small ms-2">
+			  <input class="form-check-input category-ckb" type="checkbox" value="" id="categoryCheck{{i}}">
+			  <label class="form-check-label" for="categoryCheck{{i}}">
+			    Sub Category
+			  </label>
+			</div>
+			{% endfor %}	
+		</div>
+		<span data-id = "more-3" data-button-id = "show-more-3" id="show-more-3" class="show-more small text-primary ms-2"><i class="bi bi-chevron-down"></i> More</span>
+	</div>
+
+	<div class="mb-3">
+		<div class="d-flex justify-content-between mb-3 ms-2">
+			<p class="fs-5 fw-bold mb-0">Related Categories</p>
+			<button type="button" data-chk-class = "related-cat-ckb" class="btn btn-sm text-muted clear-all">Clear</button>
+		</div>
+		{% for i in range(1,4) %}
+		<div class="form-check small ms-2">
+		  <input class="form-check-input related-cat-ckb" type="checkbox" value="" id="relateCategoryCheck{{i}}">
+		  <label class="form-check-label" for="relateCategoryCheck{{i}}">
+		    Sub Category
+		  </label>
+		</div>
+		{% endfor %}
+		<div class="d-none" id="more-4">
+			{% for i in range(5,8) %}
+			<div class="form-check small ms-2">
+			  <input class="form-check-input related-cat-ckb" type="checkbox" value="" id="relateCategoryCheck{{i}}">
+			  <label class="form-check-label" for="relateCategoryCheck{{i}}">
+			    Sub Category
+			  </label>
+			</div>
+			{% endfor %}	
+		</div>
+		<span data-id = "more-4" data-button-id = "show-more-4" id="show-more-4" class="show-more small text-primary ms-2"><i class="bi bi-chevron-down"></i> More</span>
+	</div>
+
+	<div class="mb-3">
+		<div class="d-flex justify-content-between mb-3 ms-2">
+			<p class="fs-5 fw-bold mb-0">Distance</p>
+			<button type="button" data-chk-class = "distance-ckb" class="btn btn-sm text-muted clear-all">Clear</button>
+		</div>
+		{% for i in range(1,4) %}
+		<div class="form-check small ms-2">
+		  <input class="form-check-input distance-ckb" type="checkbox" value="" id="distanceCheck{{i}}">
+		  <label class="form-check-label" for="distanceCheck{{i}}">
+		    Sub Category
+		  </label>
+		</div>
+		{% endfor %}
+		<div class="d-none" id="more-4">
+			{% for i in range(5,8) %}
+			<div class="form-check small ms-2">
+			  <input class="form-check-input distance-ckb" type="checkbox" value="" id="distanceCheck{{i}}">
+			  <label class="form-check-label" for="distanceCheck{{i}}">
+			    Sub Category
+			  </label>
+			</div>
+			{% endfor %}	
+		</div>
+		<span data-id = "more-4" data-button-id = "show-more-4" id="show-more-4" class="show-more small text-primary ms-2"><i class="bi bi-chevron-down"></i> More</span>
+	</div>
+
+</form>

@@ -1,21 +1,21 @@
 {% import 'macros/path.html' as f %}
 {% import 'macros/site.html' as s %}
-<div class="position-relative h-100">
+<div class="position-relative h-100 {{background_img_active}}">
   <a class="btn border-0 toggle-off btn-sidebar-off d-none" id="menu-btn"><i class="bi bi-list"></i></a>
   <div class="position-absolute top-0 start-50 translate-middle-x d-none d-lg-block">
     <a href="{{s.home_url()}}">
-       <img src="{{ f.img('logo/boss_majestic.png') }}" height="30px" class="mt-3">
+       <img src="{{ f.if(not background_img_active, f.img('logo/boss_majestic.png'), f.img('logo/boss_majestic_light.png')) }}" height="30px" class="mt-3" alt="main-logo">
     </a>
   </div>
   <div class="position-absolute top-0 end-0 px-2 me-3">
       <div class="d-flex mt-2 fs-5 px-3">
         <div class="p-2 bd-highlight me-2">
           <a href="{{s.search_candidate_home_url()}}">
-             <i class="bi bi-search"></i>
+             <i class="bi bi-search {{ f.if(background_img_active, 'text-light')}}"></i>
           </a>
         </div>
         <div class="p-2 bd-highlight me-2">
-          <i class="bi bi-globe" class="dropdown-toggle" id="dropdownMenuLanguage" data-bs-toggle="dropdown" aria-expanded="false"></i>
+          <i class="bi bi-globe {{ f.if(background_img_active, 'text-light')}}" class="dropdown-toggle" id="dropdownMenuLanguage" data-bs-toggle="dropdown" aria-expanded="false"></i>
           <ul class="dropdown-menu shadow mt-1" aria-labelledby="dropdownMenuLanguage">
             <li><a class="dropdown-item" href="#">English</a></li>
             <li><a class="dropdown-item" href="#">Malay</a></li>
@@ -23,7 +23,7 @@
           </ul>
         </div>
         <div class="p-2 bd-highlight me-2">
-            <i class="bi bi-bell"></i>
+            <i class="bi bi-bell {{ f.if(background_img_active, 'text-light')}}"></i>
         </div>
         <div class="dropdown p-2 bd-highlight ms-2">
           <img src="{{f.mainImg('candidate_photo.png')}}" height="30px" class="dropdown-toggle mb-1" id="dropdownMenuUser" data-bs-toggle="dropdown" aria-expanded="false">
@@ -65,6 +65,101 @@
         <a href="#" class="link-dark"><u>Back</u></a>
         <h4 class="mb-3 mt-3">Applicants</h4>
         <button class="btn btn-dark text-warning mb-2">Preview Job <i class="bi bi-box-arrow-up-right ms-1"></i></button>
+    </div>
+    {% elseif current_page == "search-result" %}
+    <div class="p-5">
+      <p class="text-center text-light fs-4 mb-4">Search for Candidates</p>
+      <form id="searchCandidateForm" method="post" action="search_candidate_result" data-end="false" class="row g-2 px-2"> 
+        <div class="col-12 col-lg-6">
+          <div class="input-group mb-2">
+            <span class="input-group-text rounded-0" id="job-type"><i class="bi bi-search"></i></span>
+            <input type="text" class="form-control rounded-0" placeholder="Search by Job Title, Company & Skills" aria-label="Search by Job Title, Company & Skills" aria-describedby="job-type">
+          </div>
+        </div>
+        <div class="col-12 col-lg-4">
+          <div class="input-group mb-2">
+            <span class="input-group-text rounded-0" id="job-location"><i class="bi bi-geo-alt-fill"></i></span>
+            <input type="text" class="form-control rounded-0" placeholder="Location" aria-label="Location" aria-describedby="job-location">
+          </div>
+        </div>
+        <div class="col-12 col-lg-2">
+          <div class="form-check pb-0 mb-0">
+              <input class="form-check-input mb-0" type="checkbox" id="malaysia_only" name="malaysia_only"
+                     value="1">
+              <label class="form-check-label text-light" for="malaysia_only">
+                  Malaysia Only
+              </label>
+          </div>
+          </div>
+          <div class="col-12 col-lg-3">
+            <select name="type_code" class="form-select" aria-label="Job Type">
+                <option selected="">Job Type</option>
+                <option value="1">Full Time</option>
+                <option value="2">Part Time</option>
+                <option value="3">Internship</option>
+                <option value="4">Freelance</option>
+            </select>
+          </div>
+          <div class="col-12 col-lg-3">
+              <select name="category_id" id="jobCategory" class="form-select" aria-label="Job Type">
+                  <option disabled="" hidden="" selected="">Job Category</option>
+                  <option value="1">Accounting</option>
+                  <option value="2">Admin</option>
+                  <option value="3">Agriculture</option>
+                  <option value="20">Aquaculture</option>
+                  <option value="4">Arts</option>
+                  <option value="26">Beauty</option>
+                  <option value="25">Beverage</option>
+                  <option value="33">Biz Development</option>
+                  <option value="5">Building</option>
+                  <option value="22">Construction</option>
+                  <option value="6">Customer Services</option>
+                  <option value="35">Defence</option>
+                  <option value="21">Design</option>
+                  <option value="7">Education</option>
+                  <option value="8">Engineering</option>
+                  <option value="31">Environment</option>
+                  <option value="18">Finance</option>
+                  <option value="9">Food</option>
+                  <option value="10">Health</option>
+                  <option value="19">HR Resource</option>
+                  <option value="11">IT</option>
+                  <option value="12">Journalism</option>
+                  <option value="36">Logistics</option>
+                  <option value="24">Maintenance</option>
+                  <option value="13">Manufacturing</option>
+                  <option value="30">Marketing</option>
+                  <option value="29">Media</option>
+                  <option value="32">Mining</option>
+                  <option value="14">Research Development (R&amp;D)</option>
+                  <option value="15">Sales</option>
+                  <option value="28">Science &amp; Technology</option>
+                  <option value="34">Security</option>
+                  <option value="16">Social Service</option>
+                  <option value="27">Sports</option>
+                  <option value="23">Training</option>
+                  <option value="17">Transportation</option>
+              </select>
+          </div>
+          <div class="col-12 col-lg-2 pe-lg-0">
+              <label for="minSalary" class="form-label mb-0 text-light small">Min Salary: <strong>MYR
+                  <output id="minSalaryO">500</output>
+              </strong></label>
+              <input type="range" class="form-range" id="minSalary" min="500" max="10000" step="500" id="minSalary"
+                     oninput="minSalaryO.value=minSalary.value" name="min_salary" value="500">
+          </div>
+          <div class="col-12 col-lg-2 ps-lg-0 text-start text-lg-end">
+              <label for="maxSalary" class="form-label mb-0 text-light small">Max Salary: <strong>MYR
+                  <output id="maxSalaryO">50000</output>
+              </strong></label>
+              <input type="range" class="form-range" id="maxSalary" min="10000" max="50000" step="500" id="maxSalary"
+                     oninput="maxSalaryO.value=maxSalary.value" name="max_salary" value="50000">
+          </div>
+
+          <div class="col-12 col-lg-2">
+              <button type="submit" class="form-control btn btn-primary">Search Now</button>
+          </div>
+      </form>
     </div>
     {% endif %}
   </div>
