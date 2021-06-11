@@ -1,0 +1,185 @@
+{% import 'macros/path.html' as f %}
+{% import 'macros/site.html' as s %}
+{% extends "layouts/base.html" %}
+{% set current_page = "my-user-profile" %} 
+{% set active_menu = "my-user-profile" %} 
+{% block js %} 
+{{ f.module(['toggle']) }} 
+<script src="{{ f.js('dashboard.min.js') }}"></script>
+{% endblock %}
+{% block content %}
+<div class="px-4 mt-n5 mb-4">
+    <div class="bg-white shadow p-3">
+    	<h5>My Profile Settings</h5>
+    	<div class="w-50 mt-5">
+    		<form id="form-user-setting" method="post" class="row g-4 mb-4" >
+    
+    			<div class="col-lg-6">
+	    			<p class="float-end fs-5 me-3">My Profile Picture <i class="bi bi-info-circle text-info fs-6 position-absolute ms-1"></i></p>
+	    		</div>
+	    		<div class="col-lg-6 ps-2">
+    				<div class="image-upload">
+					  <label for="file-input">
+					    <img src="{{ f.img('main/candidate_photo_big.png') }}" width="176px" height="176px" alt="candidate-photo">
+					  </label>
+					  <input id="file-input" type="file" class="d-none" />
+					</div>
+		    		<button class="btn btn-primary mt-3">Remove Picture</button>
+		    	</div>
+ 
+    			<div class="col-lg-6">
+	    			<p class="float-end fs-5 me-3">Username <i class="bi bi-info-circle text-info fs-6 position-absolute ms-1"></i></p>
+	    		</div>
+	    		<div class="col-lg-6 ps-2">
+    				<input type="text" class="form-control rounded-0" placeholder="Username" required="true">
+		    	</div>
+    
+    			<div class="col-lg-6">
+	    			<p class="float-end fs-5 me-3">First Name <i class="bi bi-info-circle text-info fs-6 position-absolute ms-1"></i></p>
+	    		</div>
+	    		<div class="col-lg-6 ps-2">
+    				<input type="text" class="form-control rounded-0" placeholder="First Name" required>
+		    	</div>
+    	
+    			<div class="col-lg-6">
+	    			<p class="float-end fs-5 me-3">Last Name <i class="bi bi-info-circle text-info fs-6 position-absolute ms-1"></i></p>
+	    		</div>
+	    		<div class="col-lg-6 ps-2">
+    				<input type="text" class="form-control rounded-0" placeholder="Last Name" required>
+		    	</div>
+
+		    	<div class="col-lg-6">
+	    			<p class="float-end fs-5 me-3">Role <i class="bi bi-info-circle text-info fs-6 position-absolute ms-1"></i></p>
+	    		</div>
+	    		<div class="col-lg-6 ps-2">
+    				<input type="text" class="form-control rounded-0" placeholder="eg. Account Executive" required>
+		    	</div>
+
+		    	<div class="col-lg-6">
+	    			<p class="float-end fs-5 me-3">Contact Number <i class="bi bi-info-circle text-info fs-6 position-absolute ms-1"></i></p>
+	    		</div>
+	    		<div class="col-lg-6 ps-2">
+    				<input type="text" class="form-control rounded-0" placeholder="Contact Number" required>
+		    	</div>
+
+		    	<div class="col-lg-6">
+	    			<p class="float-end fs-5 me-3">Mobile Number <i class="bi bi-info-circle text-info fs-6 position-absolute ms-1"></i></p>
+	    		</div>
+	    		<div class="col-lg-6 ps-2">
+    				<div class="input-group mb-3">
+					  <select class="form-select border text-muted">
+					    <option selected>Malaysia +60</option>
+					    <option data-countryCode="DZ" value="213">Algeria (+213)</option>
+						<option data-countryCode="AD" value="376">Andorra (+376)</option>
+						<option data-countryCode="AO" value="244">Angola (+244)</option>
+						<option data-countryCode="AI" value="1264">Anguilla (+1264)</option>
+						<option data-countryCode="AG" value="1268">Antigua &amp; Barbuda (+1268)</option>
+						<option data-countryCode="AR" value="54">Argentina (+54)</option>
+						<option data-countryCode="AM" value="374">Armenia (+374)</option>
+						<option data-countryCode="AW" value="297">Aruba (+297)</option>
+						<option data-countryCode="AU" value="61">Australia (+61)</option>
+						<option data-countryCode="AT" value="43">Austria (+43)</option>
+						<option data-countryCode="AZ" value="994">Azerbaijan (+994)</option>
+						<option data-countryCode="BS" value="1242">Bahamas (+1242)</option>
+						<option data-countryCode="BH" value="973">Bahrain (+973)</option>
+					  </select>
+					  <input type="text" class="form-control rounded-0" placeholder="123456789">
+					</div>
+		    	</div>
+
+		    	<div class="col-lg-6">
+	    			<p class="float-end fs-5 me-3">Email <i class="bi bi-info-circle text-info fs-6 position-absolute ms-1"></i></p>
+	    		</div>
+	    		<div class="col-lg-6 ps-2">
+    				<input type="email" class="form-control rounded-0" placeholder="email@example.com" required>
+		    	</div>
+
+		    	<div class="col-lg-6">
+	    			<p class="float-end fs-5 me-3">Country <i class="bi bi-info-circle text-info fs-6 position-absolute ms-1"></i></p>
+	    		</div>
+	    		<div class="col-lg-6 ps-2">
+    				<select class="form-select border text-muted">
+						<option selected>Select one...</option>
+						<option value="Albania">Albania</option>
+						<option value="Algeria">Algeria</option>
+						<option value="American Samoa">American Samoa</option>
+						<option value="Andorra">Andorra</option>
+						<option value="Angola">Angola</option>
+						<option value="Anguilla">Anguilla</option>
+						<option value="Antartica">Antarctica</option>
+						<option value="Antigua and Barbuda">Antigua and Barbuda</option>
+						<option value="Argentina">Argentina</option>
+						<option value="Armenia">Armenia</option>
+						<option value="Aruba">Aruba</option>
+						<option value="Australia">Australia</option>
+						<option value="Austria">Austria</option>
+					</select>
+		    	</div>
+
+		    	<div class="col-lg-6">
+	    			<p class="float-end fs-5 me-3">Identity Number <i class="bi bi-info-circle text-info fs-6 position-absolute ms-1"></i></p>
+	    		</div>
+	    		<div class="col-lg-6 ps-2">
+    				<div class="input-group mb-3">
+					  <select class="form-select border text-muted">
+					    <option selected>IC No</option>
+					    	{% for i in range(1,5) %}
+					    	<option value="{{ i }}">{{ i }}</option>
+							{% endfor %}
+					  </select>
+					  <input type="text" class="form-control rounded-0" placeholder="123456789">
+					</div>
+		    	</div>
+
+		    	<div class="col-lg-6">
+	    			<p class="float-end fs-5 me-3">Gender <i class="bi bi-info-circle text-info fs-6 position-absolute ms-1"></i></p>
+	    		</div>
+	    		<div class="col-lg-6 ps-2">
+    				<div class="input-group mb-3">
+					  <select class="form-select border text-muted">
+					    <option selected>Select One..</option>
+						<option value="Women">Women</option>
+				    	<option value="Men">Men</option>
+						<option value="Other">Other</option>
+					  </select>
+
+					</div>
+		    	</div>
+
+		    	<div class="col-lg-6">
+	    			<p class="float-end fs-5 me-3">Ethnicity <i class="bi bi-info-circle text-info fs-6 position-absolute ms-1"></i></p>
+	    		</div>
+	    		<div class="col-lg-6 ps-2">
+    				<div class="input-group mb-3">
+					  <select class="form-select border text-muted">
+					    <option selected>Select One..</option>
+							{% for i in range(1,5) %}
+					    	<option value="{{ i }}">{{ i }}</option>
+							{% endfor %}
+					  </select>
+					</div>
+		    	</div>
+
+		    	<div class="col-lg-6">
+	    			<p class="float-end fs-5 me-3">Marital Status <i class="bi bi-info-circle text-info fs-6 position-absolute ms-1"></i></p>
+	    		</div>
+	    		<div class="col-lg-6 ps-2">
+    				<div class="input-group mb-3">
+					  <select class="form-select border text-muted">
+					    <option selected>Select One..</option>
+				    	<option value="1">Yes</option>
+						<option value="2">No</option>
+					  </select>
+					 
+					</div>
+		    	</div>
+		    	<div class="d-flex justify-content-end">
+		    		<a class="btn btn-secondary" href="{{s.home_url()}}" role="button">Cancel</a>
+                	<button type="submit" class="btn btn-primary ms-2">Update</button> 
+                </div>
+    		</form>
+
+    	</div>
+    </div>
+</div>
+{% endblock %}
