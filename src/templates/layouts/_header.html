@@ -40,7 +40,7 @@
             </div>
             <hr>
             <li><a class="dropdown-item" href="{{ s.company_setting_url() }}">My Company Settings</a></li>
-            <li><a class="dropdown-item" href="#">My Settings</a></li>
+            <li><a class="dropdown-item" href="{{ s.my_user_profile_url() }}">My Settings</a></li>
             <li><a class="dropdown-item" href="#">Switch User</a></li>
             <hr>
             <li><a class="dropdown-item mt-0" href="#">Logout</a></li>
@@ -51,24 +51,24 @@
   <div class="position-absolute bottom-0 start-0 w-100">
     {% if current_page == "company_overview" %}
       <div class="mb-5 ps-4">
-        <h4>Petroliam Nasional Berhad (Petronas)</h4>
+        <h4>{{ title }}</h4>
         <p>Lorem ipsum dolor sit amet, consetessur adsipiscing elit. Prasesent tempor, ante sit amet malesuada tempus, ante arcu pulvinar purus, vel.</p>
         <button type="button" class="btn text-warning bg-dark btn-sm px-3 py-2">Preview My Company Profile <i class="bi bi-box-arrow-up-right"></i></button>
       </div>
     {% elseif current_page ==  "job-performance" %}
     <div class="d-flex justify-content-between p-4 mb-5">
-        <h4 class="ms-1">My Job Performance</h4>
+        <h4 class="ms-1">{{title}}</h4>
         <a class="btn btn-dark text-warning" href="{{ s.post_job_url()  }}"><i class="bi bi-plus me-1"></i> Post a Job</a>
     </div>
     {% elseif current_page ==  "applicants" %}
     <div class="mb-5 p-4">
         <a href="#" class="link-dark"><u>Back</u></a>
-        <h4 class="mb-3 mt-3">Applicants</h4>
+        <h4 class="mb-3 mt-3">{{ title }}</h4>
         <button class="btn btn-dark text-warning mb-2">Preview Job <i class="bi bi-box-arrow-up-right ms-1"></i></button>
     </div>
     {% elseif current_page == "search-result" %}
     <div class="p-5">
-      <p class="text-center text-light fs-4 mb-4">Search for Candidates</p>
+      <p class="text-center text-light fs-4 mb-4">{{ title }}</p>
       <form id="searchCandidateForm" method="post" action="search_candidate_result" data-end="false" class="row g-2 px-2"> 
         <div class="col-12 col-lg-6">
           <div class="input-group mb-2">
@@ -161,14 +161,9 @@
           </div>
       </form>
     </div>
-    {% elseif current_page == "change-password" %}
+    {% elseif  current_page in ['my-user-profile', 'company-setting', 'change-password']%}
     <div class="mb-5 p-4">
-        <h4 class="mb-3 mt-3">Change Password</h4>
-        <p class="w-50">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tempor, ante sit amet malesuada tempus.</p>
-    </div>
-    {% elseif current_page == "my-user-profile" %}
-    <div class="mb-5 p-4">
-        <h4 class="mb-3 mt-3">My User Profile</h4>
+        <h4 class="mb-3 mt-3">{{ title }}</h4>
         <p class="w-50">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tempor, ante sit amet malesuada tempus.</p>
     </div>
     {% endif %}

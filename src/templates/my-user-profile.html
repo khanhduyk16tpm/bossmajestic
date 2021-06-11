@@ -3,6 +3,7 @@
 {% extends "layouts/base.html" %}
 {% set current_page = "my-user-profile" %} 
 {% set active_menu = "my-user-profile" %} 
+{% set title = "My User Profile" %}
 {% block js %} 
 {{ f.module(['toggle']) }} 
 <script src="{{ f.js('dashboard.min.js') }}"></script>
@@ -14,10 +15,10 @@
     	<div class="w-50 mt-5">
     		<form id="form-user-setting" method="post" class="row g-4 mb-4" >
     
-    			<div class="col-lg-6">
+    			<div class="col-lg-5">
 	    			<p class="float-end fs-5 me-3">My Profile Picture <i class="bi bi-info-circle text-info fs-6 position-absolute ms-1"></i></p>
 	    		</div>
-	    		<div class="col-lg-6 ps-2">
+	    		<div class="col-lg-7 ps-2">
     				<div class="image-upload">
 					  <label for="file-input">
 					    <img src="{{ f.img('main/candidate_photo_big.png') }}" width="176px" height="176px" alt="candidate-photo">
@@ -27,48 +28,48 @@
 		    		<button class="btn btn-primary mt-3">Remove Picture</button>
 		    	</div>
  
-    			<div class="col-lg-6">
+    			<div class="col-lg-5">
 	    			<p class="float-end fs-5 me-3">Username <i class="bi bi-info-circle text-info fs-6 position-absolute ms-1"></i></p>
 	    		</div>
-	    		<div class="col-lg-6 ps-2">
+	    		<div class="col-lg-7 ps-2">
     				<input type="text" class="form-control rounded-0" placeholder="Username" required="true">
 		    	</div>
     
-    			<div class="col-lg-6">
+    			<div class="col-lg-5">
 	    			<p class="float-end fs-5 me-3">First Name <i class="bi bi-info-circle text-info fs-6 position-absolute ms-1"></i></p>
 	    		</div>
-	    		<div class="col-lg-6 ps-2">
+	    		<div class="col-lg-7 ps-2">
     				<input type="text" class="form-control rounded-0" placeholder="First Name" required>
 		    	</div>
     	
-    			<div class="col-lg-6">
+    			<div class="col-lg-5">
 	    			<p class="float-end fs-5 me-3">Last Name <i class="bi bi-info-circle text-info fs-6 position-absolute ms-1"></i></p>
 	    		</div>
-	    		<div class="col-lg-6 ps-2">
+	    		<div class="col-lg-7 ps-2">
     				<input type="text" class="form-control rounded-0" placeholder="Last Name" required>
 		    	</div>
 
-		    	<div class="col-lg-6">
+		    	<div class="col-lg-5">
 	    			<p class="float-end fs-5 me-3">Role <i class="bi bi-info-circle text-info fs-6 position-absolute ms-1"></i></p>
 	    		</div>
-	    		<div class="col-lg-6 ps-2">
+	    		<div class="col-lg-7 ps-2">
     				<input type="text" class="form-control rounded-0" placeholder="eg. Account Executive" required>
 		    	</div>
 
-		    	<div class="col-lg-6">
+		    	<div class="col-lg-5">
 	    			<p class="float-end fs-5 me-3">Contact Number <i class="bi bi-info-circle text-info fs-6 position-absolute ms-1"></i></p>
 	    		</div>
-	    		<div class="col-lg-6 ps-2">
+	    		<div class="col-lg-7 ps-2">
     				<input type="text" class="form-control rounded-0" placeholder="Contact Number" required>
 		    	</div>
 
-		    	<div class="col-lg-6">
+		    	<div class="col-lg-5">
 	    			<p class="float-end fs-5 me-3">Mobile Number <i class="bi bi-info-circle text-info fs-6 position-absolute ms-1"></i></p>
 	    		</div>
-	    		<div class="col-lg-6 ps-2">
+	    		<div class="col-lg-7 ps-2">
     				<div class="input-group mb-3">
 					  <select class="form-select border text-muted">
-					    <option selected>Malaysia +60</option>
+					    <option selected>MY+60</option>
 					    <option data-countryCode="DZ" value="213">Algeria (+213)</option>
 						<option data-countryCode="AD" value="376">Andorra (+376)</option>
 						<option data-countryCode="AO" value="244">Angola (+244)</option>
@@ -83,21 +84,21 @@
 						<option data-countryCode="BS" value="1242">Bahamas (+1242)</option>
 						<option data-countryCode="BH" value="973">Bahrain (+973)</option>
 					  </select>
-					  <input type="text" class="form-control rounded-0" placeholder="123456789">
+					  <input type="text" class="form-control rounded-0 w-50" placeholder="123456789">
 					</div>
 		    	</div>
 
-		    	<div class="col-lg-6">
+		    	<div class="col-lg-5">
 	    			<p class="float-end fs-5 me-3">Email <i class="bi bi-info-circle text-info fs-6 position-absolute ms-1"></i></p>
 	    		</div>
-	    		<div class="col-lg-6 ps-2">
+	    		<div class="col-lg-7 ps-2">
     				<input type="email" class="form-control rounded-0" placeholder="email@example.com" required>
 		    	</div>
 
-		    	<div class="col-lg-6">
+		    	<div class="col-lg-5">
 	    			<p class="float-end fs-5 me-3">Country <i class="bi bi-info-circle text-info fs-6 position-absolute ms-1"></i></p>
 	    		</div>
-	    		<div class="col-lg-6 ps-2">
+	    		<div class="col-lg-7 ps-2">
     				<select class="form-select border text-muted">
 						<option selected>Select one...</option>
 						<option value="Albania">Albania</option>
@@ -116,10 +117,10 @@
 					</select>
 		    	</div>
 
-		    	<div class="col-lg-6">
+		    	<div class="col-lg-5">
 	    			<p class="float-end fs-5 me-3">Identity Number <i class="bi bi-info-circle text-info fs-6 position-absolute ms-1"></i></p>
 	    		</div>
-	    		<div class="col-lg-6 ps-2">
+	    		<div class="col-lg-7 ps-2">
     				<div class="input-group mb-3">
 					  <select class="form-select border text-muted">
 					    <option selected>IC No</option>
@@ -127,14 +128,14 @@
 					    	<option value="{{ i }}">{{ i }}</option>
 							{% endfor %}
 					  </select>
-					  <input type="text" class="form-control rounded-0" placeholder="123456789">
+					  <input type="text" class="form-control rounded-0 w-50" placeholder="123456789">
 					</div>
 		    	</div>
 
-		    	<div class="col-lg-6">
+		    	<div class="col-lg-5">
 	    			<p class="float-end fs-5 me-3">Gender <i class="bi bi-info-circle text-info fs-6 position-absolute ms-1"></i></p>
 	    		</div>
-	    		<div class="col-lg-6 ps-2">
+	    		<div class="col-lg-7 ps-2">
     				<div class="input-group mb-3">
 					  <select class="form-select border text-muted">
 					    <option selected>Select One..</option>
@@ -146,10 +147,10 @@
 					</div>
 		    	</div>
 
-		    	<div class="col-lg-6">
+		    	<div class="col-lg-5">
 	    			<p class="float-end fs-5 me-3">Ethnicity <i class="bi bi-info-circle text-info fs-6 position-absolute ms-1"></i></p>
 	    		</div>
-	    		<div class="col-lg-6 ps-2">
+	    		<div class="col-lg-7 ps-2">
     				<div class="input-group mb-3">
 					  <select class="form-select border text-muted">
 					    <option selected>Select One..</option>
@@ -160,10 +161,10 @@
 					</div>
 		    	</div>
 
-		    	<div class="col-lg-6">
+		    	<div class="col-lg-5">
 	    			<p class="float-end fs-5 me-3">Marital Status <i class="bi bi-info-circle text-info fs-6 position-absolute ms-1"></i></p>
 	    		</div>
-	    		<div class="col-lg-6 ps-2">
+	    		<div class="col-lg-7 ps-2">
     				<div class="input-group mb-3">
 					  <select class="form-select border text-muted">
 					    <option selected>Select One..</option>

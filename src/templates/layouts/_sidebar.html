@@ -15,15 +15,15 @@
         </li>
         <li class="mb-1">
             <button class="btn text-start collapsed w-100 px-4 py-2 font-medium"
-                data-bs-toggle="collapse" data-bs-target="#second-menu-collapse" aria-expanded="{{ f.if(active_menu in ['new-applicant', 'job-performance', 'search-candidate-result', 'my-user-profile'],'true', 'false') }}">
+                data-bs-toggle="collapse" data-bs-target="#second-menu-collapse" aria-expanded="{{ f.if(active_menu in ['new-applicant', 'job-performance', 'search-candidate-result'],'true', 'false') }}">
                 Menu Item
             </button>
-            <div class="collapse {{ f.if(active_menu in ['new-applicant', 'job-performance', 'search-candidate-result', 'my-user-profile'],'show') }}" id="second-menu-collapse">
+            <div class="collapse {{ f.if(active_menu in ['new-applicant', 'job-performance', 'search-candidate-result'],'show') }}" id="second-menu-collapse">
                 <ul class="list-unstyled fw-normal pb-1 font-medium">
-                    <li class="mt-3 ms-4"><a href="{{s.applicants_url()}}" class="{{ f.if(active_menu == 'new-applicant','fw-bold') }} d-inline-flex align-items-center rounded">Applicants</a></li>
-                    <li class="mt-3 ms-4"><a href="{{s.job_performance_url()}}" class="{{ f.if(active_menu == 'job-performance','fw-bold') }} d-inline-flex align-items-center rounded">Job Performance</a></li>
-                    <li class="mt-3 ms-4"><a href="{{s.search_candidate_result_url()}}" class="{{ f.if(active_menu == 'search-candidate-result','fw-bold') }} d-inline-flex align-items-center rounded">Search Candidate</a></li>
-                    <li class="mt-3 ms-4"><a href="{{s.my_user_profile_url()}}" class="{{ f.if(active_menu == 'my-user-profile','fw-bold') }} d-inline-flex align-items-center rounded">My User Profile</a></li>
+                    <li class="mt-3 ms-4"><a href="{{ s.applicants_url() }}" class="{{ f.if(active_menu == 'new-applicant','fw-bold') }} d-inline-flex align-items-center rounded">Applicants</a></li>
+                    <li class="mt-3 ms-4"><a href="{{ s.job_performance_url() }}" class="{{ f.if(active_menu == 'job-performance','fw-bold') }} d-inline-flex align-items-center rounded">Job Performance</a></li>
+                    <li class="mt-3 ms-4"><a href="{{ s.search_candidate_result_url() }}" class="{{ f.if(active_menu == 'search-candidate-result','fw-bold') }} d-inline-flex align-items-center rounded">Search Candidate</a></li>
+                    
                 </ul>
             </div>
         </li>
