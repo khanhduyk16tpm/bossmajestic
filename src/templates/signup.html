@@ -1,4 +1,6 @@
 {% import 'macros/path.html' as f %}
+{% import 'macros/site.html' as s %}
+{% import 'macros/user.html' as u %}
 {% extends "layouts/full-page.html" %}
 
 {% block js %}{% endblock %}
@@ -12,118 +14,49 @@
 {% set page_sub_title = '' %}
 {% set quote = 'Last updated on 23th Apr 2021' %}
 
-{% block page %}
-<div class="wrapper-section">
-    <div class="container signup-page">
-        <div class="container content">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="background-auth"></div>
+{% block content %}
+
+        <div class="position-absolute top-50 start-50 translate-middle bg-white shadow p-4 w-auto">
+            <a href="{{s.home_url()}}" class="d-flex justify-content-center">
+               <img src="{{ f.img('logo/boss_majestic_fullpage.png') }}" height="35px" width="185px" class="mt-3" alt="main-logo">
+            </a>
+            <p class="text-center mt-3">Register as employer</p>
+            <form action="/en/auth/sign-up" method="post" autocomplete="off"> 
+                <div class="mb-3">
+                    <label for="company-name" class="form-label text-muted">Company Name</label>
+                    <input type="text" class="form-control rounded-0" id="company-name" placeholder="Yourcompany Sdn. Bhd." maxlength="50" autocomplete="email" autofocus="" required="true">
+                </div>          
+                <div class="mb-3">
+                    <label for="email" class="form-label text-muted">Email</label>
+                    <input type="email" class="form-control rounded-0" id="email" aria-describedby="emailHelp" placeholder="email@example.com" maxlength="50" autocomplete="email" autofocus="" required="true">
                 </div>
-                <div class="col-md-6">
-                    <div class="signup-section">
-                        <p class="signup-with desktop">Sign up with</p>
-                        <p class="signup-with mobile">Sign up with Job Majestic</p>
-                        <div class="row py-2 social-signup">
-                            <a href="#" rsignup-desktopel="nofollow" class="btn btn-secondary btn-facebook col-12 mb-2">
-                                <i class="bi bi-facebook"></i>
-                                Continue with Facebook
-                            </a>
-                            <a href="#" rel="nofollow" class="btn btn-secondary btn-linkedin col-12 mb-2">
-                                <i class="bi bi-linkedin"></i>
-                                <span class="split"></span>Sign in with LinkedIn
-                            </a>
-                        </div>
-                        <div class="row py-2">
-                            <div class="col-sm-5 d-md-block custom-hr">
-                                <hr>
-                            </div>
-                            <div class="col-sm-2 text-muted text-center py-1">Or</div>
-                            <div class="col-sm-5 d-md-block custom-hr">
-                                <hr>
-                            </div>
-                        </div>
-                        <p class="signup-with signup-with-majestic">Sign up with Job Majestic</p>
-                        <form action="/en/auth/signup" class="signup-form" method="post" autocomplete="off">
-                            <div class="form-group row">
-                                <div class="col-sm-6 mb-3 mb-md-0">
-                                    <label for="firstname">First Name</label>
-                                    <input type="text" id="firstname" class="form-control custom-form-control"
-                                        maxlength="50" autocomplete="given-name" autofocus="" required=""
-                                        name="profile[first_name]" value="">
-                                </div>
-                                <div class="col-sm-6">
-                                    <label for="lastname">Last Name</label>
-                                    <input type="text" id="lastname" class="form-control custom-form-control"
-                                        maxlength="50" autocomplete="family-name" required="" name="profile[last_name]"
-                                        value="">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-12">
-                                    <label for="mobileNumber">Mobile Number</label>
-                                    <div class="input-group">
-                                        <select name="profile[mobile_region_code]"
-                                            class="custom-select custom-form-control w-20">
-                                            <option value="SG">+65</option>
-                                            <option value="ID">+62</option>
-                                            <option value="TH">+66</option>
-                                            <option value="MY" selected="selected">+60</option>
-                                        </select>
-                                        <div class="input-group-append w-80"> <input type="text"
-                                                class="form-control custom-form-control" maxlength="10"
-                                                id="mobileNumber" required="" name="profile[mobileNationalNumber_]"
-                                                value="">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-12">
-                                    <label for="email-signup">Email</label>
-                                    <input type="email" id="email-signup" class="form-control custom-form-control"
-                                        maxlength="50" autocomplete="email" autofocus="" required="" name="email"
-                                        placeholder="yourname@youremail.com">
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-12">
-                                    <label for="new-password">Password</label>
-                                    <div class="input-group">
-                                        <input type="password" id="current-password"
-                                            class="form-control custom-form-control current-password" maxlength="20"
-                                            required="" name="password">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-6 custom-action">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" id="gridCheck" checked="">
-                                        <label class="form-check-label" for="gridCheck">
-                                            Remember me </label>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6 text-right mt-2 mt-md-0 custom-action">
-                                    <a class="text-underline" href="/password-recovery.html" rel="nofollow">Forgot
-                                        password?</a>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <div class="col-sm-12">
-                                    <button type="submit" class="btn custom-btn btn-signup col-12">Sign Up</button>
-                                </div>
-                            </div>
-                        </form>
-                        <p class="text-center my-3">
-                            <small> Already have an account? <a class="text-underline" href="/login.html">
-                                    Log in</a>
-                            </small>
-                        </p>
+                <div class="mb-3">
+                    <label for="new-password" class="form-label text-muted">Password</label>
+                    <div class="input-group">
+                        <input type="password" id="new-password"
+                            class="form-control custom-form-control new-password rounded-0" maxlength="20"
+                            required="" name="password">
                     </div>
                 </div>
-            </div>
+                <div class="d-flex flex-column">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="checkTermCondition" checked="">
+                        <label class="form-check-label ms-1" for="checkTermCondition">I accept the Terms and Conditions.</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="checkRepresent" checked="">
+                        <label class="form-check-label ms-1" for="checkRepresent">I represent company to own this account.</label>
+                    </div>
+                   <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="checkEmailAplly" checked="">
+                        <label class="form-check-label ms-1" for="checkEmailAplly">Email me when there is candidate apply my jobs.</label>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between mt-5 mb-4">
+                    <a class="btn btn-warning" href="{{u.login_url()}}" role="button">Log in</a>
+                    <button type="submit" class="btn btn-dark">Sign Up</button>         
+                </div>
+            </form>
         </div>
-    </div>
-</div>
+
 {% endblock %}

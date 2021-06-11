@@ -1,15 +1,47 @@
-{% extends "layouts/base.html" %}
+{% import 'macros/path.html' as f %}
+{% import 'macros/site.html' as s %}
 
-{% block js %}{% endblock %}
+<!doctype html>
+<html lang="en" class="h-100">
 
-{% block content %}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% if meta_description %}
+    <meta name="description" content="{{ meta_description }}">
+    {% endif %}
+    {% if meta_keywords %}
+    <meta name="keywords" content="{{ meta_keywords }}">
+    {% endif %}
+    {% if meta_robots %}
+    <meta name="robots" content="{{ meta_robots }}">
+    {% endif %}
+    {% block meta %}{% endblock %}
+    <title>{{ meta_title | default('Jobs in Malaysia - April 2021 | JobMajestic') }}</title>
+    <link rel="stylesheet" href="{{ f.css('main.min.css') }}">
+    {% block css %}{% endblock %}
+    <link rel="apple-touch-icon-precomposed" sizes="144x144"
+        href="{{ f.ico('apple-touch-icon-144-precomposed.png') }}" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114"
+        href="{{ f.ico('apple-touch-icon-114-precomposed.png') }}" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ f.ico('apple-touch-icon-72-precomposed.png') }}" />
+    <link rel="apple-touch-icon-precomposed" href="{{ f.ico('apple-touch-icon-57-precomposed.png') }}" />
+    <link rel="shortcut icon" href="{{ f.logo('full-mark.png') }}" />
+</head>
 
-{% set hero_banner_img_url = "" %}
-{% if hero_banner_img_url %}
-<img class="img-fluid" src="{{hero_banner_img_url}}">
-{% endif %}
-<div class="container-fluid px-md-5 page">
-    {% block page %}
-    {% endblock %}
-</div>
-{% endblock %}
+<body class="position-relative h-100">
+    <main role="main">
+        {% block content %}{% endblock %}
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+    <script src="{{ f.js('nocallback-toggle.min.js') }}"></script>
+    <script src="{{ f.js('password-toggle.min.js') }}"></script>
+    <script src="{{ f.js('guest.min.js') }}"></script>
+
+    {% block js %}{% endblock %}
+    <!-- page specific end -->
+</body>
+
+</html>

@@ -1,4 +1,5 @@
 {% extends "layouts/full-page.html" %}
+{% import 'macros/site.html' as s %}
 
 {% set meta_title = '' %}
 {% set meta_description = '' %}
@@ -9,18 +10,15 @@
 {% set page_sub_title = '' %}
 {% set quote = '' %}
 
-{% block page %}
-<div class="container-fluid">
-    <div class="container">
-<div class="row text-center">
-    <div class="col-lg-12 justify-content-center align-items-center p-not-found">
-        <h1>404</h1>
-        <h4>
+{% block content %}
+<div class="position-absolute top-50 start-50 translate-middle">
+    <div class="text-center">
+        <h1 class="fw-bold">404</h1>
+        <p class="text-muted">
             We are sorry, but the page you requested was not found.
-        </h4>
-        <button><span>Go back home</span></button>
+        </p>
+        <a class="btn btn-dark mt-4" href="{{ s.home_url() }}" role="button">Go back home</a>
     </div>
 </div>
-</div>
-</div>
+
 {% endblock %}

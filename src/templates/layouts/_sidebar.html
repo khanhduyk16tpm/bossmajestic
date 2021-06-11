@@ -1,5 +1,6 @@
 {% import 'macros/path.html' as f %}
 {% import 'macros/site.html' as s %}
+{% import 'macros/user.html' as u %}
 <div class="side-navbar bg-white position-fixed active-nav d-flex justify-content-between flex-wrap flex-column shadow h-100" id="sidebar">
 
     <ul class="nav flex-column w-100">
@@ -54,13 +55,8 @@
         </li>
         <li class="px-4 py-2"><a href="#" class="d-inline-flex align-items-center rounded font-medium">Menu Item</a>
         </li>
-        {% if is_guest %}
-        <li class="px-4 py-2"><a href="#" class="d-inline-flex align-items-center rounded font-medium">Login</a>
+        <li class="px-4 py-2"><a href="{{u.login_url()}}" class="d-inline-flex align-items-center rounded font-medium">Logout</a>
         </li>
-        {% else %}
-        <li class="px-4 py-2"><a href="#" class="d-inline-flex align-items-center rounded font-medium">Logout</a>
-        </li>
-        {%endif%}
     </ul>
 
 </div>

@@ -109,6 +109,7 @@
             icon.inputSelector = this.selector;
             icon.style.position = "absolute";
             icon.style.zIndex = 5;
+            icon.style.top = "-4px";
             if(this.options.iconRight){                
                 icon.style.right = "0px";
             }
