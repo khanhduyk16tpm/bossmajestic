@@ -50,14 +50,17 @@
   </div>
   <div class="position-absolute bottom-0 start-0 w-100">
     {% if current_page == "company_overview" %}
-      <div class="mb-5 ps-4">
+      <div class="mb-5 px-4">
         <h4>{{ title }}</h4>
-        <p>Lorem ipsum dolor sit amet, consetessur adsipiscing elit. Prasesent tempor, ante sit amet malesuada tempus, ante arcu pulvinar purus, vel.</p>
-        <button type="button" class="btn text-warning bg-dark btn-sm px-3 py-2">Preview My Company Profile <i class="bi bi-box-arrow-up-right"></i></button>
+        <p>Lorem ipsum dsolor sit amet, consetessur adsipiscing elit. Prasesent tempor, ante sit amet malesuada tempus, ante arcu pulvinar purus, vel.</p>
+        <div class="d-flex justify-content-between">
+          <button type="button" class="btn text-warning bg-dark">Preview My Company Profile <i class="bi bi-box-arrow-up-right"></i></button>
+          <a class="btn btn-dark text-warning" href="{{ s.post_job_url()  }}"><i class="bi bi-plus me-1"></i> Post a Job</a>
+        </div>
       </div>
     {% elseif current_page ==  "job-performance" %}
     <div class="d-flex justify-content-between p-4 mb-5">
-        <h4 class="ms-1">{{title}}</h4>
+        <h4 class="ms-1">{{ title }}</h4>
         <a class="btn btn-dark text-warning" href="{{ s.post_job_url()  }}"><i class="bi bi-plus me-1"></i> Post a Job</a>
     </div>
     {% elseif current_page ==  "applicants" %}
@@ -65,6 +68,11 @@
         <a href="#" class="link-dark"><u>Back</u></a>
         <h4 class="mb-3 mt-3">{{ title }}</h4>
         <button class="btn btn-dark text-warning mb-2">Preview Job <i class="bi bi-box-arrow-up-right ms-1"></i></button>
+    </div>
+    {% elseif current_page ==  "post-a-job" %}
+    <div class="mb-5 p-4">
+        <a href="#" class="link-dark"><u>Back</u></a>
+        <h4 class="mb-3 mt-3">{{ title }}</h4>
     </div>
     {% elseif current_page == "search-result" %}
     <div class="p-5">

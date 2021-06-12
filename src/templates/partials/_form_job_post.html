@@ -61,7 +61,7 @@
             Category<i class="bi bi-info-circle mt-n1 ms-1"></i>
         </div>
         <div class="col-12 col-lg-9 form-group">
-            <select id="job-category" name="job_category" class="form-control job-category" required>
+            <select id="job-category" name="job_category" class="form-select border text-muted job-category" required>
                 <option value="">select one...</option>
                 {% for category in categories %}
                 <option value="{{ category }}" {% if job.category == category %} selected {% endif %}>{{ category  }}</option>
@@ -75,7 +75,7 @@
             Education Level<i class="bi bi-info-circle mt-n1 ms-1"></i>
         </div>
         <div class="col-12 col-lg-9 form-group">
-            <select id="education-level" name="education_level" class="form-control education-level" required>
+            <select id="education-level" name="education_level" class="form-select border text-muted education-level" required>
                 <option value="">select one...</option>
                 {% for level in education_levels %}
                 <option value="{{ level }}" {% if job.education == level %}selected{% endif %}>{{  level }}</option>
@@ -89,7 +89,7 @@
             Working Experience (Min. Years)<i class="bi bi-info-circle mt-n1 ms-1"></i>
         </div>
         <div class="col-12 col-lg-4">
-            <input type="text" name="working_experience" class="form-control" placeholder="eg. 5 years" value ="{% if job.working_experience %}{{ job.working_experience }} {% endif %}" required>
+            <input type="text" name="working_experience" class="form-control rounded-0" placeholder="eg. 5 years" value ="{% if job.working_experience %}{{ job.working_experience }} {% endif %}" required>
             <div id="error-experience" class="error d-none">Error lorem ipsum</div>
         </div>
     </div>
@@ -135,15 +135,15 @@
             Working Hours<i class="bi bi-info-circle mt-n1 ms-1"></i>
         </div>
         <div class="col-12 col-lg-3">
-            <input type="text" id="work_from" class="form-control d-inline" name="work_from" value="{% if job.work_from %}{{ job.work_from }}{% endif %}">
+            <input type="text" id="work_from" class="form-control d-inline rounded-0" name="work_from" value="{% if job.work_from %}{{ job.work_from }}{% endif %}">
             to
-            <input type="text" id="work_to" class="form-control d-inline" name="work_to" value="{% if job.work_to %}{{ job.work_to }}{% endif %}">
+            <input type="text" id="work_to" class="form-control d-inline rounded-0" name="work_to" value="{% if job.work_to %}{{ job.work_to }}{% endif %}">
             <div id="error-work-hour" class="error d-none">Error lorem ipsum</div>
         </div>
         <div class="col-12 col-lg-2">
             <label>
                 <input type="checkbox" name="work_indefinite" value="" class="d-none" {% if job.work_indefinite %} checked {% endif %} />
-                <div class="square-radio work-indefinite text-center d-inline-block p-2 m-1">
+                <div class="square-radio work-indefinite text-center d-inline-block p-2 mb-2">
                     <span>Indefinite</span>
                 </div>
             </label>
@@ -154,7 +154,7 @@
             Salary<i class="bi bi-info-circle mt-n1 ms-1"></i>
         </div>
         <div class="col-12 col-lg-5">
-            <input type="text" name="min_salary" class="form-control d-inline" placeholder="Min..." value="{% if job.min_salary %}{{ job.min_salary }}{% endif %}" required> to <input type="text" class="form-control d-inline" name="max_salary" placeholder="Max..." value="{% if job.max_salary %}{{ job.max_salary }}{% endif %}" required>
+            <input type="text" name="min_salary" class="form-control d-inline rounded-0" placeholder="Min..." value="{% if job.min_salary %}{{ job.min_salary }}{% endif %}" required> to <input type="text" class="rounded-0 form-control d-inline" name="max_salary" placeholder="Max..." value="{% if job.max_salary %}{{ job.max_salary }}{% endif %}" required>
             <div id="error-salary" class="error d-none">Error lorem ipsum</div>
         </div>       
     </div>
@@ -165,7 +165,7 @@
         {% if job.benefits %}
             {% for benefit in job.benefits %}
             <div class="col-12 col-lg-9 offset-lg-3 mb-2 copy-benefit-row">
-                <input type="text" name="job_benefit[]" class="form-control d-inline" placeholder="eg. 14 days of annual leave" value="{{ benefit }}" >
+                <input type="text" name="job_benefit[]" class="rounded-0 form-control d-inline" placeholder="eg. 14 days of annual leave" value="{{ benefit }}" >
                 <a class="btn btn-sm mb-3 remove-benefit"><i class="bi bi-trash"></i></a>
             </div>
             {% endfor %}
@@ -185,7 +185,7 @@
             Location/Branch<i class="bi bi-info-circle mt-n1 ms-1"></i>
         </div>
         <div class="col-12 col-lg-9 form-group">
-            <select id="location" name="location" class="form-control location" required>
+            <select id="location" name="location" class="form-select border text-muted location" required>
                 <option value="">select one...</option>
                 {% for location in locations %}
                 <option value="{{ location }}" {% if job.location == location %}selected{% endif %}>{{ location }}</option>
