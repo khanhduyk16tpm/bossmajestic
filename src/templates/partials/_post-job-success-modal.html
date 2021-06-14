@@ -1,39 +1,35 @@
 {% import 'macros/site.html' as s %}
-<div class="modal fade" id="post-job-success" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="post-job-success" tabindex="-1" aria-labelledby="postJobModalLabel" aria-hidden="true">
   <div class="modal-dialog">
-    <div class="modal-content modal-post-job rounded-0">
+    <div class="modal-content p-2">
       <div class="modal-body">
-        <div class="d-flex justify-content-center"><i class="bi bi-check-circle-fill"></i></div>
-        <div class="h4 d-flex justify-content-center mt-2">Job Successfully Posted!</div>
-        <div class="whatnext d-flex justify-content-center mt-2">What do you want to do next?</div>
-        <div class="row row-cols-2 g-2 mt-1 d-flex justify-content-center">
-            <div class="card rounded-0">
-                <div class="card-body">
-                    <a href='{{ s.edit_job_url() }}'><i class="bi bi-pencil-fill px-1"></i>Edit Job</a>
+        <div class="text-center"><i class="bi bi-check-circle-fill fs-1 text-success"></i></div>
+        <h4  class="text-center mt-2">Job Successfully Posted!</h4 >
+        <p class="text-center mt-3">What do you want to do next?</p>
+        <div class="row row-cols-2 g-2">
+            <div class="col">
+                <div class="border px-3 py-5 text-center">
+                    <a href='{{ s.edit_job_url() }}'><i class="bi bi-pencil-fill me-1"></i>Edit Job</a>
                 </div>
             </div>
-            <div class="card rounded-0">
-                <div class="card-body">
-                    Preview Job<i class="bi bi-box-arrow-up-right px-1"></i>
+            <div class="col">
+                <div class="border px-3 py-5 text-center">
+                    <a href='{{ s.edit_job_url() }}'>Preview Job<i class="bi bi-box-arrow-up-right ms-1"></i></i></a>
                 </div>
             </div>
-            <div class="card rounded-0">
-                <div class="card-body">
-                    <a href='{{ s.home_url() }}'>Home</a>
+            <div class="col">
+                <div class="border px-3 py-5 text-center">
+                    <a href='{{ s.home_url() }}'>Homes</a>
                 </div>
             </div>
-            <div class="card rounded-0">
-                <div class="card-body">
+            <div class="col">
+                <div class="border px-3 py-5 text-center">
                     <a href='{{ s.post_job_url() }}'>Create another Job</a>
                 </div>
             </div>
         </div>
-      </div>
-        <div class="row mt-4 px-3">
-        <div class="col-lg-6">
-        </div>
-        <div class="col-12 offset-lg-8 mb-2">
-            <button type="button" class="btn-secondary btn-dismiss border-0" data-bs-dismiss="modal">Dismiss</button>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary btn-dismiss" data-bs-dismiss="modal">Dismiss</button>
         </div>
         </div>
     </div>
