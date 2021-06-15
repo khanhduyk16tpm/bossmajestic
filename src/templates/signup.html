@@ -15,9 +15,10 @@
 {% set quote = 'Last updated on 23th Apr 2021' %}
 
 {% block content %}
-
-        <div class="position-absolute top-50 start-50 translate-middle bg-white shadow p-4 w-auto">
-            <a href="{{s.home_url()}}" class="d-flex justify-content-center">
+<div class="container h-100">
+    <div class="row align-items-center h-100">
+        <div class="col-lg-4 mx-auto shadow bg-white p-4">
+            <a href="{{ s.home_url() }}" class="d-flex justify-content-center">
                <img src="{{ f.img('logo/boss_majestic_fullpage.png') }}" height="35px" width="185px" class="mt-3" alt="main-logo">
             </a>
             <p class="text-center mt-3">Register as employer</p>
@@ -40,23 +41,27 @@
                 </div>
                 <div class="d-flex flex-column">
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="checkTermCondition" checked="">
+                        <input class="form-check-input" type="checkbox" id="checkTermCondition">
                         <label class="form-check-label ms-1" for="checkTermCondition">I accept the Terms and Conditions.</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="checkRepresent" checked="">
+                        <input class="form-check-input" type="checkbox" id="checkRepresent">
                         <label class="form-check-label ms-1" for="checkRepresent">I represent company to own this account.</label>
                     </div>
                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="checkEmailAplly" checked="">
+                        <input class="form-check-input" type="checkbox" id="checkEmailAplly">
                         <label class="form-check-label ms-1" for="checkEmailAplly">Email me when there is candidate apply my jobs.</label>
                     </div>
                 </div>
-                <div class="d-flex justify-content-between mt-5 mb-4">
-                    <a class="btn btn-warning" href="{{u.login_url()}}" role="button">Log in</a>
-                    <button type="submit" class="btn btn-dark">Sign Up</button>         
+                <div class="d-flex flex-column mt-5 mb-4 px-3">
+                    <button type="submit" class="btn btn-primary">Sign Up As An Employer</button>
+                    <p class="text-muted small align-self-center mt-3">Already have an account?</p>
+                    <a class="btn btn-secondary" href="{{ u.login_url() }}" role="button">Login Now</a>
+                             
                 </div>
             </form>
-        </div>
+       </div>
+    </div>
+</div>
 
 {% endblock %}
