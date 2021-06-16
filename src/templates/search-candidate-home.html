@@ -6,7 +6,7 @@
 {{ f.module(['toggle']) }} 
 {% endblock %}
 {% block content %}
-<div class="px-lg-5 px-3 mt-n7">
+<div class="px-lg-5 px-0 mt-n7">
 	<div class="p-4 bg-dark">
 		<p class="text-center text-light fs-4 mb-4">Search for Candidates</p>
 	    <form id="searchCandidateForm" method="post" action="search-candidate-result" data-end="false" class="row g-2"> 
@@ -98,6 +98,7 @@
 
             <div class="col-12 col-lg-2">
                 <button type="submit" class="form-control btn btn-primary border-dark">Search Now</button>
+                <a class="form-control btn btn-outline-warning d-lg-none mt-3" href="{{s.home_url()}}" role="button">Back to home</a>
             </div>
 					
 		</form>

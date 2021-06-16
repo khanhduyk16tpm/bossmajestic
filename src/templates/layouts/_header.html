@@ -75,7 +75,7 @@
         <h4 class="mb-3 mt-3">{{ title }}</h4>
     </div>
     {% elseif current_page == "search-result" %}
-    <div class="p-5">
+    <div class="p-5 d-none d-lg-block">
       <p class="text-center text-light fs-4 mb-4">{{ title }}</p>
       <form id="searchCandidateForm" method="post" action="search_candidate_result" data-end="false" class="row g-2 px-2"> 
         <div class="col-12 col-lg-6">
