@@ -1,8 +1,8 @@
 {% import 'macros/path.html' as f %}
 {% import 'macros/site.html' as s %}
-<ul class="nav nav-tabs text-nowrap shadow bg-white" id="applicantTab">
+<ul class="nav nav-tabs text-nowrap shadow bg-white mt-lg-0 mt-4" id="applicantTab">
   <li class="nav-item">
-    <a  class="nav-link {{ f.if(active_menu == 'new-applicant',' active') }}" href="{{ s.applicants_url() }}" aria-current="page">New Applicants</a>
+    <a  class="nav-link {{ f.if(active_menu == 'new-applicant',' active') }}" href="{{ s.applicants_url() }}" aria-current="page">Applicants</a>
   </li>
   <li class="nav-item">
     <a  class="nav-link {{ f.if(active_menu == 'shortlisted',' active') }}" href="{{ s.applicants_shortlisted_url() }}">Shortlisted</a>

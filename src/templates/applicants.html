@@ -3,6 +3,7 @@
 {% import 'macros/site.html' as s %}
 {% set current_page = "applicants" %} 
 {% set active_menu = 'new-applicant' %}
+{% set locked_profile = true %}
 {% set title = 'Applicants' %}
 {% block js %} 
 {{ f.module(['toggle']) }} 
@@ -10,14 +11,18 @@
 {% endblock %}
 
 {% block applicant %}
-<div class="row px-3 mt-1">
+<div class="row px-lg-3 px-2 mt-1">
   <div class="col-lg-4 ps-lg-0">
     <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
       {% for i in range(1,10) %}
-      <div class="nav-link p-3 bg-white shadow mb-3 {% if i == 1 %} active {% endif %}" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-{{i}}" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">
+      <div class="nav-link p-lg-4 p-3 bg-white shadow mb-3 {% if i == 1 %} active {% endif %}" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-{{i}}" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">
         <div class="d-flex">
           <div class="flex-shrink-0 align-self-center">
-            <img src="{{f.mainImg('candidate_photo.png')}}" height="110px">
+            {% if locked_profile == true and i == 1 %}
+            <a href="#"><img src="{{ f.mainImg('locked_profile.png') }}" height="110px"></a>
+            {% else %}
+            <img src="{{ f.mainImg('candidate_photo.png') }}" height="110px">
+            {% endif %}
           </div>
           <div class="flex-grow-1 ms-3">
             <p class="fs-5 mb-1">Leah Chen</p>
@@ -39,13 +44,17 @@
       {% endfor %}
     </div>
   </div>
-  <div class="col-lg-8 shadow bg-white p-3">
+  <div class="col-lg-8 shadow bg-white p-lg-4 p-3">
     <div class="tab-content" id="v-pills-tabContent">
       {% for i in range(1,5) %}
       <div class="tab-pane fade {% if i == 1 %} active show {% endif %}" id="v-pills-{{i}}" role="tabpanel" aria-labelledby="v-pills-{{i}}-tab">
         <div class="d-flex">
         <div class="flex-shrink-0 align-self-center">
-          <img src="{{f.mainImg('candidate_photo.png')}}" class="img-fluid" height="150px">
+          {% if locked_profile == true and i == 1 %}
+          <a href="#"><img src="{{ f.mainImg('locked_profile.png') }}" height="150px"></a>
+          {% else %}
+          <img src="{{ f.mainImg('candidate_photo.png') }}" class="img-fluid" height="150px">
+          {% endif %}
         </div>
         <div class="flex-grow-1 w-50 ms-4">
           <p class="fs-3 mb-1">Leah Chen {{i}}</p>

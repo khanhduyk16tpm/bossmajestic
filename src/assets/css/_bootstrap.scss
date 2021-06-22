@@ -49,13 +49,15 @@ $gray-300: #dee2e6;
 $nav-link-color: primary;
 $nav-link-active-color:primary;
 $nav-tabs-border-radius:0;
-$nav-link-hover-color:$yellowColor;
+
+
 $nav-tabs-link-hover-border-color:  white white $yellowColor white;
 $nav-tabs-link-active-bg: white;
 $nav-tabs-border-width:2px;
 $nav-tabs-border-color: white;
 $nav-tabs-link-active-border-color: white white $yellowColor white;
-
+$input-group-addon-bg: white;
+$input-group-addon-border-color: white;
 $spacer: 1rem;
 $spacers: (
   0: 0,
